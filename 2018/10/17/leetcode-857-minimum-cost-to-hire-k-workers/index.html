@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>LeetCode.857 Minimum Cost to Hire K Workers | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="题目地址 题意：n个人，每个人有wage和quality，选择K个人按照quality比发放工资，要求到手的工资不少于各自的wage，求最小花费。 思路：考虑选中的K个人中，如果以满足第$i$个人的wage为标准发放工资，则最后的花费$Q$为： $$Q=\sum { k }^{ K }{ { q }{ k } } \cdot \frac { { w }{ i } }{ { q }{ i } } $">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode.857 Minimum Cost to Hire K Workers">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/leetcode-857-minimum-cost-to-hire-k-workers/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="题目地址 题意：n个人，每个人有wage和quality，选择K个人按照quality比发放工资，要求到手的工资不少于各自的wage，求最小花费。 思路：考虑选中的K个人中，如果以满足第$i$个人的wage为标准发放工资，则最后的花费$Q$为： $$Q=\sum { k }^{ K }{ { q }{ k } } \cdot \frac { { w }{ i } }{ { q }{ i } } $">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-12T09:01:22.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode.857 Minimum Cost to Hire K Workers">
+<meta name="twitter:description" content="题目地址 题意：n个人，每个人有wage和quality，选择K个人按照quality比发放工资，要求到手的工资不少于各自的wage，求最小花费。 思路：考虑选中的K个人中，如果以满足第$i$个人的wage为标准发放工资，则最后的花费$Q$为： $$Q=\sum { k }^{ K }{ { q }{ k } } \cdot \frac { { w }{ i } }{ { q }{ i } } $">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-leetcode-857-minimum-cost-to-hire-k-workers" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/17/leetcode-857-minimum-cost-to-hire-k-workers/" class="article-date">
+  <time datetime="2018-10-17T14:16:23.000Z" itemprop="datePublished">2018-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      LeetCode.857 Minimum Cost to Hire K Workers
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://leetcode.com/problems/minimum-cost-to-hire-k-workers/" target="_blank" rel="noopener">题目地址</a></p>
+<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>n个人，每个人有wage和quality，选择K个人按照quality比发放工资，要求到手的工资不少于各自的wage，求最小花费。</p>
+<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>考虑选中的K个人中，如果以满足第$i$个人的wage为标准发放工资，则最后的花费$Q$为： $$Q=\sum <em>{ k }^{ K }{ { q }</em>{ k } } \cdot \frac { { w }<em>{ i } }{ { q }</em>{ i } } $$ 为了满足其他人的工资不低于各自的wage: $$\frac { { w }<em>{ i } }{ { q }</em>{ i } } \cdot {q}<em>{j} \ge {w}</em>{j} (j\neq i)$$ 即 $$\frac { { w }<em>{ i } }{ { q }</em>{ i } } \ge \frac { { w }<em>{ j } }{ { q }</em>{ j } } (j\neq i)$$ 所以$i$号人的$\frac { w }{ q } $应该是最大的。 所以只需要对$\frac { w }{ q } $进行排序，然后计算前$i$个人中，最小的K个quality的和就行了，优先队列或者大根堆维护即可。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><p>[python] class Solution: def mincostToHireWorkers(self, quality, wage, K): “”” :type quality: List[int] :type wage: List[int] :type K: int :rtype: float “”” a = [(w/q, w, q) for (w, q) in zip(wage, quality)] a.sort() import queue as Q q = Q.PriorityQueue() ans = -1 tot = 0 for i in range(len(a)): if(q.qsize() &gt;= K): tot -= -q.get_nowait() tot += a[i][2] q.put(-a[i][2]) if(q.qsize() &gt;= K and (tot*a[i][0]&lt;ans or ans==-1)): ans = tot*a[i][0] return ans [/python]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/17/leetcode-857-minimum-cost-to-hire-k-workers/" data-id="cjoe2wu98000tads6ygvgsn80" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/12/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/12/computer-graphics-final-project-simple-raytracing/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Computer Graphics Final Project Simple RayTracing</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Gauss-Jordan-elimination/">Gauss-Jordan_elimination</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Gauss-Jordan-elimination/Multischool-Training/">Multischool-Training</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math-Theory/">Math Theory</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math-Theory/Multischool-Training/">Multischool-Training</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Multischool-Training/">Multischool-Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/17/leetcode-857-minimum-cost-to-hire-k-workers/">LeetCode.857 Minimum Cost to Hire K Workers</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/12/computer-graphics-final-project-simple-raytracing/">Computer Graphics Final Project Simple RayTracing</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/22/computer-graphics-experiment-iii-part-2-lightmodel-in-opengl-inplemented-via-glsl/">Computer Graphics Experiment III Part.2 LightModel in OpenGL (Inplemented via GLSL)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
