@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,7 +83,7 @@
 <meta property="og:title" content="Bluefissure&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bluefissure&#39;s Blog">
 
@@ -133,7 +133,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh">
 
   
   
@@ -260,7 +260,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T14:16:23+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T14:16:23+08:00">
                 2018-10-17
               </time>
             
@@ -407,7 +407,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-12T11:16:05+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-12T11:16:05+08:00">
                 2017-06-12
               </time>
             
@@ -469,8 +469,9 @@
       
         
           
-            <p>最后一个实验要求做一个RayTracing的小东西，本实验采用了Cornell Box作为模型，实现了简单的tracer。 主要从以下几个方面简单的介绍：</p>
-<h1 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h1><p><img src="https://bluefissure.com/wp-content/uploads/2017/06/tracing.png" alt=""> 算法伪代码如上，即对每个像素点随机选取光线方向，如果击中点的话对其进行render，并根据反射、折射等递归计算，没有击中点则返回背景颜色。</p>
+            <p>最后一个实验要求做一个RayTracing的小东西，本实验采用了Cornell Box作为模型，实现了简单的tracer。 主要从以下几个方面简单的介绍一下：</p>
+<h1 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h1><img src="/2017/06/12/computer-graphics-final-project-simple-raytracing/tracing.png">
+<p> 算法伪代码如上，即对每个像素点随机选取光线方向，如果击中点的话对其进行render，并根据反射、折射等递归计算，没有击中点则返回背景颜色。</p>
 <h1 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h1><p>在实验的过程中，调用glm后发现实际的速度并没有快很多，反而各种方法比较凌乱，因此自己实现了一个Vector的struct： [cpp] #pragma once #include “Calc.h” struct Vec { double x, y, z; Vec(double x_ = 0, double y_ = 0, double z_ = 0) { x = x_; y = y_; z = z_; } Vec operator+(const Vec &amp;amp;amp;amp;b) const { return Vec(x + b.x, y + b.y, z + b.z); } Vec operator-(const Vec &amp;amp;amp;amp;b) const { return Vec(x - b.x, y - b.y, z - b.z); } Vec operator<em>(double b) const { return Vec(x\</em>b, y*b, z*b); } Vec mult(const Vec &amp;amp;amp;amp;b) const { return Vec(x*b.x, y*b.y, z*b.z); } Vec&amp;amp;amp;amp; norm() { return *this = *this <em> (1 / Qsqrt(x\</em>x + y*y + z*z)); } double dot(const Vec &amp;amp;amp;amp;b) const { return x*b.x + y*b.y + z*b.z; } Vec cross(const Vec &amp;amp;amp;amp;rhs) { return Vec(y <em> rhs.z - z </em> rhs.y, z <em> rhs.x - x </em> rhs.z, x <em> rhs.y - y </em> rhs.x); } }; [/cpp] 这里面有个叫做Qsqrt的东西，其实是鼎鼎有名的卡马克常数的那个平方根快速算法，具体解释我可能有时间再写一篇博客探讨下： [cpp] #pragma once float Qsqrt(float number)//By Carmark { int i; float x2, y; const float threehalfs = 1.5F; x2 = number <em> 0.5F; y = number; i = </em>(int <em>)&amp;amp;amp;amp;y; i = 0x5f375a86 - (i &amp;amp;amp;gt;&amp;amp;amp;gt; 1); y = </em>(float <em>)&amp;amp;amp;amp;i; y = y </em> (threehalfs - (x2 <em> y </em> y)); y = y <em> (threehalfs - (x2 </em> y <em> y)); y = y </em> (threehalfs - (x2 <em> y </em> y)); return number*y; } [/cpp]</p>
 <h1 id="光线"><a href="#光线" class="headerlink" title="光线"></a>光线</h1><p>光线类，o和d分别表示起始位置和方向 [cpp] #pragma once #include “Vecter.h” struct Ray { Vec o, d; Ray(Vec o_, Vec d_) : o(o_), d(d_) {} }; [/cpp]</p>
 <p>球<br>=</p>
@@ -559,7 +560,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-22T10:36:03+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-22T10:36:03+08:00">
                 2017-05-22
               </time>
             
@@ -708,7 +709,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T23:59:27+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T23:59:27+08:00">
                 2017-04-20
               </time>
             
@@ -861,7 +862,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-18T10:09:45+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-18T10:09:45+08:00">
                 2017-04-18
               </time>
             
@@ -1014,7 +1015,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/06/computer-graphics-experiment-ii-part-2-3d-boxman/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/computer-graphics-experiment-ii-part-2-3d-boxman/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bluefissure">
@@ -1033,7 +1034,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/06/computer-graphics-experiment-ii-part-2-3d-boxman/" itemprop="url">Computer Graphics Experiment II Part.2 3D Boxman</a></h1>
+                <a class="post-title-link" href="/2017/04/05/computer-graphics-experiment-ii-part-2-3d-boxman/" itemprop="url">Computer Graphics Experiment II Part.2 3D Boxman</a></h1>
         
 
         <div class="post-meta">
@@ -1045,7 +1046,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-06T00:32:48+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-06T00:32:48+08:00">
                 2017-04-06
               </time>
             
@@ -1189,7 +1190,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-02T23:35:34+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-02T23:35:34+08:00">
                 2017-04-02
               </time>
             
@@ -1347,7 +1348,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-06T21:23:07+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-06T21:23:07+08:00">
                 2017-03-06
               </time>
             
@@ -1524,7 +1525,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-11T17:08:23+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-11T17:08:23+08:00">
                 2017-01-11
               </time>
             
@@ -1651,7 +1652,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/18/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bluefissure">
@@ -1670,7 +1671,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" itemprop="url">莫比乌斯反演 学习笔记</a></h1>
+                <a class="post-title-link" href="/2016/08/18/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" itemprop="url">莫比乌斯反演 学习笔记</a></h1>
         
 
         <div class="post-meta">
@@ -1682,7 +1683,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-19T00:04:11+00:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-19T00:04:11+08:00">
                 2016-08-19
               </time>
             

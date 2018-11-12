@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下 定义已知 F(n)=\\sum_{d\\mid n}f(d) 则有 f(n)=\\sum_{d\\mid n}\\mu(d)F({n\\over d}) 其中$\\mu(d)$叫做莫比乌斯函数,其值为\\mu(d)=\\begin{cases} 1 &amp;\\text{d = 1}\\\ (-1)^r &amp;\\text{$d=p\_1p\_2...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="莫比乌斯反演 学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/08/18/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/index.html">
+<meta property="og:site_name" content="Bluefissure&#39;s Blog">
+<meta property="og:description" content="当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下 定义已知 F(n)=\\sum_{d\\mid n}f(d) 则有 f(n)=\\sum_{d\\mid n}\\mu(d)F({n\\over d}) 其中$\\mu(d)$叫做莫比乌斯函数,其值为\\mu(d)=\\begin{cases} 1 &amp;\\text{d = 1}\\\ (-1)^r &amp;\\text{$d=p\_1p\_2...">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-11-12T09:01:22.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="莫比乌斯反演 学习笔记">
+<meta name="twitter:description" content="当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下 定义已知 F(n)=\\sum_{d\\mid n}f(d) 则有 f(n)=\\sum_{d\\mid n}\\mu(d)F({n\\over d}) 其中$\\mu(d)$叫做莫比乌斯函数,其值为\\mu(d)=\\begin{cases} 1 &amp;\\text{d = 1}\\\ (-1)^r &amp;\\text{$d=p\_1p\_2...">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/18/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/">
+
+
+
+
+
+  <title>莫比乌斯反演 学习笔记 | Bluefissure's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bluefissure's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A Place for Recording</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/18/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bluefissure">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bluefissure's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">莫比乌斯反演 学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-19T00:04:11+08:00">
+                2016-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math-Theory/" itemprop="url" rel="index">
+                    <span itemprop="name">Math Theory</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>已知 <script type="math/tex">F(n)=\\sum_{d\\mid n}f(d)</script> 则有 <script type="math/tex">f(n)=\\sum_{d\\mid n}\\mu(d)F({n\\over d})</script> 其中$\\mu(d)$叫做莫比乌斯函数,其值为<script type="math/tex">\\mu(d)=\\begin{cases} 1 &\\text{d = 1}\\\ (-1)^r &\\text{$d=p\_1p\_2...p\_r,其中p\_i为不同的素数$}\\\ 0 &\\text{else} \\end{cases}</script></p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>1.<script type="math/tex">\\sum _{ d|n }^{  }{ \\mu (d)= } \\begin{cases} 1,\\quad n=1 \\\ 0,\\quad n>1 \\end{cases}\\\</script>证明如下:</p>
+<p>$\\bullet$ $n=1$时,显然</p>
+<p>$\\bullet$ $n\\neq 1$时,将$n$分解$n={ { p }_{ 1 } }^{ { a }_{ 1 } }{ { p }_{ 2 } }^{ { a }_{ 2 } }…{ { p }_{ k } }^{ { a }_{ k } }$, $\\mu$值不为0的只有质因子次数均为1的因子,其中质因子个数为$r$的因子有$C_{k}^{r}$个,所以<script type="math/tex">\\sum _{ d|n }^{  }{ \\mu (d) } =C_{ k }^{ 0 }-C_{ k }^{ 1 }+C_{ k }^{ 2 }-...+{ (-1) }^{ k }C_{ k }^{ k }=\\sum _{ i=0 }^{ k }{ { (-1) }^{ i }C_{ k }^{ i } } ={ (-1+1) }^{ k }=0</script></p>
+<p>2.<script type="math/tex">\\sum _{ d|n }^{  }{ \\frac { \\mu (d) }{ d }  } =\\frac { \\varphi (n) }{ n }\\\</script>证明如下:</p>
+<p>由欧拉函数性质知$n=\\sum _{ d|n }^{  }{ \\varphi (n) }$, 设$F(n)=n,\\quad f(n)=\\varphi (n)$, 有$f(n)=\\varphi (n)=\\sum _{ d|n }^{  }{ \\mu (d) } \\cdot \\frac { n }{ d } $,故$\\sum _{ d|n }^{  }{ \\frac { \\mu (d) }{ d }  } =\\frac { \\varphi (n) }{ n } $</p>
+<p>3.$\\mu(n)$为积性函数</p>
+<h2 id="反演定理的证明"><a href="#反演定理的证明" class="headerlink" title="反演定理的证明"></a>反演定理的证明</h2><p><script type="math/tex">\\begin{align} \\sum _{ d|n }^{  }{ \\mu (d)\\cdot F(\\frac { n }{ d } ) } &=\\sum _{ d|n }^{  }{ \\left\[ \\mu (d)\\sum _{ k|\\frac { n }{ d }  }^{  }{ f(k) }  \\right\]  } \\\ &=\\sum _{ d|n }^{  }{ \\sum _{ d|\\frac { n }{ k }  }^{  }{ \\left\[ \\mu (d)\\cdot f(k) \\right\]  }  } \\\ &=\\sum _{ dk|n }^{  }{ \\left\[ \\mu (d)\\cdot f(k) \\right\]  } \\\ &=\\sum _{ k|n }^{  }{ \\left\[ f(k)\\sum _{ d|\\frac { n }{ k }  }^{  }{ \\mu (d) }  \\right\]  } =f(n) \\end{align}</script> 其中,$\\sum _{ d|\\frac { n }{ k }  }^{  }{ \\mu (d) } $的计算用到了性质1</p>
+<h2 id="另一种形式"><a href="#另一种形式" class="headerlink" title="另一种形式"></a>另一种形式</h2><p>莫比乌斯公式还有一种常用的形式较为常用： <script type="math/tex">F(d)=\\sum _{ d|n }^{  }{ f(n) } \\Rightarrow f(d)=\\sum _{ d|n } \\mu ({ \\frac { n }{ d }  })F(n)</script>证明同理 啊,题目明天在写吧……..</p>
+<h2 id="题目相关"><a href="#题目相关" class="headerlink" title="题目相关"></a>题目相关</h2><p>嗯，今天做了几道懵逼乌斯的题目感觉的确蛮懵逼的，主要是各种公式的推导过程很是不熟悉，看来还是要多刷题加深对于反演的理解</p>
+<h3 id="1-区间内-gcd-x-y-k-对数查询"><a href="#1-区间内-gcd-x-y-k-对数查询" class="headerlink" title="1.区间内$gcd(x,y)=k$对数查询"></a>1.区间内$gcd(x,y)=k$对数查询</h3><p>这是第一类的莫比乌斯反演的应用问题，详细的题意为”求满足$a\\le x\\le b, c\\le y\\le d$范围内，$gcd(x,y)=k$的$(x,y)$数对有多少个”。 首先，我们将问题转化成四个子问题，如果$sol(a,b)$表示$1\\le x\\le a, 1\\le y\\le b$范围内满足题意的$(x,y)$数对有多少个，那么最后的答案$ans$便为<script type="math/tex">ans=sol(b,d)-sol(a-1,d)-sol(c-1,b)+sol(a-1,c-1)</script>于是，我们只需要解决$1\\le x\\le a, 1\\le y\\le b$范围内$gcd(x,y)=k$的个数。 显然，这个问题等价于$1\\le x\\le \\frac { a }{ k } ,1\\le y\\le \\frac { b }{ k } $范围内$gcd(x,y)=1$的个数。 于是，我们考虑这个元问题：$1\\le x\\le n ,1\\le y\\le m $范围内$gcd(x,y)=1$的个数 不妨假设$n\\le m$ 我们用$f(k)$表示$gcd(x,y)=k$的个数，用$F(k)$表示$k|gcd(x,y)$的个数，则有<script type="math/tex">F(d)=\\sum _{ d|n }^{  }{ f(n) }</script> 显然<script type="math/tex">F(x)=\\left\\lfloor \\frac { n }{ x }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ x }  \\right\\rfloor</script>根据反演公式<script type="math/tex">f(i)=\\sum _{ i|d } \\mu ({ \\frac { d }{ i }  })F(d)=\\sum _{ i|d } \\mu ({ \\frac { d }{ i }  })\\cdot \\left\\lfloor \\frac { n }{ d }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ d }  \\right\\rfloor</script>有<script type="math/tex">f(1)=\\sum _{ d\\le n } \\mu ({ d })\\cdot \\left\\lfloor \\frac { n }{ d }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ d }  \\right\\rfloor</script>于是我们枚举一下$d$就能得出结果啦。 等等，枚举？范围稍稍大一点就铁定TLE啊，我们考虑<script type="math/tex">\\left\\lfloor \\frac { n }{ d }  \\right\\rfloor</script>这个东西，显然他不是随着$d$的变化一定都变化的，而是只会有$O(\\sqrt { n } )$个取值，具体的原因在新生赛热身的<a href="http://sduoj.org/problem/20/" target="_blank" rel="noopener">这道题</a> 的题解中有简单提到。因此，我们对<script type="math/tex">\\left\\lfloor \\frac { n }{ d }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ d }\\right\\rfloor</script>这个东西相同取值的块求区间内$\\mu $的和即可，在实际的操作过程中只需要维护一个$\\mu $的前缀和。 代码以 <a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2301" target="_blank" rel="noopener">BZOJ_2301</a> 为例 [cpp]#include<iostream> #include<cstdio> #include<cstring> #include<string> #include<algorithm> using namespace std; int a,b,c,d,k; #define N 100100 #define LL long long int prim[N], phi[N] = {1,1}, mob[N]={1,1}; bool vis[N]; int pn = 0; LL sum[N]; void table(){ memset(vis, 0, sizeof(vis)); mob[1]=1; for(int i = 2;i &lt; N;i++){ if(!vis[i]) { prim[pn++] = i; phi[i] = i-1; mob[i] = -1; } for(int j = 0;j &lt; pn &amp;&amp; 1LL*i*prim[j] &lt; N;j++){ if(i % prim[j] == 0){ phi[i*prim[j]] = phi[i] * prim[j]; vis[i*prim[j]] = 1; mob[i*prim[j]] = 0; break; } phi[i*prim[j]] = phi[i] * (prim[j]-1); vis[i*prim[j]] = 1; mob[i*prim[j]] = -mob[i]; } } sum[0]=0; for(int i=1;i<n;i++) sum\[i\]="sum\[i-1\]+mob\[i\];" }="" ll="" sol(int="" n,int="" m)="" {="" int="" last;="" ret="0;" if(n="">m) swap(n,m); for(int i=1;i&lt;=n;i=last+1){ last=min(n/(n/i),m/(m/i)); ret+=(LL)(n/i)<em>(m/i)</em>(sum[last]-sum[i-1]); } return ret; } int main() { int T; table(); for(scanf(“%d”,&amp;T);T—;){ scanf(“%d%d%d%d%d”,&amp;a,&amp;b,&amp;c,&amp;d,&amp;k); LL ans=sol(b/k,d/k)-sol((a-1)/k,d/k)-sol((c-1)/k,b/k)+sol((a-1)/k,(c-1)/k); printf(“%lld\\n”,ans); } return 0; } [/cpp]  </n;i++)></algorithm></string></cstring></cstdio></iostream></p>
+<h3 id="2-区间内-gcd-x-y-为质数的对数查询"><a href="#2-区间内-gcd-x-y-为质数的对数查询" class="headerlink" title="2.区间内$gcd(x,y)$为质数的对数查询"></a>2.区间内$gcd(x,y)$为质数的对数查询</h3><p>同1.可转化成元问题：$1\\le x\\le n ,1\\le y\\le m $范围内$gcd(x,y)$为质数的$(x,y)$数对个数 $(n\\le m)$ 一个非常直观（或说偷懒）的办法就是对于所有的质数$p$满足$p\\le n$我们用1.的方法搞出$gcd(x,y)=p$的个数然后加起来……啊喂怎么可能这么简单辣…… 但是这个想法给了我们一个思路，我们先来看<script type="math/tex">f(p)=\\sum _{ d\\le n/p }^{  }{ \\mu (d)\\cdot \\left\\lfloor \\frac { n/p }{ d }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m/p }{ d }  \\right\\rfloor = } \\sum _{ d\\le n/p }^{  }{ \\mu (d)\\cdot \\left\\lfloor \\frac { n }{ pd }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ pd }  \\right\\rfloor  }</script>令$T=pd$，有<script type="math/tex">f(p)=\\sum _{ d\\le n/p }^{  }{ \\mu (\\frac { T }{ p } )\\cdot \\left\\lfloor \\frac { n }{ T }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ T }  \\right\\rfloor  }</script>有<script type="math/tex">\\begin{align} \\sum _{ p\\le n }^{  }{ f(p) } &=\\sum _{ p\\le n }^{  }{ \\sum _{ d\\le n/p }^{  }{ \\mu (\\frac { T }{ p } )\\cdot \\left\\lfloor \\frac { n }{ T }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ T }  \\right\\rfloor  }  } \\\ &=\\sum _{ T=1 }^{ n }{ \\sum _{ p|T }^{  }{ \\mu (\\frac { T }{ p } )\\cdot \\left\\lfloor \\frac { n }{ T }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ T }  \\right\\rfloor  }  } \\\ &=\\sum _{ T=1 }^{ n }{ \\left\\lfloor \\frac { n }{ T }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ T }  \\right\\rfloor \\sum _{ p|T }^{  }{ \\mu (\\frac { T }{ p } ) }  }  \\end{align}</script>（以上$p$均为质数，下同） $\\left\\lfloor \\frac { n }{ T }  \\right\\rfloor \\cdot \\left\\lfloor \\frac { m }{ T }  \\right\\rfloor $可以分块来搞，后面的这个$\\sum _{ p|T }^{  }{ \\mu (\\frac { T }{ p } ) } $就不太好弄了，我们先来研究一下它</p>
+<h4 id="函数-g-x-sum-p-x-mu-frac-x-p"><a href="#函数-g-x-sum-p-x-mu-frac-x-p" class="headerlink" title="函数$g(x)=\\sum _{ p|x }^{  }{ \\mu (\\frac { x }{ p } ) } $"></a>函数$g(x)=\\sum _{ p|x }^{  }{ \\mu (\\frac { x }{ p } ) } $</h4><p>首先，我们先来说它的计算过程中用到的一个性质，之后再给出证明<script type="math/tex">g(kp)=\\begin{cases} \\mu (k),\\quad p\\mid k \\\ \\mu (k)-g(k),\\quad p\\nmid k \\end{cases}</script> 证明：首先<script type="math/tex">g(kp)=\\sum _{ p'|kp }^{  }{ \\mu (\\frac { kp }{ p' } ) }</script> （$p’$为质数，下同）我们把$k$分解<script type="math/tex">k={ p }^{ a }\\cdot { p }_{ 1 }^{ { a }_{ 1 } }\\cdot { p }_{ 2 }^{ { a }_{ 2 } }...{ p }_{ r }^{ { a }_{ r } }</script> 1.当$p|k$时，有$a\\ge 1$故<script type="math/tex">kp={ p }^{ a+1 }\\cdot { p }_{ 1 }^{ { a }_{ 1 } }\\cdot { p }_{ 2 }^{ { a }_{ 2 } }...{ p }_{ r }^{ { a }_{ r } }</script>由$\\mu$的定义可知，只有$p’=p$时，$\\mu (\\frac { kp }{ p’ } ) $才不等于0（否则$p$的指数比1大），所以此时<script type="math/tex">\\sum _{ p'|kp }^{  }{ \\mu (\\frac { kp }{ p' } ) } =\\mu (k)</script> 2.当$p\\nmid k$时 $p’=p$时，同上文：<script type="math/tex">\\mu (\\frac { kp }{ p' } )=\\mu (k)</script> $p’\\ne p$时，因为$\\mu $是一个积性函数，并且$p\\nmid \\frac { k }{ p’ } $，所以有<script type="math/tex">\\mu (\\frac { kp }{ p' } )=\\mu (\\frac { k }{ p' } )\\cdot \\mu(p)</script>有<script type="math/tex">g(kp){ | }_{ p\\ne p' }=\\sum _{ p'|kp,p'\\ne p }^{  }{ \\mu (\\frac { kp }{ p' } ) } =\\sum _{ p'|kp,p'\\ne p }^{  }{ \\mu (\\frac { k }{ p' } )\\cdot \\mu (p) } =\\mu (p)\\cdot \\sum _{ p'|k }^{  }{ \\mu (\\frac { k }{ p' } ) }</script>而<script type="math/tex">\\mu (p)=-1,\\sum _{ p'|k }^{  }{ \\mu (\\frac { k }{ p' } ) } =g(k)</script>所以<script type="math/tex">g(kp){ | }_{ p\\ne p' }=-g(k)</script> 上面两个加起来，就得到了<script type="math/tex">\\mu (k)-g(k),\\quad p\\nmid k</script> 综上，<script type="math/tex">g(kp)=\\begin{cases} \\mu (k),\\quad p\\mid k \\\ \\mu (k)-g(k),\\quad p\\nmid k \\end{cases}</script>   回想一下我们线性筛的过程，发现对于$p|k$和$p\\nmid k$的讨论正是线性筛的过程，因此我们可以预处理出$g(x)$，然后的做法就和问题1差不多了，具体的预处理过程看代码还是。 貌似一道叫做 YY的GCD 的题目成了权限题，于是代码只好以 <a href="http://www.spoj.com/problems/PGCD/" target="_blank" rel="noopener">SPOJ_PGCD </a>为例 [cpp]#include<iostream> #include<cstdio> #include<cstring> #include<string> #include<algorithm> using namespace std; int a,b,c,d,k; #define N 10000005 #define LL long long int prim[N], phi[N] = {1,1}, mob[N]={1,1},g[N]; bool vis[N]; int pn = 0; LL sum[N]; void table(){ memset(vis, 0, sizeof(vis)); mob[1]=1; g[1]=1; for(int i = 2;i &lt; N;i++){ if(!vis[i]) { prim[pn++] = i; phi[i] = i-1; mob[i] = -1; g[i] = 1; } for(int j = 0;j &lt; pn &amp;&amp; 1LL*i*prim[j] &lt; N;j++){ if(i % prim[j] == 0){ phi[i*prim[j]] = phi[i] * prim[j]; vis[i*prim[j]] = 1; mob[i*prim[j]] = 0; g[i*prim[j]] = mob[i]; break; } phi[i*prim[j]] = phi[i] <em> (prim[j]-1); vis[i\</em>prim[j]] = 1; mob[i*prim[j]] = -mob[i]; g[i*prim[j]] = mob[i] - g[i]; } } sum[0]=0; for(int i=1;i<n;i++) sum\[i\]="sum\[i-1\]+g\[i\];" }="" ll="" sol(int="" n,int="" m)="" {="" int="" last;="" ret="0;" if(n="">m) swap(n,m); for(int i=1;i&lt;=n;i=last+1){ last=min(n/(n/i),m/(m/i)); ret+=(LL)(n/i)*(m/i)<em>(sum[last]-sum[i-1]); } return ret-(LL)m</em>n; } int main() { int T,cas=1; table(); for(scanf(“%d”,&amp;T);T—;){ scanf(“%d%d”,&amp;a,&amp;b); LL ans; ans=sol(a,b); printf(“%lld\\n”,ans); } return 0; }[/cpp]</n;i++)></algorithm></string></cstring></cstdio></iostream></p>
+<h3 id="3-还有好多其他类型的题，到时候单独写博客吧……我也没做完……"><a href="#3-还有好多其他类型的题，到时候单独写博客吧……我也没做完……" class="headerlink" title="3.还有好多其他类型的题，到时候单独写博客吧……我也没做完……"></a>3.还有好多其他类型的题，到时候单独写博客吧……我也没做完……</h3><p>收尾的话差不多了，总结的话有时间再写，打那么多公式简直累死了……</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/" rel="next" title="HDU 5816 Hearthstone 状压">
+                <i class="fa fa-chevron-left"></i> HDU 5816 Hearthstone 状压
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/" rel="prev" title="Python模拟登陆初探">
+                Python模拟登陆初探 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bluefissure</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性质"><span class="nav-number">2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反演定理的证明"><span class="nav-number">3.</span> <span class="nav-text">反演定理的证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另一种形式"><span class="nav-number">4.</span> <span class="nav-text">另一种形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目相关"><span class="nav-number">5.</span> <span class="nav-text">题目相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-区间内-gcd-x-y-k-对数查询"><span class="nav-number">5.1.</span> <span class="nav-text">1.区间内$gcd(x,y)=k$对数查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-区间内-gcd-x-y-为质数的对数查询"><span class="nav-number">5.2.</span> <span class="nav-text">2.区间内$gcd(x,y)$为质数的对数查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数-g-x-sum-p-x-mu-frac-x-p"><span class="nav-number">5.2.1.</span> <span class="nav-text">函数$g(x)=\\sum _{ p|x }^{  }{ \\mu (\\frac { x }{ p } ) } $</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-还有好多其他类型的题，到时候单独写博客吧……我也没做完……"><span class="nav-number">5.3.</span> <span class="nav-text">3.还有好多其他类型的题，到时候单独写博客吧……我也没做完……</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
