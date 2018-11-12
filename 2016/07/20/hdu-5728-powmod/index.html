@@ -1,108 +1,350 @@
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>HDU 5728 PowMod 数论 欧拉函数 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2016 Multischool-Training-1-1006题目链接PowMod**Time Limit: 3000/1500 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)   ** Problem Description Declare:$k=\sum_{i=1}^{m} \varphi (i*n)\ mod\">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="2016 Multischool-Training-1-1006题目链接PowMod**Time Limit: 3000/1500 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)   ** Problem Description Declare:$k=\\sum_{i=1}^{m} \\varphi (i*n)\ mo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU 5728 PowMod 数论 欧拉函数">
 <meta property="og:url" content="http://yoursite.com/2016/07/20/hdu-5728-powmod/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="2016 Multischool-Training-1-1006题目链接PowMod**Time Limit: 3000/1500 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)   ** Problem Description Declare:$k=\sum_{i=1}^{m} \varphi (i*n)\ mod\">
-<meta property="og:locale" content="default">
+<meta property="og:site_name" content="Bluefissure&#39;s Blog">
+<meta property="og:description" content="2016 Multischool-Training-1-1006题目链接PowMod**Time Limit: 3000/1500 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)   ** Problem Description Declare:$k=\\sum_{i=1}^{m} \\varphi (i*n)\ mo">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-11-12T09:01:22.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU 5728 PowMod 数论 欧拉函数">
-<meta name="twitter:description" content="2016 Multischool-Training-1-1006题目链接PowMod**Time Limit: 3000/1500 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)   ** Problem Description Declare:$k=\sum_{i=1}^{m} \varphi (i*n)\ mod\">
+<meta name="twitter:description" content="2016 Multischool-Training-1-1006题目链接PowMod**Time Limit: 3000/1500 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)   ** Problem Description Declare:$k=\\sum_{i=1}^{m} \\varphi (i*n)\ mo">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/20/hdu-5728-powmod/">
+
+
+
+
+
+  <title>HDU 5728 PowMod 数论 欧拉函数 | Bluefissure's Blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+
 </head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bluefissure's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-hdu-5728-powmod" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/20/hdu-5728-powmod/" class="article-date">
-  <time datetime="2016-07-20T21:39:16.000Z" itemprop="datePublished">2016-07-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Math-Theory/">Math Theory</a>►<a class="article-category-link" href="/categories/Math-Theory/Multischool-Training/">Multischool-Training</a>
+        <p class="site-subtitle">A Place for Recording</p>
+      
   </div>
 
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      HDU 5728 PowMod 数论 欧拉函数
-    </h1>
+</div>
+
+<nav class="site-nav">
   
 
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/20/hdu-5728-powmod/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bluefissure">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bluefissure's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HDU 5728 PowMod 数论 欧拉函数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-20T21:39:16+00:00">
+                2016-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math-Theory/" itemprop="url" rel="index">
+                    <span itemprop="name">Math Theory</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math-Theory/Multischool-Training/" itemprop="url" rel="index">
+                    <span itemprop="name">Multischool-Training</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <h3 id="2016-Multischool-Training-1-1006"><a href="#2016-Multischool-Training-1-1006" class="headerlink" title="2016 Multischool-Training-1-1006"></a>2016 Multischool-Training-1-1006</h3><h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5728" target="_blank" rel="noopener">题目链接</a></h3><h1 id="PowMod"><a href="#PowMod" class="headerlink" title="PowMod"></a>PowMod</h1><p>**Time Limit: 3000/1500 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)  </p>
 <p>**</p>
 <p>Problem Description</p>
-<p>Declare:<br>$k=\sum_{i=1}^{m} \varphi (i*n)\ mod\ 1000000007$</p>
+<p>Declare:<br>$k=\\sum_{i=1}^{m} \\varphi (i*n)\ mod\ 1000000007$</p>
 <p>$n$ is a square-free number.</p>
-<p>$\varphi $ is the <strong>Euler’s totient function</strong>.</p>
+<p>$\\varphi $ is the <strong>Euler’s totient function</strong>.</p>
 <p>find:</p>
 <p>$ans=k^{k^{k^{k^{…^k}}}}\ mod \ p$</p>
 <p>There are infinite number of $k$</p>
 <p>Input</p>
-<p>Multiple test cases(test cases $\leq 100$), one line per case.</p>
+<p>Multiple test cases(test cases $\\leq 100$), one line per case.</p>
 <p>Each line contains three integers, $n, m$ and $p$.</p>
-<p>$1 \leq n, m, p \leq 10^{7}$</p>
+<p>$1 \\leq n, m, p \\leq 10^{7}$</p>
 <p>Output</p>
 <p>For each case, output a single line with one integer, ans.</p>
 <p>Sample Input</p>
@@ -111,149 +353,381 @@
 <p>Sample Output</p>
 <p>4</p>
 <p>7</p>
-<h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>首先，考虑到$\varphi$是一个积性函数，我们有下面两条性质</p>
+<h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>首先，考虑到$\\varphi$是一个积性函数，我们有下面两条性质</p>
 <ul>
-<li>$\varphi (mn)=\varphi (m)\cdot \varphi (n)）\quad (m,n)=1$</li>
-<li>$\varphi (pn)=p\cdot \varphi (n)\quad (p,\frac { n }{ p } )=1$   (p为n的一个质因子)</li>
+<li>$\\varphi (mn)=\\varphi (m)\\cdot \\varphi (n)）\\quad (m,n)=1$</li>
+<li>$\\varphi (pn)=p\\cdot \\varphi (n)\\quad (p,\\frac { n }{ p } )=1$   (p为n的一个质因子)</li>
 </ul>
 <p>我们先来证明一下第二点</p>
-<p>$$\begin{align}\varphi (pn) &amp;=\varphi ({ p }^{ 2 }\cdot \frac { n }{ p } )\\ &amp;=\varphi ({ p }^{ 2 })\cdot \varphi (\frac { n }{ p } )\\ &amp;=p\cdot (p-1)\cdot \varphi (\frac { n }{ p } )\\ &amp;=p\cdot \varphi (p)\cdot \varphi (\frac { n }{ p } )\\ &amp;=p\cdot \varphi (n)\end{align}$$</p>
-<p>题目中中说明$n$是square-free number，即表明它的每种质因子最多只有一个，因此我们来统计每个质因子对$k$的贡献:</p>
-<p>所求$k=\sum_{i=1}^{m} \varphi (i*n)$  可先将$n$分解质因子，对于每个质因子$p$来说，若$(i,p)=1$则直接由第一条性质拆出来即可，若$i=kp$，则由第二条性质，$\varphi (kpn)=p\cdot \varphi (kn)$，因此对质因子p有</p>
-<p>$$\begin{align}\sum <em>{ i=1 }^{ m }{ \varphi (i\cdot n) } { | }</em>{ p } &amp;=\sum _{ i\%p\neq 0 }^{ i=1:m }{ \varphi (i\cdot \frac { n }{ p } )\cdot \varphi (p) } +\sum _{ i=kp }^{ i=1:m }{ \varphi (i\cdot n) } \\ &amp;=\sum _{ i\%p\neq 0 }^{ i=1:m }{ \varphi (i\cdot \frac { n }{ p } )\cdot \varphi (p) } +\sum _{ k=1 }^{ m/p }{ \varphi (k\cdot p\cdot n) } \\ &amp;=\sum _{ i\%p\neq 0 }^{ i=1:m }{ \varphi (i\cdot \frac { n }{ p } )\cdot \varphi (p) } +\sum _{ k=1 }^{ m/p }{ \varphi (k\cdot n)\cdot p } \\ &amp;=\sum _{ i\%p\neq 0 }^{ i=1:m }{ \varphi (i\cdot \frac { n }{ p } )\cdot \varphi (p) } +\sum _{ k=1 }^{ m/p }{ \varphi (k\cdot n)\cdot (\varphi (p)+1) } \\ &amp;=\sum _{ i\%p\neq 0 }^{ i=1:m }{ \varphi (i\cdot \frac { n }{ p } )\cdot \varphi (p) } +\sum _{ k=1 }^{ m/p }{ \varphi (k\cdot n)\cdot \varphi (p) } +\sum _{ k=1 }^{ m/p }{ \varphi (k\cdot n) } \\ &amp;=\sum _{ i\%p\neq 0 }^{ i=1:m }{ \varphi (i\cdot \frac { n }{ p } )\cdot \varphi (p) } +\sum _{ i\%p=0 }^{ i=1:m }{ \varphi (\frac { i }{ p } \cdot n)\cdot \varphi (p) } +\sum _{ k=1 }^{ m/p }{ \varphi (k\cdot n) } \\ &amp;=\sum _{ i=1 }^{ m }{ \varphi (i\cdot \frac { n }{ p } ) } +\sum _{ i=1 }^{ m/p }{ \varphi (i\cdot n) }  \end{align}$$</p>
-<p>所以我们可以递归求出$k$</p>
-<p>得到$k$后，最后的答案只需要降幂公式降幂即可，$k$的无穷次方终将在递归中降成$\%1$的状态</p>
-<p>$${ A }^{ B }\%C={ A }^{ B\%\varphi (C)+\varphi (C) }\%C$$</p>
-<p>比赛中也是找了好多办法求k都没求出来，最后也是参照大牛的博客的方法才知道怎么求的k</p>
-<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><p>#include<cstdio></cstdio></p>
-<p>#include<iostream></iostream></p>
-<p>#include<algorithm></algorithm></p>
-<p>#include<cmath></cmath></p>
-<p>#include<string></string></p>
-<p>#include<cstring> <strong>using namespace</strong> std<strong>;</strong> #define LL long long <strong>const</strong> <strong>int</strong> MOD<strong>=</strong>1e9<strong>+</strong>7<strong>;</strong> <strong>const</strong> <strong>int</strong> N<strong>=</strong>1e7<strong>+</strong>7<strong>;</strong><br>LL phi<strong>[</strong>N<strong>],</strong>sum<strong>[</strong>N<strong>],</strong>pri<strong>[</strong>N<strong>];</strong> <strong>int</strong> top<strong>,</strong>tp<strong>;</strong><br>LL fac<strong>[</strong>100<strong>];</strong><br>LL n<strong>,</strong>m<strong>,</strong>p<strong>;</strong> <strong>bool</strong> vis<strong>[</strong>N<strong>];</strong></cstring></p>
-<p>LL mul<strong>(</strong>LL a<strong>,</strong>LL b<strong>,</strong> LL c<strong>)<br>{</strong><br>    a<strong>%=</strong>c<strong>;</strong><br>    b<strong>%=</strong>c<strong>;</strong><br>    LL ret<strong>=</strong>0<strong>;</strong> <strong>while**</strong>(<strong>b</strong>){<strong> </strong>if<strong>**(</strong>b<strong>&amp;</strong>1<strong>) (</strong>ret<strong>+=</strong>a<strong>)%=</strong>c<strong>;<br>        (</strong>a<strong>&lt;&lt;=</strong>1<strong>)%=</strong>c<strong>;</strong><br>        b<strong>&gt;&gt;=</strong>1<strong>;<br>    }</strong> <strong>return</strong> ret<strong>;<br>}</strong><br>LL pow<strong>(</strong>LL x<strong>,</strong>LL n<strong>,</strong>LL mod<strong>)<br>{</strong><br>    x<strong>%=</strong>mod<strong>;</strong> <strong>if**</strong>(<strong>n</strong>==<strong>1</strong>)<strong> </strong>return<strong> x</strong>;<strong><br>    LL tmp</strong>=<strong>x</strong>,<strong>ret</strong>=<strong>1</strong>;<strong> </strong>while<strong>**(</strong>n<strong>){</strong> <strong>if**</strong>(<strong>n</strong>&amp;<strong>1</strong>)<strong> ret</strong>=<strong>mul</strong>(<strong>ret</strong>,<strong>tmp</strong>,<strong>mod</strong>);<strong><br>        tmp</strong>=<strong>mul</strong>(<strong>tmp</strong>,<strong>tmp</strong>,<strong>mod</strong>);<strong><br>        n</strong>&gt;&gt;=<strong>1</strong>;<br>    }<strong> </strong>if<strong>**(</strong>ret<strong>==</strong>0<strong>)</strong> ret<strong>+=</strong>mod<strong>;</strong> <strong>return</strong> ret<strong>;<br>}</strong> <strong>void</strong> init<strong>()<br>{</strong><br>    memset<strong>(</strong>vis<strong>,</strong>0<strong>,**</strong>sizeof<strong>**(</strong>vis<strong>));</strong><br>    top<strong>=</strong>0<strong>;</strong><br>    phi<strong>[</strong>1<strong>]=</strong>1<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>2<strong>;</strong>i<strong>&lt;</strong>N<strong>;</strong>i<strong>++){</strong> <strong>if**</strong>(!<strong>vis</strong>[<strong>i</strong>]) {<strong><br>            pri</strong>[<strong>top</strong>++]=<strong>i</strong>;<strong><br>            phi</strong>[<strong>i</strong>]=<strong>i</strong>-<strong>1</strong>;<br>        }<strong> </strong>for<strong><strong>(</strong></strong>int<strong> j</strong>=<strong>0</strong>;<strong>j</strong>&lt;<strong>top</strong>&amp;&amp;<strong>i***</strong>pri<strong>[</strong>j<strong>]&lt;</strong>N<strong>;</strong>j<strong>++){</strong><br>            vis<strong>[</strong>i<strong>*</strong>pri<strong>[</strong>j<strong>]]=</strong>1<strong>;</strong> <strong>if**</strong>(!(<strong>i</strong>%<strong>pri</strong>[<strong>j</strong>])){<strong><br>                phi</strong>[<strong>i***</strong>pri<strong>[</strong>j<strong>]]=</strong>phi<strong>[</strong>i<strong>]*</strong>pri<strong>[</strong>j<strong>];</strong> <strong>break**</strong>;<br>            }<strong>**else</strong> phi<strong>[</strong>i<strong>*</strong>pri<strong>[</strong>j<strong>]]=</strong>phi<strong>[</strong>i<strong>]*(</strong>pri<strong>[</strong>j<strong>]-</strong>1<strong>);<br>        }<br>    }</strong><br>    sum<strong>[</strong>0<strong>]=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;</strong>N<strong>;</strong>i<strong>++)</strong><br>        sum<strong>[</strong>i<strong>]=(</strong>sum<strong>[</strong>i<strong>-</strong>1<strong>]+</strong>phi<strong>[</strong>i<strong>])%</strong>MOD<strong>;<br>}</strong> <strong>void</strong> getfac<strong>(</strong>LL n<strong>)<br>{</strong><br>    tp<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>0<strong>;</strong>i<strong>&lt;</strong>top<strong>;</strong>i<strong>++){</strong><br>        LL p1<strong>=</strong>pri<strong>[</strong>i<strong>];</strong> <strong>if**</strong>(<strong>n</strong>%<strong>p1</strong>==<strong>0</strong>){<strong><br>            fac</strong>[<strong>tp</strong>++]=<strong>p1</strong>;<strong><br>            n</strong>/=<strong>p1</strong>;<br>        }<strong> </strong>if<strong>**(!</strong>vis<strong>[</strong>n<strong>]){</strong><br>            fac<strong>[</strong>tp<strong>++]=</strong>n<strong>;</strong> <strong>return**</strong>;<br>        }<br>    }<br>}**</p>
-<p>LL sol<strong>(</strong>LL k<strong>,</strong>LL p<strong>,</strong>LL add<strong>)<br>{</strong><br> <strong>if**</strong>(<strong>p</strong>==<strong>1</strong>)<strong> </strong>return<strong> 1ll</strong>;<strong><br>    LL tmp</strong>=<strong>sol</strong>(<strong>k</strong>,<strong>phi</strong>[<strong>p</strong>],<strong>phi</strong>[<strong>p</strong>]);<strong> </strong>return<strong> pow</strong>(<strong>k</strong>,<strong>tmp</strong>,<strong>p</strong>)+<strong>add</strong>;<br>}<strong><br>LL  calc</strong>(<strong>**int</strong> i<strong>,</strong>LL n<strong>,</strong>LL m<strong>)<br>{</strong><br> <strong>if**</strong>(<strong>n</strong>==<strong>1</strong>)<strong> </strong>return<strong> sum</strong>[<strong>m</strong>];<strong> </strong>if<strong>**(</strong>m<strong>==</strong>0<strong>)</strong> <strong>return</strong> 0<strong>;</strong><br>    LL pp<strong>=</strong>fac<strong>[</strong>i<strong>];</strong><br>    LL k<strong>=((</strong>pp<strong>-</strong>1<strong>)*</strong>calc<strong>(</strong>i<strong>+</strong>1<strong>,</strong>n<strong>/</strong>pp<strong>,</strong>m<strong>)%</strong>MOD<strong>+</strong>calc<strong>(</strong>i<strong>,</strong>n<strong>,</strong>m<strong>/</strong>pp<strong>))%</strong>MOD<strong>;</strong> <strong>return</strong> k<strong>;<br>}</strong> <strong>int</strong> <strong>main**</strong>(){<strong><br>    init</strong>();<strong> </strong>while<strong>**(~</strong>scanf<strong>(</strong>“%lld%lld%lld”<strong>,&amp;</strong>n<strong>,&amp;</strong>m<strong>,&amp;</strong>p<strong>)){</strong><br>        getfac<strong>(</strong>n<strong>);</strong><br>        LL k<strong>=</strong>calc<strong>(</strong>0<strong>,</strong>n<strong>,</strong>m<strong>);</strong><br>        LL ans<strong>=</strong>sol<strong>(</strong>k<strong>,</strong>p<strong>,</strong>0<strong>);</strong><br>        printf<strong>(</strong>“%lld\n”<strong>,</strong>ans<strong>%</strong>p<strong>);<br>    }</strong> <strong>return</strong> 0<strong>;<br>}</strong></p>
+<script type="math/tex; mode=display">\\begin{align}\\varphi (pn) &=\\varphi ({ p }^{ 2 }\\cdot \\frac { n }{ p } )\\\ &=\\varphi ({ p }^{ 2 })\\cdot \\varphi (\\frac { n }{ p } )\\\ &=p\\cdot (p-1)\\cdot \\varphi (\\frac { n }{ p } )\\\ &=p\\cdot \\varphi (p)\\cdot \\varphi (\\frac { n }{ p } )\\\ &=p\\cdot \\varphi (n)\\end{align}</script><p>题目中中说明$n$是square-free number，即表明它的每种质因子最多只有一个，因此我们来统计每个质因子对$k$的贡献:</p>
+<p>所求$k=\\sum_{i=1}^{m} \\varphi (i*n)$  可先将$n$分解质因子，对于每个质因子$p$来说，若$(i,p)=1$则直接由第一条性质拆出来即可，若$i=kp$，则由第二条性质，$\\varphi (kpn)=p\\cdot \\varphi (kn)$，因此对质因子p有</p>
+<script type="math/tex; mode=display">\\begin{align}\\sum _{ i=1 }^{ m }{ \\varphi (i\\cdot n) } { | }_{ p } &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ i=kp }^{ i=1:m }{ \\varphi (i\\cdot n) } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot p\\cdot n) } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n)\\cdot p } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n)\\cdot (\\varphi (p)+1) } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n)\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n) } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ i\\%p=0 }^{ i=1:m }{ \\varphi (\\frac { i }{ p } \\cdot n)\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n) } \\\ &=\\sum _{ i=1 }^{ m }{ \\varphi (i\\cdot \\frac { n }{ p } ) } +\\sum _{ i=1 }^{ m/p }{ \\varphi (i\\cdot n) }  \\end{align}</script><p>所以我们可以递归求出$k$</p>
+<p>得到$k$后，最后的答案只需要降幂公式降幂即可，$k$的无穷次方终将在递归中降成$\\%1$的状态</p>
+<script type="math/tex; mode=display">{ A }^{ B }\\%C={ A }^{ B\\%\\varphi (C)+\\varphi (C) }\\%C</script><p>比赛中也是找了好多办法求k都没求出来，最后也是参照大牛的博客的方法才知道怎么求的k</p>
+<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<cstdio></cstdio></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<iostream></iostream></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include"></a>include<algorithm></algorithm></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include"></a>include<cmath></cmath></h1><h1 id="include-4"><a href="#include-4" class="headerlink" title="include"></a>include<string></string></h1><h1 id="include-using-namespace-std-define-LL-long-long-const-int-MOD-1e9-7-const-int-N-1e7-7"><a href="#include-using-namespace-std-define-LL-long-long-const-int-MOD-1e9-7-const-int-N-1e7-7" class="headerlink" title="include using namespace std; #define LL long long const int MOD=1e9+7; const int N=1e7+7;"></a>include<cstring> <strong>using namespace</strong> std<strong>;</strong> #define LL long long <strong>const</strong> <strong>int</strong> MOD<strong>=</strong>1e9<strong>+</strong>7<strong>;</strong> <strong>const</strong> <strong>int</strong> N<strong>=</strong>1e7<strong>+</strong>7<strong>;</strong></cstring></h1><p>LL phi<strong>[</strong>N<strong>],</strong>sum<strong>[</strong>N<strong>],</strong>pri<strong>[</strong>N<strong>];</strong> <strong>int</strong> top<strong>,</strong>tp<strong>;</strong><br>LL fac<strong>[</strong>100<strong>];</strong><br>LL n<strong>,</strong>m<strong>,</strong>p<strong>;</strong> <strong>bool</strong> vis<strong>[</strong>N<strong>];</strong></p>
+<p>LL mul<strong>(</strong>LL a<strong>,</strong>LL b<strong>,</strong> LL c<strong>)<br>{</strong><br>    a<strong>%=</strong>c<strong>;</strong><br>    b<strong>%=</strong>c<strong>;</strong><br>    LL ret<strong>=</strong>0<strong>;</strong> <strong>while**</strong>(<strong>b</strong>){<strong> </strong>if<strong>**(</strong>b<strong>&amp;</strong>1<strong>) (</strong>ret<strong>+=</strong>a<strong>)%=</strong>c<strong>;<br>        (</strong>a<strong>&lt;&lt;=</strong>1<strong>)%=</strong>c<strong>;</strong><br>        b<strong>&gt;&gt;=</strong>1<strong>;<br>    }</strong> <strong>return</strong> ret<strong>;<br>}</strong><br>LL pow<strong>(</strong>LL x<strong>,</strong>LL n<strong>,</strong>LL mod<strong>)<br>{</strong><br>    x<strong>%=</strong>mod<strong>;</strong> <strong>if**</strong>(<strong>n</strong>==<strong>1</strong>)<strong> </strong>return<strong> x</strong>;<strong><br>    LL tmp</strong>=<strong>x</strong>,<strong>ret</strong>=<strong>1</strong>;<strong> </strong>while<strong>**(</strong>n<strong>){</strong> <strong>if**</strong>(<strong>n</strong>&amp;<strong>1</strong>)<strong> ret</strong>=<strong>mul</strong>(<strong>ret</strong>,<strong>tmp</strong>,<strong>mod</strong>);<strong><br>        tmp</strong>=<strong>mul</strong>(<strong>tmp</strong>,<strong>tmp</strong>,<strong>mod</strong>);<strong><br>        n</strong>&gt;&gt;=<strong>1</strong>;<br>    }<strong> </strong>if<strong>**(</strong>ret<strong>==</strong>0<strong>)</strong> ret<strong>+=</strong>mod<strong>;</strong> <strong>return</strong> ret<strong>;<br>}</strong> <strong>void</strong> init<strong>()<br>{</strong><br>    memset<strong>(</strong>vis<strong>,</strong>0<strong>,**</strong>sizeof<strong>**(</strong>vis<strong>));</strong><br>    top<strong>=</strong>0<strong>;</strong><br>    phi<strong>[</strong>1<strong>]=</strong>1<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>2<strong>;</strong>i<strong>&lt;</strong>N<strong>;</strong>i<strong>++){</strong> <strong>if**</strong>(!<strong>vis</strong>[<strong>i</strong>]) {<strong><br>            pri</strong>[<strong>top</strong>++]=<strong>i</strong>;<strong><br>            phi</strong>[<strong>i</strong>]=<strong>i</strong>-<strong>1</strong>;<br>        }<strong> </strong>for<strong><strong>(</strong></strong>int<strong> j</strong>=<strong>0</strong>;<strong>j</strong>&lt;<strong>top</strong>&amp;&amp;<strong>i<em>*</em></strong>pri<strong>[</strong>j<strong>]&lt;</strong>N<strong>;</strong>j<strong>++){</strong><br>            vis<strong>[</strong>i<strong>*</strong>pri<strong>[</strong>j<strong>]]=</strong>1<strong>;</strong> <strong>if**</strong>(!(<strong>i</strong>%<strong>pri</strong>[<strong>j</strong>])){<strong><br>                phi</strong>[<strong>i<em>*</em></strong>pri<strong>[</strong>j<strong>]]=</strong>phi<strong>[</strong>i<strong>]*</strong>pri<strong>[</strong>j<strong>];</strong> <strong>break**</strong>;<br>            }<strong>**else</strong> phi<strong>[</strong>i<strong>*</strong>pri<strong>[</strong>j<strong>]]=</strong>phi<strong>[</strong>i<strong>]*(</strong>pri<strong>[</strong>j<strong>]-</strong>1<strong>);<br>        }<br>    }</strong><br>    sum<strong>[</strong>0<strong>]=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;</strong>N<strong>;</strong>i<strong>++)</strong><br>        sum<strong>[</strong>i<strong>]=(</strong>sum<strong>[</strong>i<strong>-</strong>1<strong>]+</strong>phi<strong>[</strong>i<strong>])%</strong>MOD<strong>;<br>}</strong> <strong>void</strong> getfac<strong>(</strong>LL n<strong>)<br>{</strong><br>    tp<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>0<strong>;</strong>i<strong>&lt;</strong>top<strong>;</strong>i<strong>++){</strong><br>        LL p1<strong>=</strong>pri<strong>[</strong>i<strong>];</strong> <strong>if**</strong>(<strong>n</strong>%<strong>p1</strong>==<strong>0</strong>){<strong><br>            fac</strong>[<strong>tp</strong>++]=<strong>p1</strong>;<strong><br>            n</strong>/=<strong>p1</strong>;<br>        }<strong> </strong>if<strong>**(!</strong>vis<strong>[</strong>n<strong>]){</strong><br>            fac<strong>[</strong>tp<strong>++]=</strong>n<strong>;</strong> <strong>return**</strong>;<br>        }<br>    }<br>}**</p>
+<p>LL sol<strong>(</strong>LL k<strong>,</strong>LL p<strong>,</strong>LL add<strong>)<br>{</strong><br> <strong>if**</strong>(<strong>p</strong>==<strong>1</strong>)<strong> </strong>return<strong> 1ll</strong>;<strong><br>    LL tmp</strong>=<strong>sol</strong>(<strong>k</strong>,<strong>phi</strong>[<strong>p</strong>],<strong>phi</strong>[<strong>p</strong>]);<strong> </strong>return<strong> pow</strong>(<strong>k</strong>,<strong>tmp</strong>,<strong>p</strong>)+<strong>add</strong>;<br>}<strong><br>LL  calc</strong>(<strong>**int</strong> i<strong>,</strong>LL n<strong>,</strong>LL m<strong>)<br>{</strong><br> <strong>if**</strong>(<strong>n</strong>==<strong>1</strong>)<strong> </strong>return<strong> sum</strong>[<strong>m</strong>];<strong> </strong>if<strong>**(</strong>m<strong>==</strong>0<strong>)</strong> <strong>return</strong> 0<strong>;</strong><br>    LL pp<strong>=</strong>fac<strong>[</strong>i<strong>];</strong><br>    LL k<strong>=((</strong>pp<strong>-</strong>1<strong>)*</strong>calc<strong>(</strong>i<strong>+</strong>1<strong>,</strong>n<strong>/</strong>pp<strong>,</strong>m<strong>)%</strong>MOD<strong>+</strong>calc<strong>(</strong>i<strong>,</strong>n<strong>,</strong>m<strong>/</strong>pp<strong>))%</strong>MOD<strong>;</strong> <strong>return</strong> k<strong>;<br>}</strong> <strong>int</strong> <strong>main**</strong>(){<strong><br>    init</strong>();<strong> </strong>while<strong>**(~</strong>scanf<strong>(</strong>“%lld%lld%lld”<strong>,&amp;</strong>n<strong>,&amp;</strong>m<strong>,&amp;</strong>p<strong>)){</strong><br>        getfac<strong>(</strong>n<strong>);</strong><br>        LL k<strong>=</strong>calc<strong>(</strong>0<strong>,</strong>n<strong>,</strong>m<strong>);</strong><br>        LL ans<strong>=</strong>sol<strong>(</strong>k<strong>,</strong>p<strong>,</strong>0<strong>);</strong><br>        printf<strong>(</strong>“%lld\\n”<strong>,</strong>ans<strong>%</strong>p<strong>);<br>    }</strong> <strong>return</strong> 0<strong>;<br>}</strong></p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/20/hdu-5728-powmod/" data-id="cjoe2wu8o000fads6mdr9rhja" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/" rel="prev" title="HDU 5755 Gambler Bo 高斯消元">
+                HDU 5755 Gambler Bo 高斯消元 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
       
       
     </footer>
   </div>
   
-    
-<nav id="article-nav">
   
-    <a href="/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
         
-          HDU 5755 Gambler Bo 高斯消元
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bluefissure</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2016-Multischool-Training-1-1006"><span class="nav-number">1.</span> <span class="nav-text">2016 Multischool-Training-1-1006</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目链接"><span class="nav-number">2.</span> <span class="nav-text">题目链接</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#PowMod"><span class="nav-number"></span> <span class="nav-text">PowMod</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路："><span class="nav-number">0.1.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码："><span class="nav-number">0.2.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include"><span class="nav-number"></span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-1"><span class="nav-number"></span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-2"><span class="nav-number"></span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-3"><span class="nav-number"></span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-4"><span class="nav-number"></span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-using-namespace-std-define-LL-long-long-const-int-MOD-1e9-7-const-int-N-1e7-7"><span class="nav-number"></span> <span class="nav-text">include using namespace std; #define LL long long const int MOD=1e9+7; const int N=1e7+7;</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </a>
-  
-  
-</nav>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
 
   
-</article>
+</div>
 
-</section>
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Gauss-Jordan-elimination/">Gauss-Jordan_elimination</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Gauss-Jordan-elimination/Multischool-Training/">Multischool-Training</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math-Theory/">Math Theory</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math-Theory/Multischool-Training/">Multischool-Training</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Multischool-Training/">Multischool-Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/11/12/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/17/leetcode-857-minimum-cost-to-hire-k-workers/">LeetCode.857 Minimum Cost to Hire K Workers</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/12/computer-graphics-final-project-simple-raytracing/">Computer Graphics Final Project Simple RayTracing</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/22/computer-graphics-experiment-iii-part-2-lightmodel-in-opengl-inplemented-via-glsl/">Computer Graphics Experiment III Part.2 LightModel in OpenGL (Inplemented via GLSL)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
 </body>
 </html>

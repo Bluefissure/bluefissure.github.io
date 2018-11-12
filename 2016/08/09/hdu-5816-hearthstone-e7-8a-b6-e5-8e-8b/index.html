@@ -1,19 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>HDU 5816 Hearthstone 状压 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hearthstone2016 Multischool-Training-7-1008题目连接 Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)   Problem Description Hearthstone is an online collectible card game">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Hearthstone2016 Multischool-Training-7-1008题目连接 Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)   Problem Description Hearthstone is an online collectible card game">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU 5816 Hearthstone 状压">
 <meta property="og:url" content="http://yoursite.com/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="Hearthstone2016 Multischool-Training-7-1008题目连接 Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)   Problem Description Hearthstone is an online collectible card game">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://acm.hdu.edu.cn/data/images/C710-1008-1.jpg">
 <meta property="og:image" content="https://acm.hdu.edu.cn/data/images/C710-1008-2.jpg">
 <meta property="og:updated_time" content="2018-11-12T09:01:22.368Z">
@@ -21,77 +93,236 @@
 <meta name="twitter:title" content="HDU 5816 Hearthstone 状压">
 <meta name="twitter:description" content="Hearthstone2016 Multischool-Training-7-1008题目连接 Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)   Problem Description Hearthstone is an online collectible card game">
 <meta name="twitter:image" content="https://acm.hdu.edu.cn/data/images/C710-1008-1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/">
+
+
+
+
+
+  <title>HDU 5816 Hearthstone 状压 | Bluefissure's Blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+
 </head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bluefissure's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/" class="article-date">
-  <time datetime="2016-08-09T20:39:53.000Z" itemprop="datePublished">2016-08-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Multischool-Training/">Multischool-Training</a>
+        <p class="site-subtitle">A Place for Recording</p>
+      
   </div>
 
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      HDU 5816 Hearthstone 状压
-    </h1>
+</div>
+
+<nav class="site-nav">
   
 
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bluefissure">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bluefissure's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HDU 5816 Hearthstone 状压</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-09T20:39:53+00:00">
+                2016-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Multischool-Training/" itemprop="url" rel="index">
+                    <span itemprop="name">Multischool-Training</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <h1 id="Hearthstone"><a href="#Hearthstone" class="headerlink" title="Hearthstone"></a>Hearthstone</h1><h3 id="2016-Multischool-Training-7-1008"><a href="#2016-Multischool-Training-7-1008" class="headerlink" title="2016 Multischool-Training-7-1008"></a>2016 Multischool-Training-7-1008</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5816" target="_blank" rel="noopener">题目连接</a></p>
 <p><strong>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</strong>  </p>
@@ -115,15 +346,9 @@
 <p>46/273</p>
 <h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>n张奥术智慧，m张分别会造成$X_i$点伤害的火球术，不计法力消耗，求斩杀剩下P点HP的对手的概率。</p>
 <h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>压缩下m张火球术选择与否的状态，然后DFS……为了避免MLE用了vector存的……（虽然貌似数组就能过……）</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><p>#include<iostream></iostream></p>
-<p>#include<cstdio></cstdio></p>
-<p>#include<cstring></cstring></p>
-<p>#include<string></string></p>
-<p>#include<algorithm></algorithm></p>
-<p>#include<cassert></cassert></p>
-<p>#include<vector> <strong>using namespace</strong> std<strong>;</strong> #define MAXN 1002</vector></p>
-<p>#define pb push_back <strong>int</strong> att<strong>[</strong>MAXN<strong>],</strong>n<strong>,</strong>m<strong>,</strong>p<strong>,</strong>T<strong>;</strong> <strong>typedef</strong> <strong>long long</strong> ll<strong>;</strong> <strong>struct</strong> frac <strong>{</strong><br>    ll up<strong>,</strong> low<strong>;</strong></p>
-<pre><code>frac**(**ll up **=** 0**,** ll low **=** 1**)
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<iostream></iostream></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<cstdio></cstdio></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include"></a>include<cstring></cstring></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include"></a>include<string></string></h1><h1 id="include-4"><a href="#include-4" class="headerlink" title="include"></a>include<algorithm></algorithm></h1><h1 id="include-5"><a href="#include-5" class="headerlink" title="include"></a>include<cassert></cassert></h1><h1 id="include-using-namespace-std-define-MAXN-1002"><a href="#include-using-namespace-std-define-MAXN-1002" class="headerlink" title="include using namespace std; #define MAXN 1002"></a>include<vector> <strong>using namespace</strong> std<strong>;</strong> #define MAXN 1002</vector></h1><h1 id="define-pb-push-back-int-att-MAXN-n-m-p-T-typedef-long-long-ll-struct-frac"><a href="#define-pb-push-back-int-att-MAXN-n-m-p-T-typedef-long-long-ll-struct-frac" class="headerlink" title="define pb push_back int att[MAXN],n,m,p,T; typedef long long ll; struct frac {"></a>define pb push_back <strong>int</strong> att<strong>[</strong>MAXN<strong>],</strong>n<strong>,</strong>m<strong>,</strong>p<strong>,</strong>T<strong>;</strong> <strong>typedef</strong> <strong>long long</strong> ll<strong>;</strong> <strong>struct</strong> frac <strong>{</strong></h1><pre><code>ll up**,** low**;**
+
+frac**(**ll up **=** 0**,** ll low **=** 1**)
 {** **if** **(**low **&lt;** 0**)** up **= -**up**,** low **= -**low**;**
     assert**(**low**);**
     ll g **=** __gcd**(**abs**(**up**),** low**);** **this****-&gt;**up **=** up **/** g**,** **this****-&gt;**low **=** low **/** g**;
@@ -159,133 +384,372 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 {** **return** *******this** **= *****this** **/** b**;
 }
 </code></pre><p>};<strong><br>vector </strong>&lt;<strong>frac</strong>&gt;<strong> dp</strong>[<strong>22</strong>];**</p>
-<p>frac dfs<strong>(**</strong>int<strong> n</strong>,<strong>**int</strong> st<strong>,**</strong>int<strong> p</strong>,<strong>**int</strong> left<strong>)<br>{</strong> <strong>if**</strong>(<strong>n</strong>&lt;<strong>0</strong>)<strong> </strong>return<strong> frac</strong>(<strong>0</strong>,<strong>1</strong>);<strong><br>    frac </strong>&amp;<strong>res</strong>=<strong>dp</strong>[<strong>n</strong>][<strong>st</strong>];<strong> </strong>if<strong>**(</strong>res<strong>!=</strong>frac<strong>(-</strong>1<strong>,</strong>1<strong>))</strong> <strong>return</strong> res<strong>;</strong><br>    res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);</strong> <strong>if**</strong>(<strong>p</strong>&lt;=<strong>0</strong>)<strong> </strong>return<strong> res</strong>=<strong>frac</strong>(<strong>1</strong>,<strong>1</strong>);<strong> </strong>if<strong>**(</strong>left<strong>&lt;=</strong>0<strong>)</strong> <strong>return</strong> res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);</strong> <strong>int</strong> cm<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;<strong>mm</strong>)==<strong>0</strong>)<strong> cm</strong>++;<br>    }<strong> </strong>if<strong>**(</strong>left<strong>&gt;=</strong>n<strong>+</strong>cm<strong>){</strong> <strong>int</strong> tot<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;(<strong>1</strong>&lt;&lt;(<strong>i</strong>-<strong>1</strong>)))==<strong>0</strong>)<strong> tot</strong>+=<strong>att</strong>[<strong>i</strong>];<br>        }<strong> </strong>if<strong>**(</strong>p<strong>&lt;=</strong>tot<strong>)</strong> <strong>return</strong> res<strong>=</strong>frac<strong>(</strong>1<strong>,</strong>1<strong>);</strong> <strong>else return</strong> res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);<br>    }</strong><br>    res<strong>+=</strong>dfs<strong>(</strong>n<strong>-</strong>1<strong>,</strong>st<strong>,</strong>p<strong>,</strong>left<strong>+</strong>1<strong>)*</strong>frac<strong>(</strong>n<strong>,</strong>n<strong>+</strong>cm<strong>);</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;<strong>mm</strong>)==<strong>0</strong>){<strong><br>            res</strong>+=(<strong>dfs</strong>(<strong>n</strong>,<strong>st</strong>|<strong>mm</strong>,<strong>p</strong>-<strong>att</strong>[<strong>i</strong>],<strong>left</strong>-<strong>1</strong>)<strong>*frac</strong>(<strong>1</strong>,<strong>n</strong>+<strong>cm</strong>));<br>        }<br>    }<strong> </strong>return<strong> res</strong>;<br>}<strong> </strong>void<strong> init</strong>()<br>{<strong> </strong>int<strong> lim</strong>=((<strong>1</strong>&lt;&lt;(<strong>m</strong>)));<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>0</strong>;<strong>i</strong>&lt;=<strong>n</strong>;<strong>i</strong>++){<strong><br>        dp</strong>[<strong>i</strong>].<strong>resize</strong>(<strong>lim</strong>+<strong>1</strong>);<strong> </strong>for<strong><strong>(</strong></strong>int<strong> k</strong>=<strong>0</strong>;<strong>k</strong>&lt;=<strong>lim</strong>;<strong>k</strong>++)<strong><br>            dp</strong>[<strong>i</strong>][<strong>k</strong>]=<strong>frac</strong>(-<strong>1</strong>,<strong>1</strong>);<br>    }<br>}<strong> </strong>int<strong> </strong>main<strong>**()<br>{</strong><br>    scanf<strong>(</strong>“%d”<strong>,&amp;</strong>T<strong>);</strong> <strong>while**</strong>(<strong>T</strong>–){<strong><br>        scanf</strong>(<strong>“%d%d%d”</strong>,&amp;<strong>p</strong>,&amp;<strong>n</strong>,&amp;<strong>m</strong>);<strong><br>        init</strong>();<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>1</strong>;<strong>i</strong>&lt;=<strong>m</strong>;<strong>i</strong>++)<strong><br>            scanf</strong>(<strong>“%d”</strong>,&amp;<strong>att</strong>[<strong>i</strong>]);<strong><br>        frac ans</strong>=<strong>dfs</strong>(<strong>n</strong>,<strong>0</strong>,<strong>p</strong>,<strong>1</strong>);<strong><br>        ans</strong>.<strong>output</strong>();<br>    }<strong> </strong>return<strong> 0</strong>;<br>}**</p>
+<p>frac dfs<strong>(**</strong>int<strong> n</strong>,<strong>**int</strong> st<strong>,**</strong>int<strong> p</strong>,<strong>**int</strong> left<strong>)<br>{</strong> <strong>if**</strong>(<strong>n</strong>&lt;<strong>0</strong>)<strong> </strong>return<strong> frac</strong>(<strong>0</strong>,<strong>1</strong>);<strong><br>    frac </strong>&amp;<strong>res</strong>=<strong>dp</strong>[<strong>n</strong>][<strong>st</strong>];<strong> </strong>if<strong>**(</strong>res<strong>!=</strong>frac<strong>(-</strong>1<strong>,</strong>1<strong>))</strong> <strong>return</strong> res<strong>;</strong><br>    res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);</strong> <strong>if**</strong>(<strong>p</strong>&lt;=<strong>0</strong>)<strong> </strong>return<strong> res</strong>=<strong>frac</strong>(<strong>1</strong>,<strong>1</strong>);<strong> </strong>if<strong>**(</strong>left<strong>&lt;=</strong>0<strong>)</strong> <strong>return</strong> res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);</strong> <strong>int</strong> cm<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;<strong>mm</strong>)==<strong>0</strong>)<strong> cm</strong>++;<br>    }<strong> </strong>if<strong>**(</strong>left<strong>&gt;=</strong>n<strong>+</strong>cm<strong>){</strong> <strong>int</strong> tot<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;(<strong>1</strong>&lt;&lt;(<strong>i</strong>-<strong>1</strong>)))==<strong>0</strong>)<strong> tot</strong>+=<strong>att</strong>[<strong>i</strong>];<br>        }<strong> </strong>if<strong>**(</strong>p<strong>&lt;=</strong>tot<strong>)</strong> <strong>return</strong> res<strong>=</strong>frac<strong>(</strong>1<strong>,</strong>1<strong>);</strong> <strong>else return</strong> res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);<br>    }</strong><br>    res<strong>+=</strong>dfs<strong>(</strong>n<strong>-</strong>1<strong>,</strong>st<strong>,</strong>p<strong>,</strong>left<strong>+</strong>1<strong>)*</strong>frac<strong>(</strong>n<strong>,</strong>n<strong>+</strong>cm<strong>);</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;<strong>mm</strong>)==<strong>0</strong>){<strong><br>            res</strong>+=(<strong>dfs</strong>(<strong>n</strong>,<strong>st</strong>|<strong>mm</strong>,<strong>p</strong>-<strong>att</strong>[<strong>i</strong>],<strong>left</strong>-<strong>1</strong>)<strong>*frac</strong>(<strong>1</strong>,<strong>n</strong>+<strong>cm</strong>));<br>        }<br>    }<strong> </strong>return<strong> res</strong>;<br>}<strong> </strong>void<strong> init</strong>()<br>{<strong> </strong>int<strong> lim</strong>=((<strong>1</strong>&lt;&lt;(<strong>m</strong>)));<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>0</strong>;<strong>i</strong>&lt;=<strong>n</strong>;<strong>i</strong>++){<strong><br>        dp</strong>[<strong>i</strong>].<strong>resize</strong>(<strong>lim</strong>+<strong>1</strong>);<strong> </strong>for<strong><strong>(</strong></strong>int<strong> k</strong>=<strong>0</strong>;<strong>k</strong>&lt;=<strong>lim</strong>;<strong>k</strong>++)<strong><br>            dp</strong>[<strong>i</strong>][<strong>k</strong>]=<strong>frac</strong>(-<strong>1</strong>,<strong>1</strong>);<br>    }<br>}<strong> </strong>int<strong> </strong>main<strong>**()<br>{</strong><br>    scanf<strong>(</strong>“%d”<strong>,&amp;</strong>T<strong>);</strong> <strong>while**</strong>(<strong>T</strong>—){<strong><br>        scanf</strong>(<strong>“%d%d%d”</strong>,&amp;<strong>p</strong>,&amp;<strong>n</strong>,&amp;<strong>m</strong>);<strong><br>        init</strong>();<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>1</strong>;<strong>i</strong>&lt;=<strong>m</strong>;<strong>i</strong>++)<strong><br>            scanf</strong>(<strong>“%d”</strong>,&amp;<strong>att</strong>[<strong>i</strong>]);<strong><br>        frac ans</strong>=<strong>dfs</strong>(<strong>n</strong>,<strong>0</strong>,<strong>p</strong>,<strong>1</strong>);<strong><br>        ans</strong>.<strong>output</strong>();<br>    }<strong> </strong>return<strong> 0</strong>;<br>}**</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/" data-id="cjoe2wu93000oads630vul59d" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/09/hdu-5810-balls-and-boxes-e5-85-ac-e5-bc-8f-e6-a6-82-e7-8e-87-e4-b8-8e-e7-bb-9f-e8-ae-a1/" rel="next" title="HDU 5810 Balls and Boxes 公式 概率与统计">
+                <i class="fa fa-chevron-left"></i> HDU 5810 Balls and Boxes 公式 概率与统计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" rel="prev" title="莫比乌斯反演 学习笔记">
+                莫比乌斯反演 学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
       
       
     </footer>
   </div>
   
-    
-<nav id="article-nav">
   
-    <a href="/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
         
-          莫比乌斯反演 学习笔记
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bluefissure</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hearthstone"><span class="nav-number">1.</span> <span class="nav-text">Hearthstone</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2016-Multischool-Training-7-1008"><span class="nav-number">1.0.1.</span> <span class="nav-text">2016 Multischool-Training-7-1008</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题意："><span class="nav-number">1.0.2.</span> <span class="nav-text">题意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路："><span class="nav-number">1.0.3.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码："><span class="nav-number">1.0.4.</span> <span class="nav-text">代码：</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#include"><span class="nav-number">2.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-1"><span class="nav-number">3.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-2"><span class="nav-number">4.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-3"><span class="nav-number">5.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-4"><span class="nav-number">6.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-5"><span class="nav-number">7.</span> <span class="nav-text">include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#include-using-namespace-std-define-MAXN-1002"><span class="nav-number">8.</span> <span class="nav-text">include using namespace std; #define MAXN 1002</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#define-pb-push-back-int-att-MAXN-n-m-p-T-typedef-long-long-ll-struct-frac"><span class="nav-number">9.</span> <span class="nav-text">define pb push_back int att[MAXN],n,m,p,T; typedef long long ll; struct frac {</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </a>
-  
-  
-    <a href="/2016/08/09/hdu-5810-balls-and-boxes-e5-85-ac-e5-bc-8f-e6-a6-82-e7-8e-87-e4-b8-8e-e7-bb-9f-e8-ae-a1/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">HDU 5810 Balls and Boxes 公式 概率与统计</div>
-    </a>
-  
-</nav>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
 
   
-</article>
+</div>
 
-</section>
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Gauss-Jordan-elimination/">Gauss-Jordan_elimination</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Gauss-Jordan-elimination/Multischool-Training/">Multischool-Training</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math-Theory/">Math Theory</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math-Theory/Multischool-Training/">Multischool-Training</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Multischool-Training/">Multischool-Training</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/11/12/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/17/leetcode-857-minimum-cost-to-hire-k-workers/">LeetCode.857 Minimum Cost to Hire K Workers</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/12/computer-graphics-final-project-simple-raytracing/">Computer Graphics Final Project Simple RayTracing</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/22/computer-graphics-experiment-iii-part-2-lightmodel-in-opengl-inplemented-via-glsl/">Computer Graphics Experiment III Part.2 LightModel in OpenGL (Inplemented via GLSL)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
 </body>
 </html>
