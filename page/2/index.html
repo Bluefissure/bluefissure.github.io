@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,8 +18,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -38,10 +50,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
 
 
 
@@ -50,42 +58,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
 
 
 
 
 
 
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bluefissure&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="Bluefissure&#39;s Blog">
-<meta property="og:locale" content="zh">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bluefissure&#39;s Blog">
 
 
 
@@ -94,15 +85,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.4',
+    version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -114,12 +103,33 @@
 </script>
 
 
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Bluefissure&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Bluefissure&#39;s Blog">
+<meta property="og:locale" content="zh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bluefissure&#39;s Blog">
+
+
+
+
+
 
   <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 
-
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Bluefissure's Blog</title>
   
@@ -130,6 +140,36 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
 
 </head>
 
@@ -156,13 +196,15 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">A Place for Recording</p>
       
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -170,35 +212,55 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            Home
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            Archives
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -206,12 +268,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -222,6 +292,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -248,11 +320,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/" itemprop="url">HDU 5816 Hearthstone 状压</a></h1>
+                
+                <a href="/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/" class="post-title-link" itemprop="http://yoursite.com/page/2/index.html">HDU 5816 Hearthstone 状压</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -260,13 +341,30 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-09T20:39:53+08:00">
-                2016-08-09
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2016-08-09 20:39:53" itemprop="dateCreated datePublished" datetime="2016-08-09T20:39:53+08:00">2016-08-09</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-13 16:15:07" itemprop="dateModified" datetime="2018-11-13T16:15:07+08:00">2018-11-13</time>
+              
             
           </span>
 
@@ -282,11 +380,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Multischool-Training/" itemprop="url" rel="index">
-                    <span itemprop="name">Multischool-Training</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Multischool-Training/" itemprop="url" rel="index"><span itemprop="name">Multischool-Training</span></a></span>
 
                 
                 
@@ -321,80 +415,32 @@
 
       
         
+          <h1 id="Hearthstone"><a href="#Hearthstone" class="headerlink" title="Hearthstone"></a>Hearthstone</h1><h3 id="2016-Multischool-Training-7-1008"><a href="#2016-Multischool-Training-7-1008" class="headerlink" title="2016 Multischool-Training-7-1008"></a>2016 Multischool-Training-7-1008</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5816" target="_blank" rel="noopener">题目连接</a></p>
+<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>n张奥术智慧，m张分别会造成$X_i$点伤害的火球术，不计法力消耗，求斩杀剩下P点HP的对手的概率。<br>
+          <!--noindex-->
           
-            <h1 id="Hearthstone"><a href="#Hearthstone" class="headerlink" title="Hearthstone"></a>Hearthstone</h1><h3 id="2016-Multischool-Training-7-1008"><a href="#2016-Multischool-Training-7-1008" class="headerlink" title="2016 Multischool-Training-7-1008"></a>2016 Multischool-Training-7-1008</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5816" target="_blank" rel="noopener">题目连接</a></p>
-<p><strong>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</strong>  </p>
-<p>Problem Description</p>
-<p>Hearthstone is an online collectible card game from Blizzard Entertainment. Strategies and luck are the most important factors in this game. When you suffer a desperate situation and your only hope depends on the top of the card deck, and you draw the only card to solve this dilemma. We call this “Shen Chou Gou” in Chinese.</p>
-  
-<p>Now you are asked to calculate the probability to become a “Shen Chou Gou” to kill your enemy in this turn. To simplify this problem, we assume that there are only two kinds of cards, and you don’t need to consider the cost of the cards.<br>  -A-Card: If the card deck contains less than two cards, draw all the cards from the card deck; otherwise, draw two cards from the top of the card deck.<br>  -B-Card: Deal X damage to your enemy.  </p>
-<p>Note that different B-Cards may have different X values.<br>At the beginning, you have no cards in your hands. Your enemy has P Hit Points (HP). The card deck has N A-Cards and M B-Cards. The card deck has been shuffled randomly. At the beginning of your turn, you draw a card from the top of the card deck. You can use all the cards in your hands until you run out of it. Your task is to calculate the probability that you can win in this turn, i.e., can deal at least P damage to your enemy.  </p>
-
-<p>Input</p>
-<p>The first line is the number of test cases T (T&lt;=10).<br>Then come three positive integers P (P&lt;=1000), N and M (N+M&lt;=20), representing the enemy’s HP, the number of A-Cards and the number of B-Cards in the card deck, respectively. Next line come M integers representing X (0&lt;X&lt;=1000) values for the B-Cards.</p>
-<p>Output</p>
-<p>For each test case, output the probability as a reduced fraction (i.e., the greatest common divisor of the numerator and denominator is 1). If the answer is zero (one), you should output 0/1 (1/1) instead.</p>
-<p>Sample Input</p>
-<p>2</p>
-<p>3 1 2</p>
-<p>1 2</p>
-<p>3 5 10</p>
-<p>1 1 1 1 1 1 1 1 1 1</p>
-<p>Sample Output</p>
-<p>1/3</p>
-<p>46/273</p>
-<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>n张奥术智慧，m张分别会造成$X_i$点伤害的火球术，不计法力消耗，求斩杀剩下P点HP的对手的概率。</p>
-<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>压缩下m张火球术选择与否的状态，然后DFS……为了避免MLE用了vector存的……（虽然貌似数组就能过……）</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<iostream></iostream></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<cstdio></cstdio></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include"></a>include<cstring></cstring></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include"></a>include<string></string></h1><h1 id="include-4"><a href="#include-4" class="headerlink" title="include"></a>include<algorithm></algorithm></h1><h1 id="include-5"><a href="#include-5" class="headerlink" title="include"></a>include<cassert></cassert></h1><h1 id="include-using-namespace-std-define-MAXN-1002"><a href="#include-using-namespace-std-define-MAXN-1002" class="headerlink" title="include using namespace std; #define MAXN 1002"></a>include<vector> <strong>using namespace</strong> std<strong>;</strong> #define MAXN 1002</vector></h1><h1 id="define-pb-push-back-int-att-MAXN-n-m-p-T-typedef-long-long-ll-struct-frac"><a href="#define-pb-push-back-int-att-MAXN-n-m-p-T-typedef-long-long-ll-struct-frac" class="headerlink" title="define pb push_back int att[MAXN],n,m,p,T; typedef long long ll; struct frac {"></a>define pb push_back <strong>int</strong> att<strong>[</strong>MAXN<strong>],</strong>n<strong>,</strong>m<strong>,</strong>p<strong>,</strong>T<strong>;</strong> <strong>typedef</strong> <strong>long long</strong> ll<strong>;</strong> <strong>struct</strong> frac <strong>{</strong></h1><pre><code>ll up**,** low**;**
-
-frac**(**ll up **=** 0**,** ll low **=** 1**)
-{** **if** **(**low **&lt;** 0**)** up **= -**up**,** low **= -**low**;**
-    assert**(**low**);**
-    ll g **=** __gcd**(**abs**(**up**),** low**);** **this****-&gt;**up **=** up **/** g**,** **this****-&gt;**low **=** low **/** g**;
-}** **void** output**()
-{**
-    ll g **=** __gcd**(**abs**(**up**),** low**);** **this****-&gt;**up **/=** g**;** **this****-&gt;**low **/=** g**;** **if****(**up**==**0**)** low**=**1**;**
-    printf**(**&quot;%lld/%lld\\n&quot;**,** up**,** low**);
-}**
-frac **operator** **\+ (****const** frac **&amp;**b**)** **const** **{** **return** frac**(**up ***** b**.**low **+** low ***** b**.**up**,** low ***** b**.**low**);
-}**
-frac **operator** **\- (****const** frac **&amp;**b**)** **const** **{** **return** frac**(**up ***** b**.**low **-** low ***** b**.**up**,** low ***** b**.**low**);
-}**
-frac **operator** **\* (****const** frac **&amp;**b**)** **const** **{** **return** frac**(**up ***** b**.**up**,** low ***** b**.**low**);
-}**
-frac **operator** **/ (****const** frac **&amp;**b**)** **const** **{** **return** frac**(**up ***** b**.**low**,** low ***** b**.**up**);
-}** **bool** **operator** **&lt; (****const** frac **&amp;**b**)** **const** **{** **return** up ***** b**.**low **&lt;** low ***** b**.**up**;
-}** **bool** **operator** **== (****const** frac **&amp;**b**)** **const** **{** **return** up ***** b**.**low **==** low ***** b**.**up**;
-}** **bool** **operator** **\&gt; (****const** frac**&amp;** b**)** **const** **{** **return** b **&lt; *****this****;
-}** **bool** **operator** **&lt;= (****const** frac**&amp;** b**)** **const** **{** **return** **!(**b **&lt; *****this****);
-}** **bool** **operator** **&gt;= (****const** frac **&amp;**b**)** **const** **{** **return** **!(*****this** **&lt;** b**);
-}** **bool** **operator** **!= (****const** frac **&amp;**b**)** **const** **{** **return** up ***** b**.**low **!=** low ***** b**.**up**;
-}**
-frac **operator** **+= (****const** frac **&amp;**b**)
-{** **return** *******this** **= *****this** **+** b**;
-}**
-frac **operator** **-= (****const** frac **&amp;**b**)
-{** **return*********this** **= *****this** **-** b**;
-}**
-frac **operator** ***= (****const** frac **&amp;**b**)
-{** **return** *******this** **= *****this** ***** b**;
-}**
-frac **operator** **/= (****const** frac **&amp;**b**)
-{** **return** *******this** **= *****this** **/** b**;
-}
-</code></pre><p>};<strong><br>vector </strong>&lt;<strong>frac</strong>&gt;<strong> dp</strong>[<strong>22</strong>];**</p>
-<p>frac dfs<strong>(**</strong>int<strong> n</strong>,<strong>**int</strong> st<strong>,**</strong>int<strong> p</strong>,<strong>**int</strong> left<strong>)<br>{</strong> <strong>if**</strong>(<strong>n</strong>&lt;<strong>0</strong>)<strong> </strong>return<strong> frac</strong>(<strong>0</strong>,<strong>1</strong>);<strong><br>    frac </strong>&amp;<strong>res</strong>=<strong>dp</strong>[<strong>n</strong>][<strong>st</strong>];<strong> </strong>if<strong>**(</strong>res<strong>!=</strong>frac<strong>(-</strong>1<strong>,</strong>1<strong>))</strong> <strong>return</strong> res<strong>;</strong><br>    res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);</strong> <strong>if**</strong>(<strong>p</strong>&lt;=<strong>0</strong>)<strong> </strong>return<strong> res</strong>=<strong>frac</strong>(<strong>1</strong>,<strong>1</strong>);<strong> </strong>if<strong>**(</strong>left<strong>&lt;=</strong>0<strong>)</strong> <strong>return</strong> res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);</strong> <strong>int</strong> cm<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;<strong>mm</strong>)==<strong>0</strong>)<strong> cm</strong>++;<br>    }<strong> </strong>if<strong>**(</strong>left<strong>&gt;=</strong>n<strong>+</strong>cm<strong>){</strong> <strong>int</strong> tot<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;(<strong>1</strong>&lt;&lt;(<strong>i</strong>-<strong>1</strong>)))==<strong>0</strong>)<strong> tot</strong>+=<strong>att</strong>[<strong>i</strong>];<br>        }<strong> </strong>if<strong>**(</strong>p<strong>&lt;=</strong>tot<strong>)</strong> <strong>return</strong> res<strong>=</strong>frac<strong>(</strong>1<strong>,</strong>1<strong>);</strong> <strong>else return</strong> res<strong>=</strong>frac<strong>(</strong>0<strong>,</strong>1<strong>);<br>    }</strong><br>    res<strong>+=</strong>dfs<strong>(</strong>n<strong>-</strong>1<strong>,</strong>st<strong>,</strong>p<strong>,</strong>left<strong>+</strong>1<strong>)*</strong>frac<strong>(</strong>n<strong>,</strong>n<strong>+</strong>cm<strong>);</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>m<strong>;</strong>i<strong>++){</strong> <strong>int</strong> mm<strong>=(</strong>1<strong>&lt;&lt;(</strong>i<strong>-</strong>1<strong>));</strong> <strong>if**</strong>((<strong>st</strong>&amp;<strong>mm</strong>)==<strong>0</strong>){<strong><br>            res</strong>+=(<strong>dfs</strong>(<strong>n</strong>,<strong>st</strong>|<strong>mm</strong>,<strong>p</strong>-<strong>att</strong>[<strong>i</strong>],<strong>left</strong>-<strong>1</strong>)<strong>*frac</strong>(<strong>1</strong>,<strong>n</strong>+<strong>cm</strong>));<br>        }<br>    }<strong> </strong>return<strong> res</strong>;<br>}<strong> </strong>void<strong> init</strong>()<br>{<strong> </strong>int<strong> lim</strong>=((<strong>1</strong>&lt;&lt;(<strong>m</strong>)));<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>0</strong>;<strong>i</strong>&lt;=<strong>n</strong>;<strong>i</strong>++){<strong><br>        dp</strong>[<strong>i</strong>].<strong>resize</strong>(<strong>lim</strong>+<strong>1</strong>);<strong> </strong>for<strong><strong>(</strong></strong>int<strong> k</strong>=<strong>0</strong>;<strong>k</strong>&lt;=<strong>lim</strong>;<strong>k</strong>++)<strong><br>            dp</strong>[<strong>i</strong>][<strong>k</strong>]=<strong>frac</strong>(-<strong>1</strong>,<strong>1</strong>);<br>    }<br>}<strong> </strong>int<strong> </strong>main<strong>**()<br>{</strong><br>    scanf<strong>(</strong>“%d”<strong>,&amp;</strong>T<strong>);</strong> <strong>while**</strong>(<strong>T</strong>—){<strong><br>        scanf</strong>(<strong>“%d%d%d”</strong>,&amp;<strong>p</strong>,&amp;<strong>n</strong>,&amp;<strong>m</strong>);<strong><br>        init</strong>();<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>1</strong>;<strong>i</strong>&lt;=<strong>m</strong>;<strong>i</strong>++)<strong><br>            scanf</strong>(<strong>“%d”</strong>,&amp;<strong>att</strong>[<strong>i</strong>]);<strong><br>        frac ans</strong>=<strong>dfs</strong>(<strong>n</strong>,<strong>0</strong>,<strong>p</strong>,<strong>1</strong>);<strong><br>        ans</strong>.<strong>output</strong>();<br>    }<strong> </strong>return<strong> 0</strong>;<br>}**</p>
-
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
+
+    
+
     
     
     
 
     
 
+    
+       
+    
     
 
     
@@ -425,6 +471,8 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -451,11 +499,20 @@ frac **operator** **/= (****const** frac **&amp;**b**)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/09/hdu-5810-balls-and-boxes-e5-85-ac-e5-bc-8f-e6-a6-82-e7-8e-87-e4-b8-8e-e7-bb-9f-e8-ae-a1/" itemprop="url">HDU 5810 Balls and Boxes 公式 概率与统计</a></h1>
+                
+                <a href="/2016/08/09/hdu-5810-balls-and-boxes-e5-85-ac-e5-bc-8f-e6-a6-82-e7-8e-87-e4-b8-8e-e7-bb-9f-e8-ae-a1/" class="post-title-link" itemprop="http://yoursite.com/page/2/index.html">HDU 5810 Balls and Boxes 公式 概率与统计</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -463,13 +520,30 @@ frac **operator** **/= (****const** frac **&amp;**b**)
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-09T17:36:05+08:00">
-                2016-08-09
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2016-08-09 17:36:05" itemprop="dateCreated datePublished" datetime="2016-08-09T17:36:05+08:00">2016-08-09</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-13 16:14:15" itemprop="dateModified" datetime="2018-11-13T16:14:15+08:00">2018-11-13</time>
+              
             
           </span>
 
@@ -485,11 +559,7 @@ frac **operator** **/= (****const** frac **&amp;**b**)
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Multischool-Training/" itemprop="url" rel="index">
-                    <span itemprop="name">Multischool-Training</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Multischool-Training/" itemprop="url" rel="index"><span itemprop="name">Multischool-Training</span></a></span>
 
                 
                 
@@ -524,41 +594,32 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
       
         
+          <h1 id="Balls-and-Boxes"><a href="#Balls-and-Boxes" class="headerlink" title="Balls and Boxes"></a>Balls and Boxes</h1><h3 id="2016-Multischool-Training-7-1002"><a href="#2016-Multischool-Training-7-1002" class="headerlink" title="2016 Multischool-Training-7-1002"></a>2016 Multischool-Training-7-1002</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5810" target="_blank" rel="noopener">题目连接</a></p>
+<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>$n$个球随机扔到$m$个箱子中，求每个箱子中所放球$X_i$的方差的期望。<br>
+          <!--noindex-->
           
-            <h1 id="Balls-and-Boxes"><a href="#Balls-and-Boxes" class="headerlink" title="Balls and Boxes"></a>Balls and Boxes</h1><h3 id="2016-Multischool-Training-7-1002"><a href="#2016-Multischool-Training-7-1002" class="headerlink" title="2016 Multischool-Training-7-1002"></a>2016 Multischool-Training-7-1002</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5810" target="_blank" rel="noopener">题目连接</a></p>
-<p>**Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)  </p>
-<p>**</p>
-<p>Problem Description</p>
-<p>Mr. Chopsticks is interested in random phenomena, and he conducts an experiment to study randomness. In the experiment, he throws n balls into m boxes in such a manner that each ball has equal probability of going to each boxes. After the experiment, he calculated the statistical variance V as <script type="math/tex">V=\\frac { \\sum _{ i=1 }^{ m }{ { ({ X }_{ i }-\\overline { X } ) }^{ 2 } } }{ m }</script><br>where $X_{i}$ is the number of balls in the ith box, and $\\overline{ X }$ is the average number of balls in a box.<br>Your task is to find out the expected value of $V$. </p>
-<p>Input</p>
-<p>The input contains multiple test cases. Each case contains two integers n and m (1 &lt;= n, m &lt;= 1000 000 000) in a line.<br>The input is terminated by n = m = 0.</p>
-<p>Output</p>
-<p>For each case, output the result as A/B in a line, where A/B should be an irreducible fraction. Let B=1 if the result is an integer.</p>
-<p>Sample Input</p>
-<p>2 1</p>
-<p>2 2</p>
-<p>0 0</p>
-<p>Sample Output</p>
-<p>0/1</p>
-<p>1/2</p>
-<p>_Hint_</p>
-<p>In the second sample, there are four possible outcomes, two outcomes with V = 0 and two outcomes with V = 1.</p>
-<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>$n$个球随机扔到$m$个箱子中，求每个箱子中所放球$X_i$的方差的期望。</p>
-<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>推公式……</p>
-<script type="math/tex; mode=display">\\begin{align}E(V)&=E(\\frac { \\sum _{ i=1 }^{ m }{ { ({ X }_{ i }-\\overline { X } ) }^{ 2 } }  }{ m } )\\\ &=E({ ({ X }_{ i }-\\overline { X } ) }^{ 2 })\\\ &=E({ { X }_{ i } }^{ 2 }-2{ X }_{ i }\\cdot \\overline { X } +{ \\overline { X }  }^{ 2 })\\\ &=E({ { X }_{ i } }^{ 2 })-{ \\overline { X }  }^{ 2 }\\\ &=D({ { X }_{ i } })+{ E({ { X }_{ i } }) }^{ 2 }-{ \\overline { X }  }^{ 2 }\\\ &=D({ { X }_{ i } })\\end{align}</script><p>而${ X }_{ i }\\sim B(n,\\frac { 1 }{ m } )$，所以${ D(X }_{ i })=n\\cdot \\frac { 1 }{ m } \\cdot (1-\\frac { 1 }{ m } )$</p>
-<p>写起来简单，比赛中推了好久……实在是太弱了</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<iostream></iostream></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<cstdio></cstdio></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include"></a>include<cstring></cstring></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include"></a>include<string></string></h1><h1 id="include-using-namespace-std-define-LL-long-long-int-main"><a href="#include-using-namespace-std-define-LL-long-long-int-main" class="headerlink" title="include using namespace std; #define LL long long int main**()"></a>include<algorithm> <strong>using namespace</strong> std<strong>;</strong> #define LL long long <strong>int</strong> <strong>main**</strong>()</algorithm></h1><p>{<strong><br>    LL n</strong>,<strong>m</strong>,<strong>p</strong>,<strong>q</strong>;<strong> </strong>while<strong>**(</strong>scanf<strong>(</strong>“%lld%lld”<strong>,&amp;</strong>n<strong>,&amp;</strong>m<strong>),</strong>n<strong>+</strong>m<strong>){</strong><br>        p<strong>=</strong>n<strong>*(</strong>m<strong>-</strong>1<strong>);</strong><br>        q<strong>=</strong>m<strong>*</strong>m<strong>;</strong> <strong>if**</strong>(<strong>p</strong>==<strong>0</strong>)<strong> puts</strong>(<strong>“0/1”</strong>);<strong> </strong>else<strong><br>            printf</strong>(<strong>“%lld/%lld\\n”</strong>,<strong>p</strong>/<strong>__gcd</strong>(<strong>p</strong>,<strong>q</strong>),<strong>q</strong>/<strong>__gcd</strong>(<strong>p</strong>,<strong>q</strong>));<br>    }<strong> </strong>return<strong> 0</strong>;<br>}**</p>
-
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/09/hdu-5810-balls-and-boxes-e5-85-ac-e5-bc-8f-e6-a6-82-e7-8e-87-e4-b8-8e-e7-bb-9f-e8-ae-a1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
+
+    
+
     
     
     
 
     
 
+    
+       
+    
     
 
     
@@ -589,6 +650,8 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -615,11 +678,20 @@ frac **operator** **/= (****const** frac **&amp;**b**)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/08/speed-up-network-connection-via-ipv6-vps-update-2016-10-24/" itemprop="url">Speed up network connection via IPv6 VPS Update 2016-10-24</a></h1>
+                
+                <a href="/2016/08/08/speed-up-network-connection-via-ipv6-vps-update-2016-10-24/" class="post-title-link" itemprop="http://yoursite.com/page/2/index.html">Speed up network connection via IPv6 VPS Update 2016-10-24</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -627,13 +699,30 @@ frac **operator** **/= (****const** frac **&amp;**b**)
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-08T19:23:07+08:00">
-                2016-08-08
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2016-08-08 19:23:07" itemprop="dateCreated datePublished" datetime="2016-08-08T19:23:07+08:00">2016-08-08</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-13 16:46:00" itemprop="dateModified" datetime="2018-11-13T16:46:00+08:00">2018-11-13</time>
+              
             
           </span>
 
@@ -649,11 +738,7 @@ frac **operator** **/= (****const** frac **&amp;**b**)
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Uncategorized/" itemprop="url" rel="index">
-                    <span itemprop="name">Uncategorized</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
 
                 
                 
@@ -688,37 +773,31 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
       
         
+          <p>关于如何突破宿舍网速限制顺利学习
+          <!--noindex-->
           
-            <p>原名：关于如何突破宿舍网速限制顺利学习 首先，这是篇技术文章。 学校对宿舍的ipv4速度限制模式是什么样的不太清楚，然而在9:30~24:30大概是很难成功的登入暴雪（网易）的服务器进行学习的，如果在游戏界面等待许久最终出现了这个无法连接学习服务器的界面还是蛮难受的，而且一般这种状况出现就意味着网络条件基本是gg了，即便进入游戏也会卡得动弹不得（UPD9-14：无线模式貌似可以进入，然而卡得要死）。 然而我们知道国内的教育网一般都是分配了ipv6的地址，带宽大概在100M左右，众所周知的ipv6架构的PT站之所以在资源共享上有那么快的下载速度也是这个原因，既然这样，我们为什么不可以通过ipv6连接到服务器呢？答案当然是不行的……ipv6还只是测试阶段，基本没有游戏服务器会提供v6的地址链接，因此，我们只能退而求其次，用v6链接一台VPS，然后通过VPS把数据转播出去，具体步骤如下： </p>
-<h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><p>一台具有ipv6地址的服务器（VPS、云主机之类），<a href="https://github.com/breakwa11/shadowsocks-rss" target="_blank" rel="noopener">shadowsocksR</a>，<a href="http://www.sockscap64.com/" target="_blank" rel="noopener">SocksCap64</a></p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>搭建或购买shadowsocks服务 (<a href="https://github.com/shadowsocks/shadowsocks/releases" target="_blank" rel="noopener">Win客户端</a>)，详细搭建方法请见 <a href="https://www.google.com/#q=shadowsocks" target="_blank" rel="noopener">这里</a></li>
-<li>通过ipv6地址链接shadowsocks服务,推荐使用ShadowsocksR客户端，具体配置如图<img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160914101518-300x151.png" alt="qq%e6%88%aa%e5%9b%be20160914101518"></li>
-<li>打开SocksCap，设置shadowsocks代理，添加SOCKS5代理127.0.0.1:1080，即本机ss端口 添加后测试下代理然后将相关程序添加到程序面版内</li>
-<li>打开ssR链接<img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160914101518-1-300x148.png" alt="qq%e6%88%aa%e5%9b%be20160914101518"></li>
-<li>从SocksCap中打开战网，开始学习叭</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><ul>
-<li>Update 2016-10-24：如果Ping过高的话解决办法有两个：换用低延迟服务器，或者进了地图之后暂停掉SocksCap</li>
-<li>Update 2016-9-14：通过wireshark抓包发现了问题所在，进入游戏后很多数据是以UDP方式发包，尽管服务器端设置了UDP监听与转发，但是shadowsocks客户端+SocksCap64的组合貌似对UDP发包支持不太好，因此换成了shadowsocksR客户端，勾选UDP over TCP选项，就能够将UDP包封装在TCP里发送出去</li>
-<li>Update 2016-9-6：进入游戏可能在加载地图后无法选择人物便退出，这时可以尝试切出SockCap暂时停用试试，这种玄学问题怎么解决的我也说不清……</li>
-<li>Update 2016-9-5：由于ProxyCap是付费软件，试用期到了后就换成了SocksCap64，国人开发的一个小东西，支持UDP转发，并且免费，大家喜欢的话可以去<a href="http://www.sockscap64.com/donate" target="_blank" rel="noopener">赞助一下</a> （最新版貌似能够直接添加shadowsocks代理了，更加方便了）</li>
-<li>Update 2016-9-5：好久没学习了，听说都出了新的地图和第二赛季？</li>
-<li>不想自己搭建或者想购shen买shou获得VultrV6体验资格的，可以联系作者获取。（顺带翻墙服务）（学习一点也不耗费流量）</li>
-<li>开黑么？我半蔵源氏76死神DJ大锤都贼不6，Bluefissure #5258</li>
-<li>同样的加速也适用于其他游戏，带宽取决于min(ipv6互联带宽，服务器ipv4出口带宽)，但是链接一些国内的服务器的话速度可能还是比较慢，经过我的尝试国外的服务和有全球CDN的服务（steam之类）能够跑满我服务器10M的带宽，百度云之类的服务确实不如直连快，大家自己多多尝试多多权衡就好。</li>
-</ul>
-
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/08/speed-up-network-connection-via-ipv6-vps-update-2016-10-24/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
+
+    
+
     
     
     
 
     
 
+    
+       
+    
     
 
     
@@ -749,6 +828,8 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -775,11 +856,20 @@ frac **operator** **/= (****const** frac **&amp;**b**)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/06/lightoj-1336-sigma-function-e6-95-b0-e8-ae-ba-e6-9c-89-e6-84-8f-e6-80-9d/" itemprop="url">LightOJ 1336 Sigma Function 数论 有意思</a></h1>
+                
+                <a href="/2016/08/06/lightoj-1336-sigma-function-e6-95-b0-e8-ae-ba-e6-9c-89-e6-84-8f-e6-80-9d/" class="post-title-link" itemprop="http://yoursite.com/page/2/index.html">LightOJ 1336 Sigma Function 数论 有意思</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -787,13 +877,30 @@ frac **operator** **/= (****const** frac **&amp;**b**)
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-06T22:33:32+08:00">
-                2016-08-06
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2016-08-06 22:33:32" itemprop="dateCreated datePublished" datetime="2016-08-06T22:33:32+08:00">2016-08-06</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-13 17:13:20" itemprop="dateModified" datetime="2018-11-13T17:13:20+08:00">2018-11-13</time>
+              
             
           </span>
 
@@ -809,11 +916,7 @@ frac **operator** **/= (****const** frac **&amp;**b**)
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Math-Theory/" itemprop="url" rel="index">
-                    <span itemprop="name">Math Theory</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Math-Theory/" itemprop="url" rel="index"><span itemprop="name">Math Theory</span></a></span>
 
                 
                 
@@ -848,47 +951,31 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
       
         
+          <p><a href="http://lightoj.com/volume_showproblem.php?problem=1336" target="_blank" rel="noopener">题目连接</a><br>
+          <!--noindex-->
           
-            <p><a href="http://lightoj.com/volume_showproblem.php?problem=1336" target="_blank" rel="noopener">题目连接</a></p>
-<h2 id="1336-Sigma-Function"><a href="#1336-Sigma-Function" class="headerlink" title="1336 - Sigma Function"></a>1336 - Sigma Function</h2><p><a href="http://lightoj.com/volume_showproblem.php?problem=1336&amp;language=english&amp;type=pdf" target="_blank" rel="noopener">PDF (English)</a></p>
-<p><a href="http://lightoj.com/volume_problemstat.php?problem=1336" target="_blank" rel="noopener">Statistics</a></p>
-<p><a href="http://lightoj.com/forum_showproblem.php?problem=1336" target="_blank" rel="noopener">Forum</a></p>
-<p>Time Limit: 2 second(s)</p>
-<p>Memory Limit: 32 MB</p>
-<p>Sigma function is an interesting function in Number Theory. It is denoted by the Greek letter Sigma (σ). This function actually denotes the sum of all divisors of a number. For example σ(24) = 1+2+3+4+6+8+12+24=60. Sigma of small numbers is easy to find but for large numbers it is very difficult to find in a straight forward way. But mathematicians have discovered a formula to find sigma. If the prime power decomposition of an integer is</p>
-<script type="math/tex; mode=display">n={ { p }_{ 1 } }^{ { e }_{ 1 } }\\cdot { { p }_{ 2 } }^{ { e }_{ 2 } }\\cdot { { p }_{ 3 } }^{ { e }_{ 3 } }...{ { p }_{ k } }^{ { e }_{ k } }</script><p>Then we can write,</p>
-<script type="math/tex; mode=display">\\sigma (n)=\\frac { { { p }_{ 1 } }^{ { e }_{ 1 }+1 }-1 }{ { p }_{ 1 }-1 } \\cdot \\frac { { { p }_{ 2 } }^{ { e }_{ 2 }+1 }-1 }{ { p }_{ 2 }-1 } ...\\frac { { { p }_{ k } }^{ { e }_{ k }+1 }-1 }{ { p }_{ k }-1 }</script><p>For some <strong>n</strong> the value of <strong>σ(n)</strong> is odd and for others it is even. Given a value <strong>n</strong>, you will have to find how many integers from <strong>1</strong> to <strong>n</strong> have <strong>even</strong> value of <strong>σ</strong>.</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>Input starts with an integer <strong>T (**</strong>≤ 100)**, denoting the number of test cases.</p>
-<p>Each case starts with a line containing an integer <strong>n (1 ≤ n ≤ 1012)</strong>.</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>For each case, print the case number and the result.</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><h1 id="Output-for-Sample-Input"><a href="#Output-for-Sample-Input" class="headerlink" title="Output for Sample Input"></a>Output for Sample Input</h1><p>4</p>
-<p>3</p>
-<p>10</p>
-<p>100</p>
-<p>1000</p>
-<p>Case 1: 1</p>
-<p>Case 2: 5</p>
-<p>Case 3: 83</p>
-<p>Case 4: 947</p>
-<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>定义$\\sigma (n)$为$n$的因子和，求1～$n$范围内$\\sigma$值为偶数的有多少个。</p>
-<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>首先分解$n$, $n=\\sum _{ i=1 }^{ r }{ { { p }_{ i } }^{ { a }_{ i } } } $,则$\\sigma (n)=\\prod _{ i=1 }^{ r }{ (\\sum _{ j=0 }^{ { a }_{ i } }{ { { p }_{ i } }^{ j } } ) } $，我们考虑什么情况下$\\sigma (n)$为奇数，有</p>
-<ul>
-<li>${ p }_{ i }=2$时，$\\sum _{ j=0 }^{ { a }_{ i } }{ { { p }_{ i } }^{ j } } $为奇数</li>
-<li>${ p }_{ i }\\neq 2$时，${ a }_{ i } $ 均为偶数时 $\\sum _{ j=0 }^{ { a }_{ i } }{ { { p }_{ i } }^{ j } } $为奇数</li>
-</ul>
-<p>因此，我们发现${ a }_{ i } $均为偶数时，有$\\sqrt { n } =\\sum _{ i=1 }^{ r }{ { { p }_{ i } }^{ \\frac { { a }_{ i } }{ 2 }  } } $为因子和为奇数的个数，但是缺少了2的幂为奇数的情况，共有$\\sqrt { \\frac { n }{ 2 }  } $种情况，因此最后的答案为$n-\\sqrt { n } -\\sqrt { \\frac { n }{ 2 }  } $</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><h1 id="include"><a href="#include" class="headerlink" title="include "></a>include <iostream></iostream></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include "></a>include <cstdio></cstdio></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include "></a>include <cstring></cstring></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include "></a>include <algorithm></algorithm></h1><h1 id="include-4"><a href="#include-4" class="headerlink" title="include "></a>include <cmath></cmath></h1><h1 id="define-LL-long-long"><a href="#define-LL-long-long" class="headerlink" title="define LL long long"></a>define LL long long</h1><p>using namespace std;<br>int main()<br>{<br>    int T;<br>    scanf(“%d”,&amp;T);<br>    for(int cas=1;cas&lt;=T;cas++)<br>    {<br>        LL n;<br>        scanf(“%lld”,&amp;n);<br>        LL ans =((LL)sqrt(n)+(LL)sqrt(n/2.));<br>        printf(“Case %d: %lld\\n”,cas,n-ans);<br>    }<br>    return 0;<br>}</p>
-
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/08/06/lightoj-1336-sigma-function-e6-95-b0-e8-ae-ba-e6-9c-89-e6-84-8f-e6-80-9d/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
+
+    
+
     
     
     
 
     
 
+    
+       
+    
     
 
     
@@ -919,6 +1006,8 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -945,11 +1034,20 @@ frac **operator** **/= (****const** frac **&amp;**b**)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/28/hdu-5768-lucky7-e6-95-b0-e8-ae-ba-e4-b8-ad-e5-9b-bd-e5-89-a9-e4-bd-99-e5-ae-9a-e7-90-86/" itemprop="url">HDU 5768 Lucky7 数论 中国剩余定理</a></h1>
+                
+                <a href="/2016/07/28/hdu-5768-lucky7-e6-95-b0-e8-ae-ba-e4-b8-ad-e5-9b-bd-e5-89-a9-e4-bd-99-e5-ae-9a-e7-90-86/" class="post-title-link" itemprop="http://yoursite.com/page/2/index.html">HDU 5768 Lucky7 数论 中国剩余定理</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -957,13 +1055,30 @@ frac **operator** **/= (****const** frac **&amp;**b**)
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-28T21:09:26+08:00">
-                2016-07-28
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2016-07-28 21:09:26" itemprop="dateCreated datePublished" datetime="2016-07-28T21:09:26+08:00">2016-07-28</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-13 17:16:56" itemprop="dateModified" datetime="2018-11-13T17:16:56+08:00">2018-11-13</time>
+              
             
           </span>
 
@@ -979,22 +1094,14 @@ frac **operator** **/= (****const** frac **&amp;**b**)
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Math-Theory/" itemprop="url" rel="index">
-                    <span itemprop="name">Math Theory</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Math-Theory/" itemprop="url" rel="index"><span itemprop="name">Math Theory</span></a></span>
 
                 
                 
                   , 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Math-Theory/Multischool-Training/" itemprop="url" rel="index">
-                    <span itemprop="name">Multischool-Training</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Math-Theory/Multischool-Training/" itemprop="url" rel="index"><span itemprop="name">Multischool-Training</span></a></span>
 
                 
                 
@@ -1029,48 +1136,31 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
       
         
+          <h3 id="2016-Multischool-Training-4-1005"><a href="#2016-Multischool-Training-4-1005" class="headerlink" title="2016 Multischool-Training-4-1005"></a>2016 Multischool-Training-4-1005</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5768" target="_blank" rel="noopener">题目链接</a></p>
+          <!--noindex-->
           
-            <h3 id="2016-Multischool-Training-4-1005"><a href="#2016-Multischool-Training-4-1005" class="headerlink" title="2016 Multischool-Training-4-1005"></a>2016 Multischool-Training-4-1005</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5768" target="_blank" rel="noopener">题目链接</a></p>
-<h1 id="Lucky7"><a href="#Lucky7" class="headerlink" title="Lucky7"></a>Lucky7</h1><p>**Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)  </p>
-<p>**</p>
-<p>Problem Description</p>
-<p>When ?? was born, seven crows flew in and stopped beside him. In its childhood, ?? had been unfortunately fall into the sea. While it was dying, seven dolphins arched its body and sent it back to the shore. It is said that ?? used to surrounded by 7 candles when he faced a extremely difficult problem, and always solve it in seven minutes.<br>?? once wrote an autobiography, which mentioned something about himself. In his book, it said seven is his favorite number and he thinks that a number can be divisible by seven can bring him good luck. On the other hand, ?? abhors some other prime numbers and thinks a number x divided by pi which is one of these prime numbers with a given remainder ai will bring him bad luck. In this case, many of his lucky numbers are sullied because they can be divisible by 7 and also has a remainder of ai when it is divided by the prime number pi.<br>Now give you a pair of x and y, and N pairs of ai and pi, please find out how many numbers between x and y can bring ?? good luck.</p>
-<p>Input</p>
-<p>On the first line there is an integer T(T≤20) representing the number of test cases.<br>Each test case starts with three integers three intergers n, x, y(0&lt;=n&lt;=15,0&lt;x&lt;y&lt; \({ 10 }^{ 18 }\)  ) on a line where n is the number of pirmes.<br>Following on n lines each contains two integers pi, ai where pi is the pirme and ?? abhors the numbers have a remainder of ai when they are divided by pi.<br>It is guranteed that all the pi are distinct and pi!=7.<br>It is also guaranteed that p1*p2*…*pn&lt;= \({ 10 }^{ 18 }\) and 0&lt;ai&lt;pi&lt;=  \({ 10 }^{ 5 }\)for every i∈(1…n).</p>
-<p>Output</p>
-<p>For each test case, first output “Case #x: “,x=1,2,3…., then output the correct answer on a line.</p>
-<p>Sample Input</p>
-<p>2</p>
-<p>2 1 100</p>
-<p>3 2</p>
-<p>5 3</p>
-<p>0 1 100</p>
-<p>Sample Output</p>
-<p>Case #1: 7</p>
-<p>Case #2: 14</p>
-<p>_Hint_</p>
-<p>For Case 1: 7,21,42,49,70,84,91 are the seven numbers.</p>
-<p>For Case2: 7,14,21,28,35,42,49,56,63,70,77,84,91,98 are the fourteen numbers.</p>
-<p>Author</p>
-<p>FZU</p>
-<p>Source</p>
-<p><a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2016+Multi-University+Training+Contest+4&amp;source=1&amp;searchmode=source" target="_blank" rel="noopener">2016 Multi-University Training Contest 4</a></p>
-<h4 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h4><p>给个区间$\\left[ x,y \\right] $ ， $x,y$ 范围在 \({ 10 }^{ 18 }\) 。</p>
-<p>求问区间内有多少数能被7整除，并且对任意\({ p }_{ i }\)取模不等于\({ a }_{ i }\)。</p>
-<h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>先算出来被7整除的数的个数，然后对\({ p }_{ i }\)和\({ a }_{ i }\)容斥一下，奇减偶加就好，对于多个同余方程组成的同余方程组：$\\begin{cases} x\\equiv { a }_{ 1 }\\left( mod\\quad { p }_{ 1 } \\right)  \\\ x\\equiv { a }_{ 2 }\\left( mod\\quad { p }_{ 2 } \\right)  \\\ … \\\ … \\\ x\\equiv { a }_{ k }\\left( mod\\quad { p }_{ k } \\right)  \\end{cases}$ 用中国剩余定理求解及统计个数。</p>
-<p>需要注意的是在中国剩余定理的过程中可能爆long long，乘法的过程要改成快速乘。(WA了两发QAQ)</p>
-<h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<iostream></iostream></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<cstdio></cstdio></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include"></a>include<cstring></cstring></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include"></a>include<string></string></h1><h1 id="include-4"><a href="#include-4" class="headerlink" title="include"></a>include<algorithm></algorithm></h1><h1 id="include-5"><a href="#include-5" class="headerlink" title="include"></a>include<stack></stack></h1><h1 id="include-6"><a href="#include-6" class="headerlink" title="include"></a>include<vector></vector></h1><h1 id="include-using-namespace-std-define-LL-long-long"><a href="#include-using-namespace-std-define-LL-long-long" class="headerlink" title="include using namespace std; #define LL long long"></a>include<queue> <strong>using namespace</strong> std<strong>;</strong> #define LL long long</queue></h1><h1 id="define-MAXN-100-int-n"><a href="#define-MAXN-100-int-n" class="headerlink" title="define MAXN 100 int n;"></a>define MAXN 100 <strong>int</strong> n<strong>;</strong></h1><p>LL p<strong>[</strong>MAXN<strong>],</strong>a<strong>[</strong>MAXN<strong>],</strong>x<strong>,</strong>y<strong>;</strong> <strong>bool</strong> op<strong>[</strong>MAXN<strong>];</strong><br>LL dfsans<strong>=</strong>0<strong>;</strong><br>LL lcm<strong>(</strong>LL a<strong>,</strong>LL b<strong>)<br>{</strong> <strong>return</strong> a<strong>/</strong>__gcd<strong>(</strong>a<strong>,</strong>b<strong>)*</strong>b<strong>;<br>}</strong><br>LL mul<strong>(</strong>LL a<strong>,</strong>LL b<strong>,</strong>LL c<strong>)<br>{</strong><br>    a<strong>%=</strong>c<strong>;</strong><br>    b<strong>%=</strong>c<strong>;</strong><br>    LL ret<strong>=</strong>0<strong>;</strong> <strong>while**</strong>(<strong>b</strong>){<strong> </strong>if<strong>**(</strong>b<strong>&amp;</strong>1<strong>){</strong><br>            ret<strong>+=</strong>a<strong>;</strong>ret<strong>%=</strong>c<strong>;<br>        }</strong><br>        a<strong>&lt;&lt;=</strong>1<strong>;</strong> <strong>if**</strong>(<strong>a</strong>&gt;=<strong>c</strong>)<strong> a</strong>%=<strong>c</strong>;<strong><br>        b</strong>&gt;&gt;=<strong>1</strong>;<br>    }<strong> </strong>return<strong> ret</strong>;<br>}<strong><br>LL exgcd</strong>(<strong>LL a</strong>,<strong>LL b</strong>,<strong>LL </strong>&amp;<strong>x</strong>,<strong>LL </strong>&amp;<strong>y</strong>)<br>{<strong> </strong>if<strong>**(</strong>a<strong>==</strong>0<strong>&amp;&amp;</strong>b<strong>==</strong>0<strong>)</strong> <strong>return</strong> <strong>-</strong>1<strong>;</strong> <strong>if**</strong>(!<strong>b</strong>){<strong><br>        x</strong>=<strong>1</strong>;<strong>y</strong>=<strong>0</strong>;<strong> </strong>return<strong> a</strong>;<br>    }<strong><br>    LL ans</strong>=<strong>exgcd</strong>(<strong>b</strong>,<strong>a</strong>%<strong>b</strong>,<strong>y</strong>,<strong>x</strong>);<strong><br>    y</strong>-=<strong>x*</strong>(<strong>a</strong>/<strong>b</strong>);<strong> </strong>return<strong> ans</strong>;<br>}<strong><br>LL China</strong>(<strong>**int</strong> k<strong>)<br>{</strong><br>    LL M<strong>=</strong>1<strong>,</strong>Mi<strong>,</strong>x0<strong>,</strong>y0<strong>,</strong>d<strong>,</strong>ans<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>0<strong>;</strong>i<strong>&lt;=</strong>k<strong>;</strong>i<strong>++)</strong> <strong>if**</strong>(<strong>op</strong>[<strong>i</strong>])<strong> M*</strong>=<strong>p</strong>[<strong>i</strong>];<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>0</strong>;<strong>i</strong>&lt;=<strong>k</strong>;<strong>i</strong>++){<strong> </strong>if<strong>**(!</strong>op<strong>[</strong>i<strong>])</strong> <strong>continue**</strong>;<strong><br>        Mi</strong>=<strong>M</strong>/<strong>p</strong>[<strong>i</strong>];<strong><br>        exgcd</strong>(<strong>Mi</strong>,<strong>p</strong>[<strong>i</strong>],<strong>x0</strong>,<strong>y0</strong>);<br>        (<strong>x0</strong>+=<strong>M</strong>)%=<strong>M</strong>;<strong><br>        LL tt</strong>=<strong>mul</strong>(<strong>Mi</strong>,<strong>x0</strong>,<strong>M</strong>);<br>        (<strong>ans</strong>+=<strong>mul</strong>(<strong>tt</strong>,<strong>a</strong>[<strong>i</strong>],<strong>M</strong>))%=<strong>M</strong>;<br>    }<strong> </strong>while<strong>**(</strong>ans<strong>&lt;</strong>0<strong>) (</strong>ans<strong>+=</strong>M<strong>)%=</strong>M<strong>;</strong> <strong>return</strong> ans<strong>;<br>}</strong><br>LL sol<strong>(**</strong>int<strong> n</strong>,<strong>LL x</strong>)<br>{<strong><br>    LL base</strong>=<strong>China</strong>(<strong>n</strong>);<strong><br>    LL LCM</strong>=<strong>1</strong>;<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>0</strong>;<strong>i</strong>&lt;=<strong>n</strong>;<strong>i</strong>++)<strong> </strong>if<strong>**(</strong>op<strong>[</strong>i<strong>])</strong><br>            LCM<strong>=</strong>lcm<strong>(</strong>LCM<strong>,</strong>p<strong>[</strong>i<strong>]);</strong> <strong>if**</strong>(<strong>x</strong>&lt;<strong>base</strong>)<strong> </strong>return<strong> 0</strong>;<strong> </strong>return<strong> </strong>(<strong>x</strong>-<strong>base</strong>)/<strong>LCM</strong>+<strong>1</strong>;<br>}<strong> </strong>void<strong> dfs</strong>(<strong>**int</strong> idx<strong>,</strong>LL x<strong>)<br>{</strong> <strong>if**</strong>(<strong>idx</strong>==<strong>1</strong>)<strong><br>        dfsans</strong>=<strong>0</strong>;<strong> </strong>if<strong>**(</strong>idx<strong>&gt;</strong>n<strong>){</strong> <strong>int</strong> c<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>0<strong>;</strong>i<strong>&lt;=</strong>n<strong>;</strong>i<strong>++){</strong> <strong>if**</strong>(<strong>op</strong>[<strong>i</strong>]){<strong><br>                c</strong>++;<br>            }<br>        }<strong><br>        LL tmp</strong>=<strong>sol</strong>(<strong>n</strong>,<strong>x</strong>);<strong> </strong>if<strong>**(</strong>c<strong>&amp;</strong>1<strong>)</strong> dfsans<strong>+=</strong>tmp<strong>;</strong> <strong>else</strong> dfsans<strong>-=</strong>tmp<strong>;</strong> <strong>return**</strong>;<br>    }<strong><br>    op</strong>[<strong>idx</strong>]=<strong>0</strong>;<strong><br>    dfs</strong>(<strong>idx</strong>+<strong>1</strong>,<strong>x</strong>);<strong><br>    op</strong>[<strong>idx</strong>]=<strong>1</strong>;<strong><br>    dfs</strong>(<strong>idx</strong>+<strong>1</strong>,<strong>x</strong>);<br>}<strong> </strong>void<strong> solve</strong>(<strong>**int</strong> n<strong>,</strong>LL x<strong>,</strong>LL y<strong>)<br>{</strong><br>    LL LCM<strong>=</strong>1<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;=</strong>n<strong>;</strong>i<strong>++)</strong><br>        scanf<strong>(</strong>“%lld%lld”<strong>,&amp;</strong>p<strong>[</strong>i<strong>],&amp;</strong>a<strong>[</strong>i<strong>]);</strong><br>    p<strong>[</strong>0<strong>]=</strong>7<strong>;</strong>a<strong>[</strong>0<strong>]=</strong>0<strong>;</strong><br>    op<strong>[</strong>0<strong>]=</strong>1<strong>;</strong><br>    LL cnt1<strong>=</strong>0<strong>,</strong>cnt2<strong>=</strong>0<strong>;</strong><br>    dfsans<strong>=</strong>0<strong>;</strong><br>    dfs<strong>(</strong>1<strong>,</strong>x<strong>-</strong>1<strong>);</strong><br>    cnt1<strong>=</strong>dfsans<strong>;</strong><br>    dfsans<strong>=</strong>0<strong>;</strong><br>    dfs<strong>(</strong>1<strong>,</strong>y<strong>);</strong><br>    cnt2<strong>=</strong>dfsans<strong>;</strong><br>    printf<strong>(</strong>“%lld\\n”<strong>,</strong>cnt2<strong>-</strong>cnt1<strong>);<br>}</strong> <strong>int</strong> <strong>main**</strong>()<br>{<strong> </strong>int<strong> T</strong>;<strong><br>    scanf</strong>(<strong>“%d”</strong>,&amp;<strong>T</strong>);<strong> </strong>for<strong><strong>(</strong></strong>int<strong> cas</strong>=<strong>1</strong>;<strong>cas</strong>&lt;=<strong>T</strong>;<strong>cas</strong>++){<strong><br>        scanf</strong>(<strong>“%d”</strong>,&amp;<strong>n</strong>);<strong><br>        scanf</strong>(<strong>“%lld%lld”</strong>,&amp;<strong>x</strong>,&amp;<strong>y</strong>);<strong><br>        printf</strong>(<strong>“Case #%d: “</strong>,<strong>cas</strong>);<strong><br>        solve</strong>(<strong>n</strong>,<strong>x</strong>,<strong>y</strong>);<br>    }<strong> </strong>return<strong> 0</strong>;<br>}**</p>
-
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/07/28/hdu-5768-lucky7-e6-95-b0-e8-ae-ba-e4-b8-ad-e5-9b-bd-e5-89-a9-e4-bd-99-e5-ae-9a-e7-90-86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+       
+    
     
 
     
@@ -1101,6 +1191,8 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -1127,11 +1219,20 @@ frac **operator** **/= (****const** frac **&amp;**b**)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/" itemprop="url">HDU 5755 Gambler Bo 高斯消元</a></h1>
+                
+                <a href="/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/" class="post-title-link" itemprop="http://yoursite.com/page/2/index.html">HDU 5755 Gambler Bo 高斯消元</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1139,13 +1240,30 @@ frac **operator** **/= (****const** frac **&amp;**b**)
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-27T23:33:43+08:00">
-                2016-07-27
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2016-07-27 23:33:43" itemprop="dateCreated datePublished" datetime="2016-07-27T23:33:43+08:00">2016-07-27</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-13 17:18:37" itemprop="dateModified" datetime="2018-11-13T17:18:37+08:00">2018-11-13</time>
+              
             
           </span>
 
@@ -1161,22 +1279,14 @@ frac **operator** **/= (****const** frac **&amp;**b**)
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Gauss-Jordan-elimination/" itemprop="url" rel="index">
-                    <span itemprop="name">Gauss-Jordan_elimination</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Gauss-Jordan-elimination/" itemprop="url" rel="index"><span itemprop="name">Gauss-Jordan_elimination</span></a></span>
 
                 
                 
                   , 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Gauss-Jordan-elimination/Multischool-Training/" itemprop="url" rel="index">
-                    <span itemprop="name">Multischool-Training</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Gauss-Jordan-elimination/Multischool-Training/" itemprop="url" rel="index"><span itemprop="name">Multischool-Training</span></a></span>
 
                 
                 
@@ -1211,61 +1321,31 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
       
         
+          <h3 id="2016-Multischool-Training-3-1004"><a href="#2016-Multischool-Training-3-1004" class="headerlink" title="2016 Multischool-Training-3-1004"></a>2016 Multischool-Training-3-1004</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5755" target="_blank" rel="noopener">题目链接</a></p>
+          <!--noindex-->
           
-            <h3 id="2016-Multischool-Training-3-1004"><a href="#2016-Multischool-Training-3-1004" class="headerlink" title="2016 Multischool-Training-3-1004"></a>2016 Multischool-Training-3-1004</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5755" target="_blank" rel="noopener">题目链接</a></p>
-<h1 id="Gambler-Bo"><a href="#Gambler-Bo" class="headerlink" title="Gambler Bo"></a>Gambler Bo</h1><p><strong>Time Limit: 8000/4000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)<br>Special Judge</strong>  </p>
-<p>Problem Description</p>
-<p>Gambler Bo is very proficient in a matrix game.  </p>
-<p>You have a $N\\times M$ matrix, every cell has a value in $\\{0,1,2\\}$.  </p>
-<p>In this game, you can choose a cell in the matrix, plus 2 to this cell, and plus 1 to all the adjacent cells.  </p>
-<p>for example, you choose the cell $(x,y)$, the value of $(x,y)$ will be plused 2, and the value of $(x-1,y)(x+1,y)(x,y-1)(x,y+1)$ will be plused 1.  </p>
-<p>if you choose the cell $(1,2)$, the cell $(1,2)$ will be plused 2, and the cell $(2,2)(1,1)(1,3)$ will be plused 1, the cell $(0,2)$ won’t be changed because it’s out of the matrix.  </p>
-<p>If the values of some cells is exceed 2, then these values will be modulo 3.  </p>
-<p>Gambler Bo gives you such a matrix, your task is making all value of this matrix to 0 by doing above operations no more than $2NM$ times.</p>
-<p>Input</p>
-<p>First line, an integer $T$. There are $T$ test cases.  </p>
-<p>In each test, first line is two integers $N,M$, and following $N$ lines describe the matrix of this test case.  </p>
-<p>$T\\leq 10,1\\leq N,M\\leq 30$, the matrix is random and guarantee that there is at least one operation solution.</p>
-<p>Output</p>
-<p>For each test, first line contains an integer $num(0\\leq num\\leq 2NM)$ describing the operation times.  </p>
-<p>Following $num$ lines, each line contains two integers $x,y(1\\leq x\\leq N,1\\leq y\\leq M)$ describing the operation cell.  </p>
-<p>The answer may not be unique, you can output any one.</p>
-<p>Sample Input</p>
-<p>2</p>
-<p>2 3</p>
-<p>2 1 2</p>
-<p>0 2 0</p>
-<p>3 3</p>
-<p>1 0 1</p>
-<p>0 1 0</p>
-<p>1 0 1</p>
-<p>Sample Output</p>
-<p>1</p>
-<p>1 2</p>
-<p>5</p>
-<p>1 1</p>
-<p>1 3</p>
-<p>2 2</p>
-<p>3 1</p>
-<p>3 3</p>
-<p>Source</p>
-<p><a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2016+Multi-University+Training+Contest+3&amp;source=1&amp;searchmode=source" target="_blank" rel="noopener">2016 Multi-University Training Contest 3</a></p>
-<h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>首先这道题比赛时路子有点野并没有A掉，后来看才发现高斯消元能够很快的求出答案，主要方法类似于反转开关，只是反转开关只有两种操作和两种状态，因此由列出的xor方程便能很容易的异或解出，这个题目有三种操作（点击一次或两次）以及三种状态（0,1,2），因此列出的方程不是异或方程，而是模3域下的加法（即$(x+y)\\%3$）。</p>
-<p>对每个点，点击它的次数设为$x_i$，则其对自己的贡献为2，它周围格子对它的贡献为1，他们的和与初始格子上的值的和加起来应该等于0（模3域下），因此可以列出$N\\times M$个方程，$N\\times M$个变量。</p>
-<p>因为数域是模3域，因此我们可以只用加法消元，高斯消元不再多讲，有自由变元直接取0就行，另外需要注意的是最后求$x_i$的过程中如果常数是1而系数是2需要给常数+3再求得结果（因为是模3域），其他情况如果除不尽则结果为0（因为系数只可能是1或者2），具体不详细讲了，直接看代码就行。</p>
-<p>哦对，高斯消元复杂度 $O({ \\left( N\\times M \\right)  }^{ 3 })$</p>
-<h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<iostream></iostream></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<cstdio></cstdio></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include"></a>include<cstring></cstring></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include"></a>include<string></string></h1><h1 id="include-4"><a href="#include-4" class="headerlink" title="include"></a>include<algorithm></algorithm></h1><h1 id="include-using-namespace-std-define-MAXN-1000"><a href="#include-using-namespace-std-define-MAXN-1000" class="headerlink" title="include using namespace std; #define MAXN 1000"></a>include<cstdlib> <strong>using namespace</strong> std<strong>;</strong> #define MAXN 1000</cstdlib></h1><h1 id="define-range-x-y-x-gt-0-amp-amp-x-0-amp-amp-y-lt-M"><a href="#define-range-x-y-x-gt-0-amp-amp-x-0-amp-amp-y-lt-M" class="headerlink" title="define range(x,y) (x&gt;=0&amp;&amp;x=0&amp;&amp;y&lt;M)"></a>define range(x,y) (x&gt;=0&amp;&amp;x<n&&y>=0&amp;&amp;y&lt;M)</n&&y></h1><h1 id="define-f-a-b-a-b-3"><a href="#define-f-a-b-a-b-3" class="headerlink" title="define f(a,b) (((a)+(b))%3)"></a>define f(a,b) (((a)+(b))%3)</h1><h1 id="define-getx-i-j-i-M-j"><a href="#define-getx-i-j-i-M-j" class="headerlink" title="define getx(i,j) ((i)*M+(j))"></a>define getx(i,j) ((i)*M+(j))</h1><h1 id="define-geti-x-x-M"><a href="#define-geti-x-x-M" class="headerlink" title="define geti(x) ((x)/M)"></a>define geti(x) ((x)/M)</h1><h1 id="define-getj-x-x-x-MM-int-N-M-int-mp-35-35-int-dx-4-0-0-1-1-int-dy-4-1-1-0-0-int-x-MAXN-answer-int-g-MAXN-MAXN-augmented-matrix-int-var-equ-inline-void-uniqueans-int-var"><a href="#define-getj-x-x-x-MM-int-N-M-int-mp-35-35-int-dx-4-0-0-1-1-int-dy-4-1-1-0-0-int-x-MAXN-answer-int-g-MAXN-MAXN-augmented-matrix-int-var-equ-inline-void-uniqueans-int-var" class="headerlink" title="define getj(x) ((x)-(x)/MM) int N,M; int mp[35][35]; int dx[4]={0,0,1,-1}; int dy[4]={1,-1,0,0}; int x[MAXN];//answer int g[MAXN][MAXN];//augmented matrix int var,equ; inline void uniqueans(**int* var)"></a>define getj(x) ((x)-(x)/M<em>M) <strong>int</strong> N<strong>,</strong>M<strong>;</strong> <strong>int</strong> mp<strong>[</strong>35<strong>][</strong>35<strong>];</strong> <strong>int</strong> dx<strong>[</strong>4<strong>]={</strong>0<strong>,</strong>0<strong>,</strong>1<strong>,-</strong>1<strong>};</strong> <strong>int</strong> dy<strong>[</strong>4<strong>]={</strong>1<strong>,-</strong>1<strong>,</strong>0<strong>,</strong>0<strong>};</strong> <strong>int</strong> x<strong>[</strong>MAXN<strong>];</strong>//answer <strong>int</strong> g<strong>[</strong>MAXN<strong>][</strong>MAXN<strong>];</strong>//augmented matrix <strong>int</strong> var<strong>,</strong>equ<strong>;</strong> <strong>inline</strong> <strong>void</strong> uniqueans<strong>(**</strong>int<em>* var</em></em>)</h1><p>{<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>var</strong>-<strong>1</strong>;<strong>i</strong>&gt;=<strong>0</strong>;<strong>i</strong>—){<strong> </strong>if<strong>**(!</strong>g<strong>[</strong>i<strong>][</strong>i<strong>]){</strong><br>            x<strong>[</strong>i<strong>]=</strong>0<strong>;</strong> <strong>continue**</strong>;<br>        }<strong> </strong>int<strong> tmp</strong>=<strong>g</strong>[<strong>i</strong>][<strong>var</strong>];<strong> </strong>for<strong><strong>(</strong></strong>int<strong> j</strong>=<strong>i</strong>+<strong>1</strong>;<strong>j</strong>&lt;<strong>var</strong>;<strong>j</strong>++){<strong> </strong>int<strong> v</strong>=((<strong>g</strong>[<strong>i</strong>][<strong>j</strong>]==<strong>0</strong>)?<strong>0</strong>:<strong>3</strong>-<strong>g</strong>[<strong>i</strong>][<strong>j</strong>]);<strong><br>            tmp</strong>+=<strong>v<em>*</em></strong>x<strong>[</strong>j<strong>];<br>        }</strong> <strong>if**</strong>(<strong>tmp</strong>%<strong>g</strong>[<strong>i</strong>][<strong>i</strong>]==<strong>0</strong>)<strong><br>            x</strong>[<strong>i</strong>]=<strong>tmp</strong>/<strong>g</strong>[<strong>i</strong>][<strong>i</strong>];<strong> </strong>else if<strong>**((</strong>tmp<strong>+</strong>3<strong>)%</strong>g<strong>[</strong>i<strong>][</strong>i<strong>]==</strong>0<strong>)</strong><br>            x<strong>[</strong>i<strong>]=(</strong>tmp<strong>+</strong>3<strong>)/</strong>g<strong>[</strong>i<strong>][</strong>i<strong>];</strong> <strong>else</strong> x<strong>[</strong>i<strong>]=</strong>0<strong>;</strong><br>        x<strong>[</strong>i<strong>]%=</strong>3<strong>;<br>    }<br>}</strong> <strong>inline</strong> <strong>int</strong> gauss<strong>(**</strong>int<strong> equ</strong>,<strong>**int</strong> var<strong>)<br>{</strong> <strong>int</strong> col<strong>,</strong>k<strong>,</strong>maxr<strong>;</strong> <strong>for**</strong>(<strong>k</strong>=<strong>0</strong>,<strong>col</strong>=<strong>0</strong>;<strong>k</strong>&lt;<strong>equ</strong>&amp;&amp;<strong>col</strong>&lt;<strong>var</strong>;<strong>k</strong>++,<strong>col</strong>++){<strong><br>        maxr</strong>=<strong>k</strong>;<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>k</strong>+<strong>1</strong>;<strong>i</strong>&lt;<strong>equ</strong>;<strong>i</strong>++)<strong> </strong>if<strong>**(</strong>abs<strong>(</strong>g<strong>[</strong>maxr<strong>][</strong>col<strong>])&lt;</strong>abs<strong>(</strong>g<strong>[</strong>i<strong>][</strong>col<strong>]))</strong><br>                maxr<strong>=</strong>i<strong>;</strong> <strong>if**</strong>(<strong>maxr</strong>!=<strong>k</strong>)<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>col</strong>;<strong>i</strong>&lt;=<strong>var</strong>;<strong>i</strong>++)<strong><br>                swap</strong>(<strong>g</strong>[<strong>k</strong>][<strong>i</strong>],<strong>g</strong>[<strong>maxr</strong>][<strong>i</strong>]);<strong> </strong>if<strong>**(</strong>g<strong>[</strong>k<strong>][</strong>col<strong>]==</strong>0<strong>){</strong><br>            k<strong>—;**</strong>continue<strong>**;<br>        }</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>k<strong>+</strong>1<strong>;</strong>i<strong>&lt;</strong>equ<strong>;</strong>i<strong>++)</strong> <strong>if**</strong>(<strong>g</strong>[<strong>i</strong>][<strong>col</strong>]!=<strong>0</strong>){<strong> </strong>int<strong> v</strong>=((<strong>g</strong>[<strong>i</strong>][<strong>col</strong>]+<strong>g</strong>[<strong>k</strong>][<strong>col</strong>]==<strong>3</strong>)?<strong>1</strong>:<strong>2</strong>);<strong> </strong>for<strong><strong>(</strong></strong>int<strong> j</strong>=<strong>col</strong>;<strong>j</strong>&lt;=<strong>var</strong>;<strong>j</strong>++)<strong><br>                    g</strong>[<strong>i</strong>][<strong>j</strong>]=<strong>f</strong>(<strong>g</strong>[<strong>i</strong>][<strong>j</strong>],<strong>v<em>*</em></strong>g<strong>[</strong>k<strong>][</strong>j<strong>]);<br>            }<br>    }</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>k<strong>;</strong>i<strong>&lt;</strong>equ<strong>;</strong>i<strong>++)</strong> <strong>if**</strong>(<strong>g</strong>[<strong>i</strong>][<strong>var</strong>]!=<strong>0</strong>)<strong> </strong>return<strong> </strong>-<strong>1</strong>;<strong>//no answer<br>    //if(k&lt;var) return var-k;//inf answer return number of free vars<br>    uniqueans</strong>(<strong>var</strong>);<strong> </strong>return<strong> 0</strong>;<strong>//ans -&gt; x[] </strong>}<strong> </strong>int<strong> </strong>main<strong>**()<br>{</strong> <strong>int</strong> T<strong>,</strong>t<strong>;</strong><br>    scanf<strong>(</strong>“%d”<strong>,&amp;</strong>T<strong>);</strong> <strong>while**</strong>(<strong>T</strong>—){<strong><br>        memset</strong>(<strong>g</strong>,<strong>0</strong>,<strong><strong>sizeof</strong></strong>(<strong>g</strong>));<strong><br>        memset</strong>(<strong>x</strong>,<strong>0</strong>,<strong><strong>sizeof</strong></strong>(<strong>x</strong>));<strong><br>        scanf</strong>(<strong>“%d%d”</strong>,&amp;<strong>N</strong>,&amp;<strong>M</strong>);<strong><br>        var</strong>=<strong>equ</strong>=<strong>N<em>*</em></strong>M<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>0<strong>;</strong>i<strong>&lt;</strong>N<strong>;</strong>i<strong>++){</strong> <strong>for**</strong>(<strong>**int</strong> j<strong>=</strong>0<strong>;</strong>j<strong>&lt;</strong>M<strong>;</strong>j<strong>++){</strong><br>                scanf<strong>(</strong>“%d”<strong>,&amp;</strong>t<strong>);</strong><br>                g<strong>[</strong>getx<strong>(</strong>i<strong>,</strong>j<strong>)][</strong>var<strong>]=</strong>t<strong>==</strong>0<strong>?</strong>0<strong>:</strong>3<strong>-</strong>t<strong>;</strong><br>                g<strong>[</strong>getx<strong>(</strong>i<strong>,</strong>j<strong>)][</strong>getx<strong>(</strong>i<strong>,</strong>j<strong>)]=</strong>2<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> k<strong>=</strong>0<strong>;</strong>k<strong>&lt;</strong>4<strong>;</strong>k<strong>++){</strong> <strong>int</strong> x<strong>=</strong>i<strong>+</strong>dx<strong>[</strong>k<strong>],</strong>y<strong>=</strong>j<strong>+</strong>dy<strong>[</strong>k<strong>];</strong> <strong>if**</strong>(<strong>range</strong>(<strong>x</strong>,<strong>y</strong>))<strong> g</strong>[<strong>getx</strong>(<strong>i</strong>,<strong>j</strong>)][<strong>getx</strong>(<strong>x</strong>,<strong>y</strong>)]=<strong>1</strong>;<br>                }<br>            }<br>        }<strong> </strong>int<strong> err</strong>=<strong>gauss</strong>(<strong>equ</strong>,<strong>var</strong>);<strong> </strong>int<strong> cnt</strong>=<strong>0</strong>;<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>0</strong>;<strong>i</strong>&lt;<strong>var</strong>;<strong>i</strong>++)<strong><br>            cnt</strong>+=(<strong>x</strong>[<strong>i</strong>]%=<strong>3</strong>);<strong><br>        printf</strong>(<strong>“%d\\n”</strong>,<strong>cnt</strong>);<strong> </strong>for<strong><strong>(</strong></strong>int<strong> i</strong>=<strong>0</strong>;<strong>i</strong>&lt;<strong>var</strong>;<strong>i</strong>++){<strong> </strong>while<strong>**(</strong>x<strong>[</strong>i<strong>]—)</strong><br>                printf<strong>(</strong>“%d %d\\n”<strong>,</strong>geti<strong>(</strong>i<strong>)+</strong>1<strong>,</strong>getj<strong>(</strong>i<strong>)+</strong>1<strong>);<br>        }<br>    }</strong> <strong>return</strong> 0<strong>;<br>}</strong></p>
-
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+       
+    
     
 
     
@@ -1298,6 +1378,8 @@ frac **operator** **/= (****const** frac **&amp;**b**)
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -1322,11 +1404,20 @@ frac **operator** **/= (****const** frac **&amp;**b**)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/20/hdu-5728-powmod/" itemprop="url">HDU 5728 PowMod 数论 欧拉函数</a></h1>
+                
+                <a href="/2016/07/20/hdu-5728-powmod/" class="post-title-link" itemprop="http://yoursite.com/page/2/index.html">HDU 5728 PowMod 数论 欧拉函数</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1334,13 +1425,30 @@ frac **operator** **/= (****const** frac **&amp;**b**)
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-20T21:39:16+08:00">
-                2016-07-20
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2016-07-20 21:39:16" itemprop="dateCreated datePublished" datetime="2016-07-20T21:39:16+08:00">2016-07-20</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-13 17:20:36" itemprop="dateModified" datetime="2018-11-13T17:20:36+08:00">2018-11-13</time>
+              
             
           </span>
 
@@ -1356,22 +1464,14 @@ frac **operator** **/= (****const** frac **&amp;**b**)
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Math-Theory/" itemprop="url" rel="index">
-                    <span itemprop="name">Math Theory</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Math-Theory/" itemprop="url" rel="index"><span itemprop="name">Math Theory</span></a></span>
 
                 
                 
                   , 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Math-Theory/Multischool-Training/" itemprop="url" rel="index">
-                    <span itemprop="name">Multischool-Training</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Math-Theory/Multischool-Training/" itemprop="url" rel="index"><span itemprop="name">Multischool-Training</span></a></span>
 
                 
                 
@@ -1406,53 +1506,31 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
       
         
+          <h3 id="2016-Multischool-Training-1-1006"><a href="#2016-Multischool-Training-1-1006" class="headerlink" title="2016 Multischool-Training-1-1006"></a>2016 Multischool-Training-1-1006</h3><h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5728" target="_blank" rel="noopener">题目链接</a></h3>
+          <!--noindex-->
           
-            <h3 id="2016-Multischool-Training-1-1006"><a href="#2016-Multischool-Training-1-1006" class="headerlink" title="2016 Multischool-Training-1-1006"></a>2016 Multischool-Training-1-1006</h3><h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5728" target="_blank" rel="noopener">题目链接</a></h3><h1 id="PowMod"><a href="#PowMod" class="headerlink" title="PowMod"></a>PowMod</h1><p>**Time Limit: 3000/1500 MS (Java/Others)    Memory Limit: 262144/262144 K (Java/Others)  </p>
-<p>**</p>
-<p>Problem Description</p>
-<p>Declare:<br>$k=\\sum_{i=1}^{m} \\varphi (i*n)\ mod\ 1000000007$</p>
-<p>$n$ is a square-free number.</p>
-<p>$\\varphi $ is the <strong>Euler’s totient function</strong>.</p>
-<p>find:</p>
-<p>$ans=k^{k^{k^{k^{…^k}}}}\ mod \ p$</p>
-<p>There are infinite number of $k$</p>
-<p>Input</p>
-<p>Multiple test cases(test cases $\\leq 100$), one line per case.</p>
-<p>Each line contains three integers, $n, m$ and $p$.</p>
-<p>$1 \\leq n, m, p \\leq 10^{7}$</p>
-<p>Output</p>
-<p>For each case, output a single line with one integer, ans.</p>
-<p>Sample Input</p>
-<p>1 2 6</p>
-<p>1 100 9</p>
-<p>Sample Output</p>
-<p>4</p>
-<p>7</p>
-<h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><p>首先，考虑到$\\varphi$是一个积性函数，我们有下面两条性质</p>
-<ul>
-<li>$\\varphi (mn)=\\varphi (m)\\cdot \\varphi (n)）\\quad (m,n)=1$</li>
-<li>$\\varphi (pn)=p\\cdot \\varphi (n)\\quad (p,\\frac { n }{ p } )=1$   (p为n的一个质因子)</li>
-</ul>
-<p>我们先来证明一下第二点</p>
-<script type="math/tex; mode=display">\\begin{align}\\varphi (pn) &=\\varphi ({ p }^{ 2 }\\cdot \\frac { n }{ p } )\\\ &=\\varphi ({ p }^{ 2 })\\cdot \\varphi (\\frac { n }{ p } )\\\ &=p\\cdot (p-1)\\cdot \\varphi (\\frac { n }{ p } )\\\ &=p\\cdot \\varphi (p)\\cdot \\varphi (\\frac { n }{ p } )\\\ &=p\\cdot \\varphi (n)\\end{align}</script><p>题目中中说明$n$是square-free number，即表明它的每种质因子最多只有一个，因此我们来统计每个质因子对$k$的贡献:</p>
-<p>所求$k=\\sum_{i=1}^{m} \\varphi (i*n)$  可先将$n$分解质因子，对于每个质因子$p$来说，若$(i,p)=1$则直接由第一条性质拆出来即可，若$i=kp$，则由第二条性质，$\\varphi (kpn)=p\\cdot \\varphi (kn)$，因此对质因子p有</p>
-<script type="math/tex; mode=display">\\begin{align}\\sum _{ i=1 }^{ m }{ \\varphi (i\\cdot n) } { | }_{ p } &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ i=kp }^{ i=1:m }{ \\varphi (i\\cdot n) } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot p\\cdot n) } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n)\\cdot p } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n)\\cdot (\\varphi (p)+1) } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n)\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n) } \\\ &=\\sum _{ i\\%p\\neq 0 }^{ i=1:m }{ \\varphi (i\\cdot \\frac { n }{ p } )\\cdot \\varphi (p) } +\\sum _{ i\\%p=0 }^{ i=1:m }{ \\varphi (\\frac { i }{ p } \\cdot n)\\cdot \\varphi (p) } +\\sum _{ k=1 }^{ m/p }{ \\varphi (k\\cdot n) } \\\ &=\\sum _{ i=1 }^{ m }{ \\varphi (i\\cdot \\frac { n }{ p } ) } +\\sum _{ i=1 }^{ m/p }{ \\varphi (i\\cdot n) }  \\end{align}</script><p>所以我们可以递归求出$k$</p>
-<p>得到$k$后，最后的答案只需要降幂公式降幂即可，$k$的无穷次方终将在递归中降成$\\%1$的状态</p>
-<script type="math/tex; mode=display">{ A }^{ B }\\%C={ A }^{ B\\%\\varphi (C)+\\varphi (C) }\\%C</script><p>比赛中也是找了好多办法求k都没求出来，最后也是参照大牛的博客的方法才知道怎么求的k</p>
-<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><h1 id="include"><a href="#include" class="headerlink" title="include"></a>include<cstdio></cstdio></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include"></a>include<iostream></iostream></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include"></a>include<algorithm></algorithm></h1><h1 id="include-3"><a href="#include-3" class="headerlink" title="include"></a>include<cmath></cmath></h1><h1 id="include-4"><a href="#include-4" class="headerlink" title="include"></a>include<string></string></h1><h1 id="include-using-namespace-std-define-LL-long-long-const-int-MOD-1e9-7-const-int-N-1e7-7"><a href="#include-using-namespace-std-define-LL-long-long-const-int-MOD-1e9-7-const-int-N-1e7-7" class="headerlink" title="include using namespace std; #define LL long long const int MOD=1e9+7; const int N=1e7+7;"></a>include<cstring> <strong>using namespace</strong> std<strong>;</strong> #define LL long long <strong>const</strong> <strong>int</strong> MOD<strong>=</strong>1e9<strong>+</strong>7<strong>;</strong> <strong>const</strong> <strong>int</strong> N<strong>=</strong>1e7<strong>+</strong>7<strong>;</strong></cstring></h1><p>LL phi<strong>[</strong>N<strong>],</strong>sum<strong>[</strong>N<strong>],</strong>pri<strong>[</strong>N<strong>];</strong> <strong>int</strong> top<strong>,</strong>tp<strong>;</strong><br>LL fac<strong>[</strong>100<strong>];</strong><br>LL n<strong>,</strong>m<strong>,</strong>p<strong>;</strong> <strong>bool</strong> vis<strong>[</strong>N<strong>];</strong></p>
-<p>LL mul<strong>(</strong>LL a<strong>,</strong>LL b<strong>,</strong> LL c<strong>)<br>{</strong><br>    a<strong>%=</strong>c<strong>;</strong><br>    b<strong>%=</strong>c<strong>;</strong><br>    LL ret<strong>=</strong>0<strong>;</strong> <strong>while**</strong>(<strong>b</strong>){<strong> </strong>if<strong>**(</strong>b<strong>&amp;</strong>1<strong>) (</strong>ret<strong>+=</strong>a<strong>)%=</strong>c<strong>;<br>        (</strong>a<strong>&lt;&lt;=</strong>1<strong>)%=</strong>c<strong>;</strong><br>        b<strong>&gt;&gt;=</strong>1<strong>;<br>    }</strong> <strong>return</strong> ret<strong>;<br>}</strong><br>LL pow<strong>(</strong>LL x<strong>,</strong>LL n<strong>,</strong>LL mod<strong>)<br>{</strong><br>    x<strong>%=</strong>mod<strong>;</strong> <strong>if**</strong>(<strong>n</strong>==<strong>1</strong>)<strong> </strong>return<strong> x</strong>;<strong><br>    LL tmp</strong>=<strong>x</strong>,<strong>ret</strong>=<strong>1</strong>;<strong> </strong>while<strong>**(</strong>n<strong>){</strong> <strong>if**</strong>(<strong>n</strong>&amp;<strong>1</strong>)<strong> ret</strong>=<strong>mul</strong>(<strong>ret</strong>,<strong>tmp</strong>,<strong>mod</strong>);<strong><br>        tmp</strong>=<strong>mul</strong>(<strong>tmp</strong>,<strong>tmp</strong>,<strong>mod</strong>);<strong><br>        n</strong>&gt;&gt;=<strong>1</strong>;<br>    }<strong> </strong>if<strong>**(</strong>ret<strong>==</strong>0<strong>)</strong> ret<strong>+=</strong>mod<strong>;</strong> <strong>return</strong> ret<strong>;<br>}</strong> <strong>void</strong> init<strong>()<br>{</strong><br>    memset<strong>(</strong>vis<strong>,</strong>0<strong>,**</strong>sizeof<strong>**(</strong>vis<strong>));</strong><br>    top<strong>=</strong>0<strong>;</strong><br>    phi<strong>[</strong>1<strong>]=</strong>1<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>2<strong>;</strong>i<strong>&lt;</strong>N<strong>;</strong>i<strong>++){</strong> <strong>if**</strong>(!<strong>vis</strong>[<strong>i</strong>]) {<strong><br>            pri</strong>[<strong>top</strong>++]=<strong>i</strong>;<strong><br>            phi</strong>[<strong>i</strong>]=<strong>i</strong>-<strong>1</strong>;<br>        }<strong> </strong>for<strong><strong>(</strong></strong>int<strong> j</strong>=<strong>0</strong>;<strong>j</strong>&lt;<strong>top</strong>&amp;&amp;<strong>i<em>*</em></strong>pri<strong>[</strong>j<strong>]&lt;</strong>N<strong>;</strong>j<strong>++){</strong><br>            vis<strong>[</strong>i<strong>*</strong>pri<strong>[</strong>j<strong>]]=</strong>1<strong>;</strong> <strong>if**</strong>(!(<strong>i</strong>%<strong>pri</strong>[<strong>j</strong>])){<strong><br>                phi</strong>[<strong>i<em>*</em></strong>pri<strong>[</strong>j<strong>]]=</strong>phi<strong>[</strong>i<strong>]*</strong>pri<strong>[</strong>j<strong>];</strong> <strong>break**</strong>;<br>            }<strong>**else</strong> phi<strong>[</strong>i<strong>*</strong>pri<strong>[</strong>j<strong>]]=</strong>phi<strong>[</strong>i<strong>]*(</strong>pri<strong>[</strong>j<strong>]-</strong>1<strong>);<br>        }<br>    }</strong><br>    sum<strong>[</strong>0<strong>]=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>1<strong>;</strong>i<strong>&lt;</strong>N<strong>;</strong>i<strong>++)</strong><br>        sum<strong>[</strong>i<strong>]=(</strong>sum<strong>[</strong>i<strong>-</strong>1<strong>]+</strong>phi<strong>[</strong>i<strong>])%</strong>MOD<strong>;<br>}</strong> <strong>void</strong> getfac<strong>(</strong>LL n<strong>)<br>{</strong><br>    tp<strong>=</strong>0<strong>;</strong> <strong>for**</strong>(<strong>**int</strong> i<strong>=</strong>0<strong>;</strong>i<strong>&lt;</strong>top<strong>;</strong>i<strong>++){</strong><br>        LL p1<strong>=</strong>pri<strong>[</strong>i<strong>];</strong> <strong>if**</strong>(<strong>n</strong>%<strong>p1</strong>==<strong>0</strong>){<strong><br>            fac</strong>[<strong>tp</strong>++]=<strong>p1</strong>;<strong><br>            n</strong>/=<strong>p1</strong>;<br>        }<strong> </strong>if<strong>**(!</strong>vis<strong>[</strong>n<strong>]){</strong><br>            fac<strong>[</strong>tp<strong>++]=</strong>n<strong>;</strong> <strong>return**</strong>;<br>        }<br>    }<br>}**</p>
-<p>LL sol<strong>(</strong>LL k<strong>,</strong>LL p<strong>,</strong>LL add<strong>)<br>{</strong><br> <strong>if**</strong>(<strong>p</strong>==<strong>1</strong>)<strong> </strong>return<strong> 1ll</strong>;<strong><br>    LL tmp</strong>=<strong>sol</strong>(<strong>k</strong>,<strong>phi</strong>[<strong>p</strong>],<strong>phi</strong>[<strong>p</strong>]);<strong> </strong>return<strong> pow</strong>(<strong>k</strong>,<strong>tmp</strong>,<strong>p</strong>)+<strong>add</strong>;<br>}<strong><br>LL  calc</strong>(<strong>**int</strong> i<strong>,</strong>LL n<strong>,</strong>LL m<strong>)<br>{</strong><br> <strong>if**</strong>(<strong>n</strong>==<strong>1</strong>)<strong> </strong>return<strong> sum</strong>[<strong>m</strong>];<strong> </strong>if<strong>**(</strong>m<strong>==</strong>0<strong>)</strong> <strong>return</strong> 0<strong>;</strong><br>    LL pp<strong>=</strong>fac<strong>[</strong>i<strong>];</strong><br>    LL k<strong>=((</strong>pp<strong>-</strong>1<strong>)*</strong>calc<strong>(</strong>i<strong>+</strong>1<strong>,</strong>n<strong>/</strong>pp<strong>,</strong>m<strong>)%</strong>MOD<strong>+</strong>calc<strong>(</strong>i<strong>,</strong>n<strong>,</strong>m<strong>/</strong>pp<strong>))%</strong>MOD<strong>;</strong> <strong>return</strong> k<strong>;<br>}</strong> <strong>int</strong> <strong>main**</strong>(){<strong><br>    init</strong>();<strong> </strong>while<strong>**(~</strong>scanf<strong>(</strong>“%lld%lld%lld”<strong>,&amp;</strong>n<strong>,&amp;</strong>m<strong>,&amp;</strong>p<strong>)){</strong><br>        getfac<strong>(</strong>n<strong>);</strong><br>        LL k<strong>=</strong>calc<strong>(</strong>0<strong>,</strong>n<strong>,</strong>m<strong>);</strong><br>        LL ans<strong>=</strong>sol<strong>(</strong>k<strong>,</strong>p<strong>,</strong>0<strong>);</strong><br>        printf<strong>(</strong>“%lld\\n”<strong>,</strong>ans<strong>%</strong>p<strong>);<br>    }</strong> <strong>return</strong> 0<strong>;<br>}</strong></p>
-
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2016/07/20/hdu-5728-powmod/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+       
+    
     
 
     
@@ -1481,15 +1559,12 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1520,44 +1595,60 @@ frac **operator** **/= (****const** frac **&amp;**b**)
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
+                <div class="site-state-item site-state-posts">
                 
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">categories</span>
+                  <a href="/archives/">
                 
-              </div>
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
             
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
@@ -1578,16 +1669,18 @@ frac **operator** **/= (****const** frac **&amp;**b**)
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Bluefissure</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -1595,12 +1688,13 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
 
 
 
 
         
+
 
 
 
@@ -1620,7 +1714,10 @@ frac **operator** **/= (****const** frac **&amp;**b**)
     
 
     
+	
+    
 
+    
   </div>
 
   
@@ -1639,7 +1736,11 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
 
 
-  
+
+
+
+
+
 
 
 
@@ -1659,16 +1760,6 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -1677,18 +1768,13 @@ frac **operator** **/= (****const** frac **&amp;**b**)
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
 
 
 
@@ -1700,21 +1786,7 @@ frac **operator** **/= (****const** frac **&amp;**b**)
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
 
 
 
@@ -1722,11 +1794,7 @@ frac **operator** **/= (****const** frac **&amp;**b**)
 
 
 
-
-
   
-
-
 
 
 
@@ -1750,31 +1818,19 @@ frac **operator** **/= (****const** frac **&amp;**b**)
   
 
   
+
   
 
   
   
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
 
   
 
