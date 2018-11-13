@@ -326,9 +326,10 @@
 <p><strong>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</strong>  </p>
 <p>Problem Description</p>
 <p>Hearthstone is an online collectible card game from Blizzard Entertainment. Strategies and luck are the most important factors in this game. When you suffer a desperate situation and your only hope depends on the top of the card deck, and you draw the only card to solve this dilemma. We call this “Shen Chou Gou” in Chinese.</p>
-<p><img src="https://acm.hdu.edu.cn/data/images/C710-1008-1.jpg" alt=""><br>Now you are asked to calculate the probability to become a “Shen Chou Gou” to kill your enemy in this turn. To simplify this problem, we assume that there are only two kinds of cards, and you don’t need to consider the cost of the cards.<br>  -A-Card: If the card deck contains less than two cards, draw all the cards from the card deck; otherwise, draw two cards from the top of the card deck.<br>  -B-Card: Deal X damage to your enemy.  </p>
+  
+<p>Now you are asked to calculate the probability to become a “Shen Chou Gou” to kill your enemy in this turn. To simplify this problem, we assume that there are only two kinds of cards, and you don’t need to consider the cost of the cards.<br>  -A-Card: If the card deck contains less than two cards, draw all the cards from the card deck; otherwise, draw two cards from the top of the card deck.<br>  -B-Card: Deal X damage to your enemy.  </p>
 <p>Note that different B-Cards may have different X values.<br>At the beginning, you have no cards in your hands. Your enemy has P Hit Points (HP). The card deck has N A-Cards and M B-Cards. The card deck has been shuffled randomly. At the beginning of your turn, you draw a card from the top of the card deck. You can use all the cards in your hands until you run out of it. Your task is to calculate the probability that you can win in this turn, i.e., can deal at least P damage to your enemy.  </p>
-<p><img src="https://acm.hdu.edu.cn/data/images/C710-1008-2.jpg" alt=""></p>
+
 <p>Input</p>
 <p>The first line is the number of test cases T (T&lt;=10).<br>Then come three positive integers P (P&lt;=1000), N and M (N+M&lt;=20), representing the enemy’s HP, the number of A-Cards and the number of B-Cards in the card deck, respectively. Next line come M integers representing X (0&lt;X&lt;=1000) values for the B-Cards.</p>
 <p>Output</p>
@@ -688,14 +689,14 @@ frac **operator** **/= (****const** frac **&amp;**b**)
       
         
           
-            <p>原名：关于如何突破宿舍网速限制顺利学习<img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160808185004.png" alt="QQ截图20160808185004"> 首先，这是篇技术文章。 学校对宿舍的ipv4速度限制模式是什么样的不太清楚，然而在9:30~24:30大概是很难成功的登入暴雪（网易）的服务器进行学习的，如果在游戏界面等待许久最终出现了这个无法连接学习服务器的界面还是蛮难受的，而且一般这种状况出现就意味着网络条件基本是gg了，即便进入游戏也会卡得动弹不得（UPD9-14：无线模式貌似可以进入，然而卡得要死）。 然而我们知道国内的教育网一般都是分配了ipv6的地址，带宽大概在100M左右，众所周知的ipv6架构的PT站之所以在资源共享上有那么快的下载速度也是这个原因，既然这样，我们为什么不可以通过ipv6连接到服务器呢？答案当然是不行的……ipv6还只是测试阶段，基本没有游戏服务器会提供v6的地址链接，因此，我们只能退而求其次，用v6链接一台VPS，然后通过VPS把数据转播出去，具体步骤如下： </p>
+            <p>原名：关于如何突破宿舍网速限制顺利学习 首先，这是篇技术文章。 学校对宿舍的ipv4速度限制模式是什么样的不太清楚，然而在9:30~24:30大概是很难成功的登入暴雪（网易）的服务器进行学习的，如果在游戏界面等待许久最终出现了这个无法连接学习服务器的界面还是蛮难受的，而且一般这种状况出现就意味着网络条件基本是gg了，即便进入游戏也会卡得动弹不得（UPD9-14：无线模式貌似可以进入，然而卡得要死）。 然而我们知道国内的教育网一般都是分配了ipv6的地址，带宽大概在100M左右，众所周知的ipv6架构的PT站之所以在资源共享上有那么快的下载速度也是这个原因，既然这样，我们为什么不可以通过ipv6连接到服务器呢？答案当然是不行的……ipv6还只是测试阶段，基本没有游戏服务器会提供v6的地址链接，因此，我们只能退而求其次，用v6链接一台VPS，然后通过VPS把数据转播出去，具体步骤如下： </p>
 <h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><p>一台具有ipv6地址的服务器（VPS、云主机之类），<a href="https://github.com/breakwa11/shadowsocks-rss" target="_blank" rel="noopener">shadowsocksR</a>，<a href="http://www.sockscap64.com/" target="_blank" rel="noopener">SocksCap64</a></p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
 <li>搭建或购买shadowsocks服务 (<a href="https://github.com/shadowsocks/shadowsocks/releases" target="_blank" rel="noopener">Win客户端</a>)，详细搭建方法请见 <a href="https://www.google.com/#q=shadowsocks" target="_blank" rel="noopener">这里</a></li>
 <li>通过ipv6地址链接shadowsocks服务,推荐使用ShadowsocksR客户端，具体配置如图<img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160914101518-300x151.png" alt="qq%e6%88%aa%e5%9b%be20160914101518"></li>
-<li>打开SocksCap，设置shadowsocks代理，添加SOCKS5代理127.0.0.1:1080，即本机ss端口 <img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160905234544-300x204.png" alt="QQ截图20160905234544">添加后测试下代理<img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160905234544-1-300x184.png" alt="QQ截图20160905234544">然后将相关程序添加到程序面版内<img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160905234544-2-300x171.png" alt="QQ截图20160905234544"></li>
+<li>打开SocksCap，设置shadowsocks代理，添加SOCKS5代理127.0.0.1:1080，即本机ss端口 添加后测试下代理然后将相关程序添加到程序面版内</li>
 <li>打开ssR链接<img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160914101518-1-300x148.png" alt="qq%e6%88%aa%e5%9b%be20160914101518"></li>
-<li>从SocksCap中打开战网，开始学习叭<img src="https://bluefissure.com/wp-content/uploads/2016/08/QQ截图20160808190705-3-300x188.png" alt="QQ截图20160808190705"></li>
+<li>从SocksCap中打开战网，开始学习叭</li>
 </ol>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><ul>
 <li>Update 2016-10-24：如果Ping过高的话解决办法有两个：换用低延迟服务器，或者进了地图之后暂停掉SocksCap</li>

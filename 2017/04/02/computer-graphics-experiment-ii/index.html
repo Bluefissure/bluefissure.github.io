@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="图形学实验二，主要是写了3D的空间漫游以及Walking Boxman两个东西，用了一下午加一晚上。 先放一下效果：(我大B站时不时傲娇，加载不出来播放器的话烦请移步av9570127)  然后具体的实现主要分为两部分，3D场景漫游和机器人的绘画与动作，本篇博文先着重介绍3D漫游部分，机器人部分留作下一篇博文再做介绍。 UNV相机及变换首先UNV相机主要由三个单位向量表示：  $\\overrig">
+<meta name="description" content="图形学实验二，主要是写了3D的空间漫游以及Walking Boxman两个东西，用了一下午加一晚上。 先放一下效果：(我大B站时不时傲娇，加载不出来播放器的话烦请移步av9570127)  然后具体的实现主要分为两部分，3D场景漫游和机器人的绘画与动作，本篇博文先着重介绍3D漫游部分，机器人部分留作下一篇博文再做介绍。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Computer Graphics Experiment II Part.1 3D Touring">
 <meta property="og:url" content="http://yoursite.com/2017/04/02/computer-graphics-experiment-ii/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
-<meta property="og:description" content="图形学实验二，主要是写了3D的空间漫游以及Walking Boxman两个东西，用了一下午加一晚上。 先放一下效果：(我大B站时不时傲娇，加载不出来播放器的话烦请移步av9570127)  然后具体的实现主要分为两部分，3D场景漫游和机器人的绘画与动作，本篇博文先着重介绍3D漫游部分，机器人部分留作下一篇博文再做介绍。 UNV相机及变换首先UNV相机主要由三个单位向量表示：  $\\overrig">
+<meta property="og:description" content="图形学实验二，主要是写了3D的空间漫游以及Walking Boxman两个东西，用了一下午加一晚上。 先放一下效果：(我大B站时不时傲娇，加载不出来播放器的话烦请移步av9570127)  然后具体的实现主要分为两部分，3D场景漫游和机器人的绘画与动作，本篇博文先着重介绍3D漫游部分，机器人部分留作下一篇博文再做介绍。">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="https://bluefissure.com/wp-content/uploads/2017/04/unv.png">
-<meta property="og:updated_time" content="2018-11-12T09:01:22.368Z">
+<meta property="og:image" content="http://yoursite.com/2017/04/02/computer-graphics-experiment-ii/unv.png">
+<meta property="og:updated_time" content="2018-11-13T04:05:55.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Computer Graphics Experiment II Part.1 3D Touring">
-<meta name="twitter:description" content="图形学实验二，主要是写了3D的空间漫游以及Walking Boxman两个东西，用了一下午加一晚上。 先放一下效果：(我大B站时不时傲娇，加载不出来播放器的话烦请移步av9570127)  然后具体的实现主要分为两部分，3D场景漫游和机器人的绘画与动作，本篇博文先着重介绍3D漫游部分，机器人部分留作下一篇博文再做介绍。 UNV相机及变换首先UNV相机主要由三个单位向量表示：  $\\overrig">
-<meta name="twitter:image" content="https://bluefissure.com/wp-content/uploads/2017/04/unv.png">
+<meta name="twitter:description" content="图形学实验二，主要是写了3D的空间漫游以及Walking Boxman两个东西，用了一下午加一晚上。 先放一下效果：(我大B站时不时傲娇，加载不出来播放器的话烦请移步av9570127)  然后具体的实现主要分为两部分，3D场景漫游和机器人的绘画与动作，本篇博文先着重介绍3D漫游部分，机器人部分留作下一篇博文再做介绍。">
+<meta name="twitter:image" content="http://yoursite.com/2017/04/02/computer-graphics-experiment-ii/unv.png">
 
 
 
@@ -323,23 +323,26 @@
       
 
       
-        <p>图形学实验二，主要是写了3D的空间漫游以及Walking Boxman两个东西，用了一下午加一晚上。 先放一下效果：(我大B站时不时傲娇，加载不出来播放器的话烦请移步<a href="http://www.bilibili.com/video/av9570127/" target="_blank" rel="noopener">av9570127</a>)  然后具体的实现主要分为两部分，3D场景漫游和机器人的绘画与动作，本篇博文先着重介绍3D漫游部分，机器人部分留作下一篇博文再做介绍。</p>
+        <p>图形学实验二，主要是写了3D的空间漫游以及Walking Boxman两个东西，用了一下午加一晚上。 先放一下效果：(我大B站时不时傲娇，加载不出来播放器的话烦请移步<a href="http://www.bilibili.com/video/av9570127/" target="_blank" rel="noopener">av9570127</a>)  然后具体的实现主要分为两部分，3D场景漫游和机器人的绘画与动作，本篇博文先着重介绍3D漫游部分，机器人部分留作下一篇博文再做介绍。<br><a id="more"></a></p>
 <h2 id="UNV相机及变换"><a href="#UNV相机及变换" class="headerlink" title="UNV相机及变换"></a>UNV相机及变换</h2><p>首先UNV相机主要由三个单位向量表示：</p>
 <ul>
-<li>$\\overrightarrow { n } $:指向目标的视线向量</li>
-<li>$\\overrightarrow { u } $:指向相机右方的向量</li>
-<li>$\\overrightarrow { v } $:指向相机上方的向量</li>
+<li>$\overrightarrow { n } $:指向目标的视线向量</li>
+<li>$\overrightarrow { u } $:指向相机右方的向量</li>
+<li>$\overrightarrow { v } $:指向相机上方的向量</li>
 </ul>
 <p>而这三个组成的向量可以由下面三个向量（点）来求得：</p>
 <ul>
-<li>$\\overrightarrow { pos } $:相机位置</li>
-<li>$\\overrightarrow { target } $:视线目标位置</li>
-<li>$\\overrightarrow { up } $:指向空间上方的向量</li>
+<li>$\overrightarrow { pos } $:相机位置</li>
+<li>$\overrightarrow { target } $:视线目标位置</li>
+<li>$\overrightarrow { up } $:指向空间上方的向量</li>
 </ul>
-<p>具体的计算公式为： <script type="math/tex">\\begin{cases} \\overrightarrow { n } =\\overrightarrow { target } -\\overrightarrow { pos }  \\\ \\overrightarrow { u } =\\overrightarrow { up } \\times \\overrightarrow { n }  \\\ \\overrightarrow { v } =\\overrightarrow { u } \\times \\overrightarrow { n }  \\end{cases}</script> 有了这几个向量，我们就可以首先实现平移变换了： [cpp] void GLCamera::slide(float du, float dv, float dn,float dup) { m_pos(0) = m_pos(0) + du*u.x() + dv*v.x() + dn*n.x() + dup*m_up.x(); m_pos(1) = m_pos(1) + du*u.y() + dv*v.y() + dn*n.y() + dup*m_up.y(); m_pos(2) = m_pos(2) + du*u.z() + dv*v.z() + dn*n.z() + dup*m_up.z(); m_target(0) = m_target(0) + du*u.x() + dv*v.x() + dn*n.x() + dup*m_up.x(); m_target(1) = m_target(1) + du*u.y() + dv*v.y() + dn*n.y() + dup*m_up.y(); m_target(2) = m_target(2) + du*u.z() + dv*v.z() + dn*n.z() + dup*m_up.z(); } [/cpp] 其中，du dv dn dup分别是在$\\overrightarrow { u } $, $\\overrightarrow { v } $, $\\overrightarrow { n } $, $\\overrightarrow { up } $向量方向上面的平移距离。 然后将键盘的按键事件与函数绑定，在display函数中调用glulookAt函数就好了： [cpp] gluLookAt(cam.m_pos.x(), cam.m_pos.y(), cam.m_pos.z(), cam.m_target.x(), cam.m_target.y(), cam.m_target.z(), cam.m_up.x(), cam.m_up.y(), cam.m_up.z()) [/cpp]</p>
-<h2 id="鼠标的移动与视野变换"><a href="#鼠标的移动与视野变换" class="headerlink" title="鼠标的移动与视野变换"></a>鼠标的移动与视野变换</h2><p>鼠标的移动产生视野的变换似乎是一个比较麻烦的事情，但是实际上这种视野的变换无非是一系列对unv三个向量的旋转操作，下面从两个维度说明下鼠标的移动对视野产生的影响应该怎么计算： <img src="https://bluefissure.com/wp-content/uploads/2017/04/unv.png" alt=""></p>
-<h3 id="x方向变化——鼠标左右移动"><a href="#x方向变化——鼠标左右移动" class="headerlink" title="x方向变化——鼠标左右移动"></a>x方向变化——鼠标左右移动</h3><p>如图，结合我们多年守望先锋的经验，左右移动鼠标是$\\overrightarrow { u } $ $\\overrightarrow { n } $ 两个向量绕着$\\overrightarrow { v } $ 进行旋转，实际上，我们只需要将$\\overrightarrow { n } $进行旋转后计算出旋转后对应的$\\overrightarrow { target } $向量，并重新应用之前的计算公式计算$\\overrightarrow { u } $ $\\overrightarrow { n } $ $\\overrightarrow { v } $。</p>
-<h3 id="y方向变化——鼠标上下移动"><a href="#y方向变化——鼠标上下移动" class="headerlink" title="y方向变化——鼠标上下移动"></a>y方向变化——鼠标上下移动</h3><p>同样的，结合我们多年76对空打法鸡的经验，上下移动鼠标是$\\overrightarrow { v } $ $\\overrightarrow { n } $ 两个向量绕着$\\overrightarrow { u } $ 进行旋转，实际上，我们也只需要将$\\overrightarrow { n } $进行旋转后计算出旋转后对应的$\\overrightarrow { target } $向量，并重新应用之前的计算公式计算$\\overrightarrow { u } $ $\\overrightarrow { n } $ $\\overrightarrow { v } $。   注意下代码中的$x$ $y$和上面所说的$x$ $y$是反的，由于默认的二维数组是$x$为行，$y$为列…… [cpp] void passiveMotion(int x, int y) { GLint deltax = oldx - x; GLint deltay = oldy - y; GLfloat xAngle = 360 <em> (GLfloat)deltay / (GLfloat)WinH; GLfloat yAngle = 360 </em> (GLfloat)deltax / (GLfloat)WinW; yAngle = 360 - yAngle; xAngle = 360 - xAngle; glPushMatrix(); glLoadIdentity(); glRotated(xAngle, cam.u.x(), cam.u.y(), cam.u.z());//上下移动 glRotated(yAngle, cam.v.x(), cam.v.y(), cam.v.z());//左右移动 GLfloat m[16]; glGetFloatv(GL_MODELVIEW_MATRIX, m); glPopMatrix(); Eigen::Matrix3d rot; for (int i = 0; i &lt; 3; i++) { for (int j = 0; j &lt; 3; j++) { rot(i, j) = m[i <em> 4 + j]; } } cam.n = rot</em>cam.n; cam.m_target = Eigen::Vector3d(cam.m_pos.x() - cam.n.x(), cam.m_pos.y() - cam.n.y(), cam.m_pos.z() - cam.n.z()); cam.upduvn(); oldx = x; oldy = y; glutPostRedisplay(); } [/cpp]   到这里这个项目的目前实现了的3D漫游功能和实现的过程就差不多介绍完了，还有很多的相机旋转的函数并没有在这里用到，更具体的代码请移步<a href="https://github.com/Bluefissure/WalkingMan" target="_blank" rel="noopener">github</a> 下一篇博文——<a href="https://bluefissure.com/archives/261" target="_blank" rel="noopener">3D Boxman</a></p>
+<p>具体的计算公式为： </p>
+<script type="math/tex; mode=display">\begin{cases} \overrightarrow { n } =\overrightarrow { target } -\overrightarrow { pos }  \\ \overrightarrow { u } =\overrightarrow { up } \times \overrightarrow { n }  \\ \overrightarrow { v } =\overrightarrow { u } \times \overrightarrow { n }  \end{cases}</script><p>有了这几个向量，我们就可以首先实现平移变换了：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> GLCamera::slide(<span class="keyword">float</span> du, <span class="keyword">float</span> dv, <span class="keyword">float</span> dn,<span class="keyword">float</span> dup)</span><br><span class="line">&#123;</span><br><span class="line">    m_pos(<span class="number">0</span>) = m_pos(<span class="number">0</span>) + du*u.x() + dv*v.x() + dn*n.x() + dup*m_up.x();</span><br><span class="line">    m_pos(<span class="number">1</span>) = m_pos(<span class="number">1</span>) + du*u.y() + dv*v.y() + dn*n.y() + dup*m_up.y();</span><br><span class="line">    m_pos(<span class="number">2</span>) = m_pos(<span class="number">2</span>) + du*u.z() + dv*v.z() + dn*n.z() + dup*m_up.z();</span><br><span class="line">    m_target(<span class="number">0</span>) = m_target(<span class="number">0</span>) + du*u.x() + dv*v.x() + dn*n.x() + dup*m_up.x();</span><br><span class="line">    m_target(<span class="number">1</span>) = m_target(<span class="number">1</span>) + du*u.y() + dv*v.y() + dn*n.y() + dup*m_up.y();</span><br><span class="line">    m_target(<span class="number">2</span>) = m_target(<span class="number">2</span>) + du*u.z() + dv*v.z() + dn*n.z() + dup*m_up.z();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中，du dv dn dup分别是在$\overrightarrow { u } $, $\overrightarrow { v } $, $\overrightarrow { n } $, $\overrightarrow { up } $向量方向上面的平移距离。 然后将键盘的按键事件与函数绑定，在display函数中调用glulookAt函数就好了：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gluLookAt(cam.m_pos.x(), cam.m_pos.y(), cam.m_pos.z(), </span><br><span class="line">    cam.m_target.x(), cam.m_target.y(), cam.m_target.z(), </span><br><span class="line">    cam.m_up.x(), cam.m_up.y(), cam.m_up.z())</span><br></pre></td></tr></table></figure></p>
+<h2 id="鼠标的移动与视野变换"><a href="#鼠标的移动与视野变换" class="headerlink" title="鼠标的移动与视野变换"></a>鼠标的移动与视野变换</h2><p>鼠标的移动产生视野的变换似乎是一个比较麻烦的事情，但是实际上这种视野的变换无非是一系列对unv三个向量的旋转操作，下面从两个维度说明下鼠标的移动对视野产生的影响应该怎么计算： <img src="/2017/04/02/computer-graphics-experiment-ii/unv.png"></p>
+<h3 id="x方向变化——鼠标左右移动"><a href="#x方向变化——鼠标左右移动" class="headerlink" title="x方向变化——鼠标左右移动"></a>x方向变化——鼠标左右移动</h3><p>如图，结合我们多年守望先锋的经验，左右移动鼠标是$\overrightarrow { u } $ $\overrightarrow { n } $ 两个向量绕着$\overrightarrow { v } $ 进行旋转，实际上，我们只需要将$\overrightarrow { n } $进行旋转后计算出旋转后对应的$\overrightarrow { target } $向量，并重新应用之前的计算公式计算$\overrightarrow { u } $ $\overrightarrow { n } $ $\overrightarrow { v } $。</p>
+<h3 id="y方向变化——鼠标上下移动"><a href="#y方向变化——鼠标上下移动" class="headerlink" title="y方向变化——鼠标上下移动"></a>y方向变化——鼠标上下移动</h3><p>同样的，结合我们多年76对空打法鸡的经验，上下移动鼠标是$\overrightarrow { v } $ $\overrightarrow { n } $ 两个向量绕着$\overrightarrow { u } $ 进行旋转，实际上，我们也只需要将$\overrightarrow { n } $进行旋转后计算出旋转后对应的$\overrightarrow { target } $向量，并重新应用之前的计算公式计算$\overrightarrow { u } $ $\overrightarrow { n } $ $\overrightarrow { v } $。   注意下代码中的$x$ $y$和上面所说的$x$ $y$是反的，由于默认的二维数组是$x$为行，$y$为列……<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">passiveMotion</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    GLint deltax = oldx - x;</span><br><span class="line">    GLint deltay = oldy - y;</span><br><span class="line">    GLfloat xAngle = <span class="number">360</span> * (GLfloat)deltay / (GLfloat)WinH;</span><br><span class="line">    GLfloat yAngle = <span class="number">360</span> * (GLfloat)deltax / (GLfloat)WinW;</span><br><span class="line">    yAngle = <span class="number">360</span> - yAngle;</span><br><span class="line">    xAngle = <span class="number">360</span> - xAngle;</span><br><span class="line">    glPushMatrix();</span><br><span class="line">    glLoadIdentity();</span><br><span class="line">    glRotated(xAngle, cam.u.x(), cam.u.y(), cam.u.z());<span class="comment">//上下移动</span></span><br><span class="line">    glRotated(yAngle, cam.v.x(), cam.v.y(), cam.v.z());<span class="comment">//左右移动</span></span><br><span class="line">    GLfloat m[<span class="number">16</span>];</span><br><span class="line">    glGetFloatv(GL_MODELVIEW_MATRIX, m);</span><br><span class="line">    glPopMatrix();</span><br><span class="line">    Eigen::Matrix3d rot;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            rot(i, j) = m[i * <span class="number">4</span> + j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cam.n = rot*cam.n;</span><br><span class="line">    cam.m_target = Eigen::Vector3d(cam.m_pos.x() - cam.n.x(), cam.m_pos.y() - cam.n.y(), cam.m_pos.z() - cam.n.z());</span><br><span class="line">    cam.upduvn();</span><br><span class="line">    oldx = x;</span><br><span class="line">    oldy = y;</span><br><span class="line">    glutPostRedisplay();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>到这里这个项目的目前实现了的3D漫游功能和实现的过程就差不多介绍完了，还有很多的相机旋转的函数并没有在这里用到，更具体的代码请移步<a href="https://github.com/Bluefissure/WalkingMan" target="_blank" rel="noopener">github</a> 下一篇博文——<a href="">3D Boxman</a></p>
 
       
     </div>
@@ -699,6 +702,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
