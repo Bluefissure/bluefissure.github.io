@@ -3,6 +3,74 @@
   
     
     <entry>
+      <title>LeetCode-940 Distinct Subsequences II</title>
+      <link href="/2018/11/15/leetcode-940-distinct-subsequences-ii/"/>
+      <url>/2018/11/15/leetcode-940-distinct-subsequences-ii/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/distinct-subsequences-ii/" target="_blank" rel="noopener">题目链接</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>求S的不重复子序列个数</p><a id="more"></a><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>DP</p><h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><p>显然如果S的每个字符都是不同的，一共有$2^{n}$个子集（子序列），用<code>dp[i]</code>表示第<code>i</code>位的子序列个数，则有<code>dp[i+1]=2*dp[i]</code></p><p>考虑重复情况，如果第<code>i</code>位的字母之前出现过，设最近的出现位置是<code>j</code>，则<code>j-1</code>的情况会被多计一次，减掉就行了</p><p>详细解释下为什么：</p><p>首先，<code>dp[i+1]=2*dp[i]</code>的转移方程基于乘法原理：取了这个字母与没取这个字母两种情况</p><p>那么，由于<code>S[i]==S[j]</code>，重复的情况是“没取<code>S[j]</code>取了<code>S[i]</code>”和“取了<code>S[j]</code>没取<code>S[i]</code>”，仔细思考，这两种情况都需要在<code>j</code>后面的字母都没有取，否则也不是重复，所以这种情况一共<code>dp[j-1]</code>种</p><p>PS：别忘了减掉空集</p><p>PPS：模运算下的减法需要<code>(a-b+mod)%mod</code></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">distinctSubseqII</span><span class="params">(self, S)</span>:</span></span><br><span class="line">        dp = [<span class="number">0</span>] * (len(S)+<span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        mk = [<span class="number">0</span>] * <span class="number">26</span></span><br><span class="line">        MOD = <span class="number">1000000007</span></span><br><span class="line">        <span class="keyword">for</span> (i, ch) <span class="keyword">in</span> enumerate(S, <span class="number">1</span>):</span><br><span class="line">            idx = ord(ch)-ord(<span class="string">'a'</span>)</span><br><span class="line">            <span class="keyword">if</span>(mk[idx]!=<span class="number">0</span>):</span><br><span class="line">                dp[i] = (dp[i<span class="number">-1</span>] * <span class="number">2</span> - dp[mk[idx]<span class="number">-1</span>] + MOD)%MOD</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i] = (dp[i<span class="number">-1</span>] * <span class="number">2</span>)%MOD</span><br><span class="line">            mk[idx] = i</span><br><span class="line">        <span class="keyword">return</span> dp[len(S)] - <span class="number">1</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>LeetCode-939 Minimum Area Rectangle</title>
+      <link href="/2018/11/15/leetcode-939-minimum-area-rectangle/"/>
+      <url>/2018/11/15/leetcode-939-minimum-area-rectangle/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/minimum-area-rectangle/" target="_blank" rel="noopener">题目链接</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>求由点集里面的点组成的最小长方形的面积</p><a id="more"></a><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>暴力可过</p><p>不暴力的话，有一些<a href="https://leetcode.com/problems/minimum-area-rectangle/discuss/192021/Python-O(N1.5)-80ms" target="_blank" rel="noopener">基于数据的随机分布的优化</a>，最坏的情况好像也是$O(n^2)$，此处不细讲了</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minAreaRect</span><span class="params">(self, points)</span>:</span></span><br><span class="line">        s = set()</span><br><span class="line">        ubound = <span class="number">40000</span>*<span class="number">40000</span>+<span class="number">1</span></span><br><span class="line">        ans = <span class="number">40000</span>*<span class="number">40000</span>+<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> x1, y1 <span class="keyword">in</span> points:</span><br><span class="line">            <span class="keyword">for</span> x2, y2 <span class="keyword">in</span> s:</span><br><span class="line">                <span class="keyword">if</span> (x1, y2) <span class="keyword">in</span> s <span class="keyword">and</span> (x2, y1) <span class="keyword">in</span> s:</span><br><span class="line">                    calc = abs(x1 - x2) * abs(y1 - y2)</span><br><span class="line">                    <span class="keyword">if</span> calc <span class="keyword">and</span> calc &lt; ans:</span><br><span class="line">                        ans = calc</span><br><span class="line">            s.add((x1, y1))</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> ans==ubound <span class="keyword">else</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>LeetCode-938 Range Sum of BST</title>
+      <link href="/2018/11/15/leetcode-938-range-sum-of-bst/"/>
+      <url>/2018/11/15/leetcode-938-range-sum-of-bst/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/range-sum-of-bst/" target="_blank" rel="noopener">题目链接</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>对BST在[L,R]区间的节点求和</p><a id="more"></a><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>DFS</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rangeSumBST</span><span class="params">(self, root, L, R)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        sumL = self.rangeSumBST(root.left,L,R) <span class="keyword">if</span> root.left <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        sumR = self.rangeSumBST(root.right,L,R) <span class="keyword">if</span> root.right <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        val = root.val <span class="keyword">if</span> L &lt;= root.val &lt;= R <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> sumL+sumR+val</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>LeetCode-937 Reorder Log Files</title>
+      <link href="/2018/11/15/leetcode-937/"/>
+      <url>/2018/11/15/leetcode-937/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/reorder-log-files/" target="_blank" rel="noopener">题目链接</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>两种log：letter-log除了identifier均为小写字母，digit-log除了identifier均为数字，要求将letter-log提取到digit-log前面，并对letter-log进行字典排序</p><a id="more"></a><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>Python大法好</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reorderLogFiles</span><span class="params">(self, logs)</span>:</span></span><br><span class="line">        letter_logs = []</span><br><span class="line">        digit_logs = []</span><br><span class="line">        <span class="keyword">for</span> log <span class="keyword">in</span> logs:</span><br><span class="line">            <span class="keyword">if</span> str.isdigit(log.split(<span class="string">" "</span>)[<span class="number">1</span>]):</span><br><span class="line">                digit_logs.append(log)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                letter_logs.append(log)</span><br><span class="line">        <span class="keyword">return</span> sorted(letter_logs, key=<span class="keyword">lambda</span> x: <span class="string">" "</span>.join([item <span class="keyword">for</span> item <span class="keyword">in</span> x.split(<span class="string">" "</span>)[<span class="number">1</span>:]])) + digit_logs</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>迁移</title>
       <link href="/2018/11/13/blog-migration/"/>
       <url>/2018/11/13/blog-migration/</url>
