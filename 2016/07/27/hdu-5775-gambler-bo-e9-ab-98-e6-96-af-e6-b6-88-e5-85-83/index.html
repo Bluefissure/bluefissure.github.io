@@ -111,7 +111,7 @@
   <meta name="description" content="2016 Multischool-Training-3-1004题目链接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU 5755 Gambler Bo 高斯消元">
-<meta property="og:url" content="http://yoursite.com/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/index.html">
+<meta property="og:url" content="https://blog.bluefissure.com/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="2016 Multischool-Training-3-1004题目链接">
 <meta property="og:locale" content="en">
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/">
+  <link rel="canonical" href="https://blog.bluefissure.com/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/">
 
 
 
@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/">
+    <link itemprop="mainEntityOfPage" href="https://blog.bluefissure.com/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bluefissure">
@@ -838,7 +838,7 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/';
+        this.page.url = 'https://blog.bluefissure.com/2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/';
         this.page.identifier = '2016/07/27/hdu-5775-gambler-bo-e9-ab-98-e6-96-af-e6-b6-88-e5-85-83/';
         this.page.title = 'HDU 5755 Gambler Bo 高斯消元';
         };
@@ -1238,12 +1238,84 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
+
 
   
 
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
 
   
 

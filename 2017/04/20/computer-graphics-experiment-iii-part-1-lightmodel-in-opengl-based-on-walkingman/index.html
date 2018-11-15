@@ -111,25 +111,25 @@
   <meta name="description" content="图形学实验三第一部分——实验二基础上的光照模型。 此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。 本篇博客首先在上一个实验：WalkMan 的基础上添加光照，并使用两种不同的着色方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)">
-<meta property="og:url" content="http://yoursite.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/index.html">
+<meta property="og:url" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="图形学实验三第一部分——实验二基础上的光照模型。 此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。 本篇博客首先在上一个实验：WalkMan 的基础上添加光照，并使用两种不同的着色方法。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/smooth.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/flat.png">
+<meta property="og:image" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png">
+<meta property="og:image" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/smooth.png">
+<meta property="og:image" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/flat.png">
 <meta property="og:updated_time" content="2018-11-13T03:53:40.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)">
 <meta name="twitter:description" content="图形学实验三第一部分——实验二基础上的光照模型。 此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。 本篇博客首先在上一个实验：WalkMan 的基础上添加光照，并使用两种不同的着色方法。">
-<meta name="twitter:image" content="http://yoursite.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png">
+<meta name="twitter:image" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">
+  <link rel="canonical" href="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">
 
 
 
@@ -354,7 +354,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">
+    <link itemprop="mainEntityOfPage" href="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bluefissure">
@@ -850,7 +850,7 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/';
+        this.page.url = 'https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/';
         this.page.identifier = '2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/';
         this.page.title = 'Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)';
         };
@@ -1226,12 +1226,84 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
+
 
   
 
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
 
   
 

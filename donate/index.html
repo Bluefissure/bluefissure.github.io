@@ -111,7 +111,7 @@
   <meta name="description" content="赞助与纪念马如果你喜欢我⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄并打算分担一部分的服务器费用（或者希望作为PY的一种形式），可以赤裸裸的金钱赞助辣：如果你有手机支付宝，请打开支付宝App，使用“扫一扫”付款。 Then you can naked money sponsor: If you have a cell phone to pay, please open the Alipay App, use t">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Donate">
-<meta property="og:url" content="http://yoursite.com/donate/index.html">
+<meta property="og:url" content="https://blog.bluefissure.com/donate/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="赞助与纪念马如果你喜欢我⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄并打算分担一部分的服务器费用（或者希望作为PY的一种形式），可以赤裸裸的金钱赞助辣：如果你有手机支付宝，请打开支付宝App，使用“扫一扫”付款。 Then you can naked money sponsor: If you have a cell phone to pay, please open the Alipay App, use t">
 <meta property="og:locale" content="en">
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/donate/">
+  <link rel="canonical" href="https://blog.bluefissure.com/donate/">
 
 
 
@@ -1042,12 +1042,84 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
+
 
   
 
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
 
   
 
