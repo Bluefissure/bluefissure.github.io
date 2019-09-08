@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="DP盛宴">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-08T15:52:59.516Z">
+<meta property="og:updated_time" content="2019-09-08T21:38:04.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Weekly Contest 153">
 <meta name="twitter:description" content="DP盛宴">
@@ -392,12 +392,24 @@
                 
               
 
-              <time title="Created: 2019-09-08 11:13:37 / Modified: 23:52:59" itemprop="dateCreated datePublished" datetime="2019-09-08T11:13:37+08:00">2019-09-08</time>
+              <time title="Created: 2019-09-08 11:13:37" itemprop="dateCreated datePublished" datetime="2019-09-08T11:13:37+08:00">2019-09-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-09 05:38:04" itemprop="dateModified" datetime="2019-09-09T05:38:04+08:00">2019-09-09</time>
               
             
           </span>
@@ -469,7 +481,7 @@
         <p>DP盛宴<br><a id="more"></a><br>（第二题真煞笔）</p>
 <h2 id="1184-Distance-Between-Bus-Stops"><a href="#1184-Distance-Between-Bus-Stops" class="headerlink" title="1184. Distance Between Bus Stops"></a>1184. Distance Between Bus Stops</h2><p>min(sum(s, d), total_sum - sum(s, d))</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">distanceBetweenBusStops</span><span class="params">(self, distance: List[int], start: int, destination: int)</span> -&gt; int:</span></span><br><span class="line">        s = min(start, destination)</span><br><span class="line">        d = max(start, destination)</span><br><span class="line">        a = sum(distance[s:d])</span><br><span class="line">        t = sum(distance)</span><br><span class="line">        <span class="keyword">return</span> min(a, t-a)</span><br></pre></td></tr></table></figure>
-<h2 id="1185-Day-of-the-Week"><a href="#1185-Day-of-the-Week" class="headerlink" title="1185. Day of the Week"></a>1185. Day of the Week</h2><p><a href="[https://en.wikipedia.org/wiki/Zeller%27s_congruence](https://en.wikipedia.org/wiki/Zeller&#39;s_congruence">Zeller’s congruence</a></p>
+<h2 id="1185-Day-of-the-Week"><a href="#1185-Day-of-the-Week" class="headerlink" title="1185. Day of the Week"></a>1185. Day of the Week</h2><p><a href="https://en.wikipedia.org/wiki/Zeller&#39;s_congruence" target="_blank" rel="noopener">Zeller’s congruence</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dayOfTheWeek</span><span class="params">(self, d: int, m: int, y: int)</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> m==<span class="number">1</span> <span class="keyword">or</span> m==<span class="number">2</span>:</span><br><span class="line">            m += <span class="number">12</span></span><br><span class="line">            y -= <span class="number">1</span></span><br><span class="line">        w = (d+<span class="number">2</span>*m+<span class="number">3</span>*(m+<span class="number">1</span>)//<span class="number">5</span>+y+y//<span class="number">4</span>-y//<span class="number">100</span>+y//<span class="number">400</span>+<span class="number">1</span>) % <span class="number">7</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">"Sunday"</span>, <span class="string">"Monday"</span>, <span class="string">"Tuesday"</span>, <span class="string">"Wednesday"</span>, <span class="string">"Thursday"</span>, <span class="string">"Friday"</span>, <span class="string">"Saturday"</span>][w]</span><br></pre></td></tr></table></figure>
 <h2 id="1186-Maximum-Subarray-Sum-with-One-Deletion"><a href="#1186-Maximum-Subarray-Sum-with-One-Deletion" class="headerlink" title="1186. Maximum Subarray Sum with One Deletion"></a>1186. Maximum Subarray Sum with One Deletion</h2><p>题意：要求在可以删除一个元素的情况下，求最大区间和</p>
 <p>思路：最大区间和使用dp维护，另外使用一个dp来维护删除一个元素的情况下的最大区间和即可。</p>
