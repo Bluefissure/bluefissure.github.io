@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="DP盛宴">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-08T15:48:57.224Z">
+<meta property="og:updated_time" content="2019-09-08T15:52:59.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Weekly Contest 153">
 <meta name="twitter:description" content="DP盛宴">
@@ -392,7 +392,7 @@
                 
               
 
-              <time title="Created: 2019-09-08 11:13:37 / Modified: 23:48:57" itemprop="dateCreated datePublished" datetime="2019-09-08T11:13:37+08:00">2019-09-08</time>
+              <time title="Created: 2019-09-08 11:13:37 / Modified: 23:52:59" itemprop="dateCreated datePublished" datetime="2019-09-08T11:13:37+08:00">2019-09-08</time>
             
 
             
@@ -494,7 +494,7 @@
 </li>
 <li><p><code>arr1[i] &lt;= k</code>，此时需要通过<code>arr2</code>进行替代操作。</p>
 <p>但是仔细一想，由于即便是<code>arr1[i] &gt; k</code>的情况下我们也需要维护通过arr2进行替换操作的状态，否则在下一个位置dp时可能会丢掉状态，所以不要写成<code>if(arr1[i]&lt;=k)</code>或者写在1. 的else分支内。</p>
-<p>通过arr2进行转移的方法听起来十分简单。我们需要在arr2中选出比<code>k</code>大的最小的数并将步骤数+1（为什么只需要最小的一个？），因此只需要将arr2排序后，进行二分即可。</p>
+<p>通过arr2进行转移的方法听起来十分简单。我们需要在arr2中选出比<code>k</code>大的最小的数并将步骤数+1（为什么只需要最小的一个？），因此只需要将arr2排序后，进行二分即可。转移方程：<code>dp&#39;[arr2[loc]] = min(dp&#39;[arr2[loc]], dp[k] + 1)</code>。</p>
 </li>
 </ol>
 <p>复杂度分析也很简单：“循环arr1，循环dp，二分arr2”，即<code>O(n^2log(n))</code>。</p>
