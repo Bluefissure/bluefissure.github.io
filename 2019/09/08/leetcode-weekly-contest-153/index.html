@@ -108,28 +108,24 @@
 
 
 
-  <meta name="description" content="图形学实验三第一部分——实验二基础上的光照模型。 此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。 本篇博客首先在上一个实验：WalkMan 的基础上添加光照，并使用两种不同的着色方法。">
+  <meta name="description" content="DP盛宴">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)">
-<meta property="og:url" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/index.html">
+<meta property="og:title" content="LeetCode Weekly Contest 153">
+<meta property="og:url" content="https://blog.bluefissure.com/2019/09/08/leetcode-weekly-contest-153/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
-<meta property="og:description" content="图形学实验三第一部分——实验二基础上的光照模型。 此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。 本篇博客首先在上一个实验：WalkMan 的基础上添加光照，并使用两种不同的着色方法。">
+<meta property="og:description" content="DP盛宴">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png">
-<meta property="og:image" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/smooth.png">
-<meta property="og:image" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/flat.png">
-<meta property="og:updated_time" content="2018-11-13T03:53:40.687Z">
+<meta property="og:updated_time" content="2019-09-08T15:48:57.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)">
-<meta name="twitter:description" content="图形学实验三第一部分——实验二基础上的光照模型。 此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。 本篇博客首先在上一个实验：WalkMan 的基础上添加光照，并使用两种不同的着色方法。">
-<meta name="twitter:image" content="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png">
+<meta name="twitter:title" content="LeetCode Weekly Contest 153">
+<meta name="twitter:description" content="DP盛宴">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">
+  <link rel="canonical" href="https://blog.bluefissure.com/2019/09/08/leetcode-weekly-contest-153/">
 
 
 
@@ -139,7 +135,7 @@
   };
 </script>
 
-  <title>Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan) | Bluefissure's Blog</title>
+  <title>LeetCode Weekly Contest 153 | Bluefissure's Blog</title>
   
 
 
@@ -354,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/">
+    <link itemprop="mainEntityOfPage" href="https://blog.bluefissure.com/2019/09/08/leetcode-weekly-contest-153/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bluefissure">
@@ -371,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)
+          <h1 class="post-title" itemprop="name headline">LeetCode Weekly Contest 153
               
             
           </h1>
@@ -396,24 +392,12 @@
                 
               
 
-              <time title="Created: 2017-04-20 23:59:27" itemprop="dateCreated datePublished" datetime="2017-04-20T23:59:27+08:00">2017-04-20</time>
+              <time title="Created: 2019-09-08 11:13:37 / Modified: 23:48:57" itemprop="dateCreated datePublished" datetime="2019-09-08T11:13:37+08:00">2019-09-08</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-13 11:53:40" itemprop="dateModified" datetime="2018-11-13T11:53:40+08:00">2018-11-13</time>
               
             
           </span>
@@ -430,7 +414,14 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/LeetCode-Contest/" itemprop="url" rel="index"><span itemprop="name">LeetCode Contest</span></a></span>
 
                 
                 
@@ -445,9 +436,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/#comments" itemprop="discussionUrl">
+                <a href="/2019/09/08/leetcode-weekly-contest-153/#comments" itemprop="discussionUrl">
                 
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/08/leetcode-weekly-contest-153/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -475,21 +466,38 @@
       
 
       
-        <p>图形学实验三第一部分——实验二基础上的光照模型。 此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。 本篇博客首先在上一个实验：<a href="">WalkMan</a> 的基础上添加光照，并使用两种不同的着色方法。<br><a id="more"></a></p>
-<h2 id="光照模型"><a href="#光照模型" class="headerlink" title="光照模型"></a>光照模型</h2><p>OpenGL中的光照模型中的反射光分为三个分量，分别是环境反射光（Ambient Light）、漫反射光（Diffuse Light）和镜面反射光（Specular Light）。</p>
-<ul>
-<li><p>环境光Ambient：是由光源发出经环境多次散射而无法确定其入射方向的光，即似乎来自所有方向。其特征是入射方向和出射方向均为任意方向。</p>
+        <p>DP盛宴<br><a id="more"></a><br>（第二题真煞笔）</p>
+<h2 id="1184-Distance-Between-Bus-Stops"><a href="#1184-Distance-Between-Bus-Stops" class="headerlink" title="1184. Distance Between Bus Stops"></a>1184. Distance Between Bus Stops</h2><p>min(sum(s, d), total_sum - sum(s, d))</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">distanceBetweenBusStops</span><span class="params">(self, distance: List[int], start: int, destination: int)</span> -&gt; int:</span></span><br><span class="line">        s = min(start, destination)</span><br><span class="line">        d = max(start, destination)</span><br><span class="line">        a = sum(distance[s:d])</span><br><span class="line">        t = sum(distance)</span><br><span class="line">        <span class="keyword">return</span> min(a, t-a)</span><br></pre></td></tr></table></figure>
+<h2 id="1185-Day-of-the-Week"><a href="#1185-Day-of-the-Week" class="headerlink" title="1185. Day of the Week"></a>1185. Day of the Week</h2><p><a href="[https://en.wikipedia.org/wiki/Zeller%27s_congruence](https://en.wikipedia.org/wiki/Zeller&#39;s_congruence">Zeller’s congruence</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dayOfTheWeek</span><span class="params">(self, d: int, m: int, y: int)</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> m==<span class="number">1</span> <span class="keyword">or</span> m==<span class="number">2</span>:</span><br><span class="line">            m += <span class="number">12</span></span><br><span class="line">            y -= <span class="number">1</span></span><br><span class="line">        w = (d+<span class="number">2</span>*m+<span class="number">3</span>*(m+<span class="number">1</span>)//<span class="number">5</span>+y+y//<span class="number">4</span>-y//<span class="number">100</span>+y//<span class="number">400</span>+<span class="number">1</span>) % <span class="number">7</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="string">"Sunday"</span>, <span class="string">"Monday"</span>, <span class="string">"Tuesday"</span>, <span class="string">"Wednesday"</span>, <span class="string">"Thursday"</span>, <span class="string">"Friday"</span>, <span class="string">"Saturday"</span>][w]</span><br></pre></td></tr></table></figure>
+<h2 id="1186-Maximum-Subarray-Sum-with-One-Deletion"><a href="#1186-Maximum-Subarray-Sum-with-One-Deletion" class="headerlink" title="1186. Maximum Subarray Sum with One Deletion"></a>1186. Maximum Subarray Sum with One Deletion</h2><p>题意：要求在可以删除一个元素的情况下，求最大区间和</p>
+<p>思路：最大区间和使用dp维护，另外使用一个dp来维护删除一个元素的情况下的最大区间和即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maximumSum</span><span class="params">(self, arr: List[int])</span> -&gt; int:</span></span><br><span class="line">        INF = <span class="number">10</span>**<span class="number">9</span>+<span class="number">1000</span></span><br><span class="line">        dp1 = [-INF] * len(arr)</span><br><span class="line">        dp2 = [-INF] * len(arr)</span><br><span class="line">        ans = arr[<span class="number">0</span>]</span><br><span class="line">        csum = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i, a <span class="keyword">in</span> enumerate(arr):</span><br><span class="line">            dp1[i] = a;</span><br><span class="line">            <span class="keyword">if</span> i:</span><br><span class="line">                dp1[i] = max(a, dp1[i<span class="number">-1</span>] + a); <span class="comment"># same as max-sub-seq</span></span><br><span class="line">                dp2[i] = max(dp1[i<span class="number">-1</span>], dp2[i<span class="number">-1</span>] + a);</span><br><span class="line">            ans = max(ans, dp1[i])</span><br><span class="line">            ans = max(ans, dp2[i])</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p>详解：</p>
+<p><code>dp1</code>和普通的求最大区间和的方法相同，<code>dp1[i]</code>维护的是以位置<code>i</code>结尾的最大连续区间和。</p>
+<p><code>dp2</code>则维护删除了一个元素的以位置<code>i</code>结尾的最大连续区间和，转移规则如下：</p>
+<ol>
+<li>如果删除<code>i</code>号元素，则之前<code>i-1</code>是没有删除元素情况下的以位置<code>i-1</code>结尾的最大连续区间和，即<code>dp1[i-1]</code></li>
+<li>如果没删除<code>i</code>号元素，则之前<code>i-1</code>是删除了一个元素情况下的以位置<code>i-1</code>结尾的最大连续区间和，由于没有删除，需要加上这个元素，即<code>dp2[i-1]+arr[i]</code></li>
+<li>求1. 2.的最大值即为<code>dp2[i]</code></li>
+</ol>
+<p>所以<code>dp2[i] = max(dp1[i-1], dp2[i-1] + arr[i]);</code></p>
+<p>转移过程中维护<code>ans</code>即为答案</p>
+<h2 id="1187-Make-Array-Strictly-Increasing"><a href="#1187-Make-Array-Strictly-Increasing" class="headerlink" title="1187. Make Array Strictly Increasing"></a>1187. Make Array Strictly Increasing</h2><p>题意：一次操作可以将arr1中的某个元素用arr2的元素替代（次数不限），问最少需要几次操作才能保证arr1严格递增。</p>
+<p>思路：针对每个位置通过dp维护当前元素为<code>k</code>时所需要的操作次数<code>v</code>，交替更新。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">makeArrayIncreasing</span><span class="params">(self, arr1: List[int], arr2: List[int])</span> -&gt; int:</span></span><br><span class="line">        dp = &#123;<span class="number">-1</span>:<span class="number">0</span>&#125;</span><br><span class="line">        arr2.sort()</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> arr1:</span><br><span class="line">            n_dp = collections.defaultdict(<span class="keyword">lambda</span>: float(<span class="string">'inf'</span>))</span><br><span class="line">            <span class="keyword">for</span> key <span class="keyword">in</span> dp:</span><br><span class="line">                <span class="keyword">if</span> a &gt; key:</span><br><span class="line">                    n_dp[a] = min(n_dp[a],dp[key])</span><br><span class="line">                loc = bisect.bisect_right(arr2,key)</span><br><span class="line">                <span class="keyword">if</span> loc &lt; len(arr2):</span><br><span class="line">                    n_dp[arr2[loc]] = min(n_dp[arr2[loc]],dp[key]+<span class="number">1</span>)</span><br><span class="line">            dp = n_dp</span><br><span class="line">        <span class="keyword">if</span> dp:</span><br><span class="line">            <span class="keyword">return</span> min(dp.values())</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<p>详解：</p>
+<p>首先，<code>dp[k] = v</code>表示在当前位置的元素为<code>k</code>时，保证arr1严格递增所需的操作次数为<code>v</code>，我们循环arr1中的元素<code>arr1[i]</code>和dp中的<code>k</code>，在更新时有两种情况：</p>
+<ol>
+<li><p><code>arr1[i] &gt; k</code>，则说明arr1当前位置的元素比<code>k</code>大，不替换arr2中的元素也可以满足递增，转移方程为：<code>dp&#39;[arr1[i]] = min(dp&#39;[arr1[i]], dp[k])</code>。（注意，由于位置<code>i</code>需要用到前一个位置的dp，所以此处用了<code>dp&#39;</code>来表示，代码中则是使用了<code>n_dp</code>）</p>
 </li>
-<li><p>漫射光Diffuse：来自特定方向，它垂直于物体时比倾斜时更明亮。一旦它照射到物体上，则在各个方向上均匀地发散出去，效果为无论视点在哪里它都一样亮，其特征是入射方向唯一、出射方向为任意方向。</p>
+<li><p><code>arr1[i] &lt;= k</code>，此时需要通过<code>arr2</code>进行替代操作。</p>
+<p>但是仔细一想，由于即便是<code>arr1[i] &gt; k</code>的情况下我们也需要维护通过arr2进行替换操作的状态，否则在下一个位置dp时可能会丢掉状态，所以不要写成<code>if(arr1[i]&lt;=k)</code>或者写在1. 的else分支内。</p>
+<p>通过arr2进行转移的方法听起来十分简单。我们需要在arr2中选出比<code>k</code>大的最小的数并将步骤数+1（为什么只需要最小的一个？），因此只需要将arr2排序后，进行二分即可。</p>
 </li>
-<li><p>镜面光Specular：来自特定方向并沿另一方向反射出去，一个平行激光束在高质量的镜面上产生100%的镜面反射，其特征是入射方向和出射方向均唯一。</p>
-</li>
-</ul>
-<h2 id="创建光源"><a href="#创建光源" class="headerlink" title="创建光源"></a><strong>创建光源</strong></h2><p>OpenGL中用函数glLightfv来创建光源，函数原型是：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">glLightfv</span> <span class="params">(GLenum light, GLenum pname, <span class="keyword">const</span> GLfloat *params)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>第一个参数light指定所创建的光源号，如GL_LIGHT0、GL_LIGHT1、…、GL_LIGHT7。 第二个参数pname指定光源特性，这个参数的具体信息见下表所示。 <img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png"> 第三个参数设置相应的光源特性值。 如下，我们便可以定义一个位置在(5,5,5)没有环境光，镜面反射光和漫反射光都为白光的光源<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GLfloat light_ambient[] = &#123; <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span> &#125;;</span><br><span class="line">GLfloat light_diffuse[] = &#123; <span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span> &#125;;</span><br><span class="line">GLfloat light_specular[] = &#123; <span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span> &#125;;</span><br><span class="line">GLfloat light_position[] = &#123; <span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">0</span> &#125;;</span><br><span class="line">glLightfv(GL_LIGHT0, GL_POSITION, light_position);</span><br><span class="line">glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);</span><br><span class="line">glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);</span><br><span class="line">glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);</span><br></pre></td></tr></table></figure></p>
-<p>其中，position是其次坐标系，当第四个参数为0时，表示点光源，为1时表示由前三个数组成向量射来的平型光源。</p>
-<h2 id="Phong-Model与Flat-Model"><a href="#Phong-Model与Flat-Model" class="headerlink" title="Phong Model与Flat Model"></a>Phong Model与Flat Model</h2><p>我们用下列代码控制关照的模式<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!smooth)</span><br><span class="line">	glShadeModel(GL_FLAT);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	glShadeModel(GL_SMOOTH);</span><br></pre></td></tr></table></figure></p>
-<p>然后光照模型的对比如下： <img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/smooth.png"> <img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/flat.png"> 可见，FLAT模式下出现了明显的马赫带。 新版本的OpenGL提供了更加自由的渲染模式，我们在<a href="">下一篇博客</a>中将利用其通过不同的Model渲染新的场景。</p>
+</ol>
+<p>复杂度分析也很简单：“循环arr1，循环dp，二分arr2”，即<code>O(n^2log(n))</code>。</p>
 
       
     </div>
@@ -520,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/18/about-the-forum-with-mr-coordinate-song/" rel="next" title="About the forum with Mr. Coordinate Song">
-                <i class="fa fa-chevron-left"></i> About the forum with Mr. Coordinate Song
+              <a href="/2019/09/02/leetcode-weekly-contest-152/" rel="next" title="LeetCode Weekly Contest 152">
+                <i class="fa fa-chevron-left"></i> LeetCode Weekly Contest 152
               </a>
             
           </div>
@@ -529,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/22/computer-graphics-experiment-iii-part-2-lightmodel-in-opengl-inplemented-via-glsl/" rel="prev" title="Computer Graphics Experiment III Part.2 LightModel in OpenGL (Inplemented via GLSL)">
-                Computer Graphics Experiment III Part.2 LightModel in OpenGL (Inplemented via GLSL) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -717,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#光照模型"><span class="nav-number">1.</span> <span class="nav-text">光照模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建光源"><span class="nav-number">2.</span> <span class="nav-text">创建光源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Phong-Model与Flat-Model"><span class="nav-number">3.</span> <span class="nav-text">Phong Model与Flat Model</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1184-Distance-Between-Bus-Stops"><span class="nav-number">1.</span> <span class="nav-text">1184. Distance Between Bus Stops</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1185-Day-of-the-Week"><span class="nav-number">2.</span> <span class="nav-text">1185. Day of the Week</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1186-Maximum-Subarray-Sum-with-One-Deletion"><span class="nav-number">3.</span> <span class="nav-text">1186. Maximum Subarray Sum with One Deletion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1187-Make-Array-Strictly-Increasing"><span class="nav-number">4.</span> <span class="nav-text">1187. Make Array Strictly Increasing</span></a></li></ol></div>
             
 
           </div>
@@ -872,9 +876,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.bluefissure.com/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/';
-        this.page.identifier = '2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/';
-        this.page.title = 'Computer Graphics Experiment III Part.1 LightModel in OpenGL (based on WalkingMan)';
+        this.page.url = 'https://blog.bluefissure.com/2019/09/08/leetcode-weekly-contest-153/';
+        this.page.identifier = '2019/09/08/leetcode-weekly-contest-153/';
+        this.page.title = 'LeetCode Weekly Contest 153';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');
@@ -1239,6 +1243,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
