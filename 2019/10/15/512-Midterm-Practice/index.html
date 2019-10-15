@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="Just for practice, if you find something wrong, feel free to contact me.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-15T01:35:13.504Z">
+<meta property="og:updated_time" content="2019-10-15T01:54:31.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="512 Midterm Practice">
 <meta name="twitter:description" content="Just for practice, if you find something wrong, feel free to contact me.">
@@ -392,7 +392,7 @@
                 
               
 
-              <time title="Created: 2019-10-15 06:21:08 / Modified: 09:35:13" itemprop="dateCreated datePublished" datetime="2019-10-15T06:21:08+08:00">2019-10-15</time>
+              <time title="Created: 2019-10-15 06:21:08 / Modified: 09:54:31" itemprop="dateCreated datePublished" datetime="2019-10-15T06:21:08+08:00">2019-10-15</time>
             
 
             
@@ -469,8 +469,37 @@ T(n) &= T(n-2)+n^2\\
 &= \Theta(n^3)
 \end{align*}</script><p>b). Try <em>Master Theorm</em> first:<br>$f(n)=\frac{n}{\lg{n}}$</p>
 <script type="math/tex; mode=display">
-\lim_{n->\infty}{\frac{f(n)}{n}} = \lim_{n->\infty}{\frac{1}{\lg{n}}} = 0</script><p>so $f(n)=o(n)$, $T(n)=\Theta(n)$<br>c). TODO</p>
-</li>
+\lim_{n->\infty}{\frac{f(n)}{n}} = \lim_{n->\infty}{\frac{1}{\lg{n}}} = 0</script><p>so $f(n)=o(n)$, $T(n)=\Theta(n)$<br>c). As the <a href="https://math.stackexchange.com/questions/167418/time-complexity-of-tn-tn-2-frac1-logn" target="_blank" rel="noopener">link</a> shows,</p>
+<script type="math/tex; mode=display">
+T(n)=\left\{\begin{array}{}T(0)+\sum_{k=1}^{n/2}\frac{1}{\log(2k)}&\text{if }n\text{ is even}\\T(1)+\sum_{k=1}^{(n-1)/2}\frac{1}{\log(2k+1)}&\text{if }n\text{ is odd}\end{array}\right.\tag{1}</script><p>and</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\sum_{k=1}^{(n-1)/2}\frac{1}{\log(2k+1)}
+&\le\frac{1}{\log(3)}+\int_1^{(n-1)/2}\frac{\mathrm{d}x}{\log(2x+1)}\\
+&={\frac{1}{\log(3)}+\frac12\int_3^8\frac{\mathrm{d}x}{\log(x)}}+\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}\tag{2}
+\end{align}</script><p>and </p>
+<script type="math/tex; mode=display">
+\begin{align}
+\sum_{k=1}^{n/2}\frac{1}{\log(2k)}
+&\le\frac{1}{\log(2)}+\int_1^{n/2}\frac{\mathrm{d}x}{\log(2x)}\\
+&={\frac{1}{\log(2)}+\frac12\int_2^8\frac{\mathrm{d}x}{\log(x)}}+\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}\tag{3}
+\end{align}</script><p>For $n \ge 8$, we have that $\log(x)\le2(\log(x)-1)$, thus</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}
+&\le\int_8^n\frac{(\log(x)-1)\mathrm{d}x}{\log(x)^2}\\
+&=\frac{n}{\log(n)}{-\frac{8}{\log(8)}}\tag{4}
+\end{align}</script><p>Combining $(1)$ though $(4)$, we get that</p>
+<script type="math/tex; mode=display">
+T(n)\le{C}+\frac{n}{\log(n)}=O\left(\frac{n}{\log(n)}\right)\tag{5}</script><p>and we have</p>
+<script type="math/tex; mode=display">
+T(n) = \sum{\frac{1}{\log{i}}} \ge \sum{\frac{1}{\log{n}}} = \lfloor\frac{n}{2}\rfloor \frac{1}{\log{n}} \tag{6}</script><p>So</p>
+<script type="math/tex; mode=display">
+T(n) = \Omega(\frac{n}{\log{n}}) \tag{7}</script><p>Combining $(5)$ and $(7)$ we have</p>
+<script type="math/tex; mode=display">
+T(n) = \Theta(\frac{n}{\log{n}})</script></li>
+</ol>
+<ol>
 <li><p>BWTRPUZ</p>
 </li>
 <li><p>Can’t understand, <strong>Mergesort</strong> doesn’t compare indices.</p>
