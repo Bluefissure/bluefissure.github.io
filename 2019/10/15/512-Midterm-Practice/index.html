@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="Just for practice, if you find something wrong, feel free to contact me.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-15T01:13:05.020Z">
+<meta property="og:updated_time" content="2019-10-15T01:33:18.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="512 Midterm Practice">
 <meta name="twitter:description" content="Just for practice, if you find something wrong, feel free to contact me.">
@@ -392,7 +392,7 @@
                 
               
 
-              <time title="Created: 2019-10-15 06:21:08 / Modified: 09:13:05" itemprop="dateCreated datePublished" datetime="2019-10-15T06:21:08+08:00">2019-10-15</time>
+              <time title="Created: 2019-10-15 06:21:08 / Modified: 09:33:18" itemprop="dateCreated datePublished" datetime="2019-10-15T06:21:08+08:00">2019-10-15</time>
             
 
             
@@ -445,15 +445,16 @@
 <ol>
 <li><p>See <a href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf" target="_blank" rel="noopener">solutions</a></p>
 </li>
-<li><p>From <a href="https://en.wikipedia.org/wiki/Stirling%27s_approximation" target="_blank" rel="noopener">Stirling’s approximation</a> we know $ n! \sim \sqrt{2\pi n}(\frac{n}{e})^n$, so $n!=\Theta(n^n)$ :</p>
+<li><p>We have $T(n)   = n T(n-1) + 1 $ and we can prove $ n!\le{T(n)}\le{2n!-1}$ by induction:</p>
+<ul>
+<li><p>For $n=1$, it works.</p>
+</li>
+<li><p>For $n\ge{2}$, </p>
 <script type="math/tex; mode=display">
- \begin{align*}
- T(n)   &= n T(n-1) + 1\\
-  &= n((n-1)((n-2)T(n-3) + 1) + 1) + 1\\
-  &= n!T(0) + n + n(n-1) + ... + n! + 1\\
-  &= n + n(n-1) + ... + n! + n! + 1\\
- &= \Theta(n^1) + \Theta(n^2) + \Theta(n^3) + .... + \Theta(n^n) = \Theta(n^n)
- \end{align*}</script></li>
+n! = n((n-1)!) \le T(n) = n(T(n-1)+1) + 1 \le n(2(n-1)!-1)=2n!-n+1 \le 2n!-1</script></li>
+</ul>
+<p>So, $T(n)=\Theta{(n!)}$</p>
+</li>
 <li><p>a). $n^3 = \omega(\lg^2n)$</p>
 <p>b). $\lg(n^2) = 2\lg(n)$, $\lg{2^{\sqrt{2\lg{n}}}}=\sqrt{2\lg{n}}\lg{2}$, so $\lg{n^2}=\omega{(\lg{2^{\sqrt{2\lg{n}}}})}$, thus ${n^2}=\omega{({2^{\sqrt{2\lg{n}}}})}$</p>
 <p>c). $\Theta$</p>
