@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="Just for practice, if you find something wrong, feel free to contact me.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-15T02:02:44.826Z">
+<meta property="og:updated_time" content="2019-10-15T02:57:02.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="512 Midterm Practice">
 <meta name="twitter:description" content="Just for practice, if you find something wrong, feel free to contact me.">
@@ -392,7 +392,7 @@
                 
               
 
-              <time title="Created: 2019-10-15 06:21:08 / Modified: 10:02:44" itemprop="dateCreated datePublished" datetime="2019-10-15T06:21:08+08:00">2019-10-15</time>
+              <time title="Created: 2019-10-15 06:21:08 / Modified: 10:57:02" itemprop="dateCreated datePublished" datetime="2019-10-15T06:21:08+08:00">2019-10-15</time>
             
 
             
@@ -505,7 +505,7 @@ T(n) = \Theta(\frac{n}{\log{n}})</script></li>
 <li><p>See <a href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf" target="_blank" rel="noopener">solutions</a></p>
 </li>
 <li><p>a).</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">kthSmallest(a, k):\\</span><br><span class="line">  if len(a) == 1 and k==1:</span><br><span class="line">    return a[0]</span><br><span class="line">  p = partition(a)  // p &lt;= len(a) * 0.6</span><br><span class="line">  if k &lt;= p:</span><br><span class="line">    return kthSmallest(a[:p], k)</span><br><span class="line">  else:</span><br><span class="line">    return kthSmallest(a[p:], k-p)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">kthSmallest(a, k):</span><br><span class="line">  if len(a) == 1 and k&lt;=1:</span><br><span class="line">    return a[0]</span><br><span class="line">  p = partition(a)  // p &lt;= len(a) * 0.6</span><br><span class="line">  if k &lt;= p:</span><br><span class="line">    return kthSmallest(a[:p], k)</span><br><span class="line">  else:</span><br><span class="line">    return kthSmallest(a[p:], k-p)</span><br></pre></td></tr></table></figure>
 <p><code>a[:p]</code> means <code>a[0], a[1], a[2], ... , a[p-1]</code>,</p>
 <p><code>a[p:]</code> means <code>a[p], a[p+1], ... , a[len(a)-1]</code></p>
 <p>b). $T(n) = T(\frac{n}{5/3}) + n$</p>
@@ -524,7 +524,10 @@ n^{\log_{5/3}{1}} = 1</script><p>so $f(n)=\Omega(1)$,</p>
 </li>
 <li><p>See <a href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf" target="_blank" rel="noopener">solutions</a></p>
 </li>
-<li><p>We can use something like <a href="https://en.wikipedia.org/wiki/Segment_tree" target="_blank" rel="noopener">Segment Tree</a> to do this. TODO.</p>
+<li><p>We can use something like <a href="https://en.wikipedia.org/wiki/Segment_tree" target="_blank" rel="noopener">Segment Tree</a> to do this.<br>a).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">MaxSum(1, n):</span><br><span class="line">  pre_sum[0] = 0</span><br><span class="line">  for i = 1 to n:  // O(n)</span><br><span class="line">    pre_sum[i] = pre_sum[i-1] + a[i]</span><br><span class="line">  return Query(1, n)[1]</span><br><span class="line"></span><br><span class="line">MyMax(x, y):  // O(1)  </span><br><span class="line">  if x[0] &gt; y[0]:</span><br><span class="line">    return x</span><br><span class="line">  return y</span><br><span class="line"></span><br><span class="line">Sum(l, r):  // O(1)</span><br><span class="line">  return pre_sum[r] - pre_sum[l-1]</span><br><span class="line"></span><br><span class="line">Query(l, r):</span><br><span class="line">  if r &lt; l: return (-inf, -1, -1), (-inf, -1, -1), (-inf, -1, -1)</span><br><span class="line">  if l == r: return (a[l], l, l), (a[l], l, l), (a[l], l, l) </span><br><span class="line">  mid = (l + r) // 2</span><br><span class="line">  left_pre, left_max, left_suf = Query(l, mid - 1)</span><br><span class="line">  right_pre, right_max, right_suf = Query(mid, r)</span><br><span class="line">  if Sum(l, mid - 1) + right_pre[0] &gt; left_pre[0]:</span><br><span class="line">    self_pre = (Sum(l, mid - 1) + right_pre[0], l, right_pre[2])</span><br><span class="line">  else:</span><br><span class="line">    self_pre = left_pre</span><br><span class="line">  if left_suf[0] + Sum(mid, r) &gt; right_suf[0]:</span><br><span class="line">    self_suf = (left_suf[0] + Sum(mid, r), left_suf[1], r)</span><br><span class="line">  else:</span><br><span class="line">    self_suf = right_suf</span><br><span class="line">  self_max = MyMax(left_max, right_max)</span><br><span class="line">  self_max = MyMax(self_max, (left_suf[0]+right_pre[0], left_suf[1], right_pre[2]))</span><br><span class="line">  self_max = MyMax(self_max, MyMax(left_pre, right_suf))</span><br><span class="line">  return self_pre, self_max, self_suf</span><br></pre></td></tr></table></figure>
+<p>b). $T(n)=2T(n/2)+C$, so $T(n)=\Theta(n)$ </p>
+<p>c). If using dynamic programming, we can get another $O(n)$ algorithm, transmission formula is <code>dp[i] = max(a[i], dp[i-1] + a[i])</code>.</p>
 </li>
 </ol>
 
