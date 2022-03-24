@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.bluefissure.com/2017/04/02/computer-graphics-experiment-ii/unv.png">
 <meta property="article:published_time" content="2017-04-02T15:35:34.000Z">
-<meta property="article:modified_time" content="2018-11-13T04:05:55.815Z">
+<meta property="article:modified_time" content="2022-03-24T06:52:45.327Z">
 <meta property="article:author" content="Bluefissure">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://blog.bluefissure.com/2017/04/02/computer-graphics-experiment-ii/unv.png">
@@ -183,7 +183,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2018-11-13 12:05:55" itemprop="dateModified" datetime="2018-11-13T12:05:55+08:00">2018-11-13</time>
+                <time title="Modified: 2022-03-24 14:52:45" itemprop="dateModified" datetime="2022-03-24T14:52:45+08:00">2022-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -228,15 +228,21 @@ target="_blank" rel="noopener" href="http://www.bilibili.com/video/av9570127/">a
 <span id="more"></span> UNV相机及变换 --------</p>
 <p>首先UNV相机主要由三个单位向量表示：</p>
 <ul>
-<li>$ $:指向目标的视线向量</li>
-<li>$ $:指向相机右方的向量</li>
-<li>$ $:指向相机上方的向量</li>
+<li><span class="math inline">\(\overrightarrow { n
+}\)</span>:指向目标的视线向量</li>
+<li><span class="math inline">\(\overrightarrow { u
+}\)</span>:指向相机右方的向量</li>
+<li><span class="math inline">\(\overrightarrow {
+v }\)</span>:指向相机上方的向量</li>
 </ul>
 <p>而这三个组成的向量可以由下面三个向量（点）来求得：</p>
 <ul>
-<li>$ $:相机位置</li>
-<li>$ $:视线目标位置</li>
-<li>$ $:指向空间上方的向量</li>
+<li><span class="math inline">\(\overrightarrow { pos
+}\)</span>:相机位置</li>
+<li><span class="math inline">\(\overrightarrow {
+target }\)</span>:视线目标位置</li>
+<li><span class="math inline">\(\overrightarrow {
+up }\)</span>:指向空间上方的向量</li>
 </ul>
 <p>具体的计算公式为： <span class="math display">\[\begin{cases}
 \overrightarrow { n } =\overrightarrow { target } -\overrightarrow { pos
@@ -244,24 +250,43 @@ target="_blank" rel="noopener" href="http://www.bilibili.com/video/av9570127/">a
 \overrightarrow { n }  \\ \overrightarrow { v } =\overrightarrow { u }
 \times \overrightarrow { n }  \end{cases}\]</span>
 有了这几个向量，我们就可以首先实现平移变换了： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">GLCamera::slide</span><span class="params">(<span class="type">float</span> du, <span class="type">float</span> dv, <span class="type">float</span> dn,<span class="type">float</span> dup)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">m_pos</span>(<span class="number">0</span>) = <span class="built_in">m_pos</span>(<span class="number">0</span>) + du*u.<span class="built_in">x</span>() + dv*v.<span class="built_in">x</span>() + dn*n.<span class="built_in">x</span>() + dup*m_up.<span class="built_in">x</span>();</span><br><span class="line">    <span class="built_in">m_pos</span>(<span class="number">1</span>) = <span class="built_in">m_pos</span>(<span class="number">1</span>) + du*u.<span class="built_in">y</span>() + dv*v.<span class="built_in">y</span>() + dn*n.<span class="built_in">y</span>() + dup*m_up.<span class="built_in">y</span>();</span><br><span class="line">    <span class="built_in">m_pos</span>(<span class="number">2</span>) = <span class="built_in">m_pos</span>(<span class="number">2</span>) + du*u.<span class="built_in">z</span>() + dv*v.<span class="built_in">z</span>() + dn*n.<span class="built_in">z</span>() + dup*m_up.<span class="built_in">z</span>();</span><br><span class="line">    <span class="built_in">m_target</span>(<span class="number">0</span>) = <span class="built_in">m_target</span>(<span class="number">0</span>) + du*u.<span class="built_in">x</span>() + dv*v.<span class="built_in">x</span>() + dn*n.<span class="built_in">x</span>() + dup*m_up.<span class="built_in">x</span>();</span><br><span class="line">    <span class="built_in">m_target</span>(<span class="number">1</span>) = <span class="built_in">m_target</span>(<span class="number">1</span>) + du*u.<span class="built_in">y</span>() + dv*v.<span class="built_in">y</span>() + dn*n.<span class="built_in">y</span>() + dup*m_up.<span class="built_in">y</span>();</span><br><span class="line">    <span class="built_in">m_target</span>(<span class="number">2</span>) = <span class="built_in">m_target</span>(<span class="number">2</span>) + du*u.<span class="built_in">z</span>() + dv*v.<span class="built_in">z</span>() + dn*n.<span class="built_in">z</span>() + dup*m_up.<span class="built_in">z</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 其中，du dv
-dn dup分别是在$ $, $ $, $ $, $ $向量方向上面的平移距离。
+dn dup分别是在<span class="math inline">\(\overrightarrow { u
+}\)</span>, <span class="math inline">\(\overrightarrow { v }\)</span>,
+<span class="math inline">\(\overrightarrow { n }\)</span>, <span
+class="math inline">\(\overrightarrow { up
+}\)</span>向量方向上面的平移距离。
 然后将键盘的按键事件与函数绑定，在display函数中调用glulookAt函数就好了：
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">gluLookAt</span>(cam.m_pos.<span class="built_in">x</span>(), cam.m_pos.<span class="built_in">y</span>(), cam.m_pos.<span class="built_in">z</span>(), </span><br><span class="line">    cam.m_target.<span class="built_in">x</span>(), cam.m_target.<span class="built_in">y</span>(), cam.m_target.<span class="built_in">z</span>(), </span><br><span class="line">    cam.m_up.<span class="built_in">x</span>(), cam.m_up.<span class="built_in">y</span>(), cam.m_up.<span class="built_in">z</span>())</span><br></pre></td></tr></table></figure></p>
 <h2 id="鼠标的移动与视野变换">鼠标的移动与视野变换</h2>
 <p>鼠标的移动产生视野的变换似乎是一个比较麻烦的事情，但是实际上这种视野的变换无非是一系列对unv三个向量的旋转操作，下面从两个维度说明下鼠标的移动对视野产生的影响应该怎么计算：
 <img src="/2017/04/02/computer-graphics-experiment-ii/unv.png" class=""></p>
 <h3 id="x方向变化鼠标左右移动">x方向变化——鼠标左右移动</h3>
-<p>如图，结合我们多年守望先锋的经验，左右移动鼠标是$ $ $ $ 两个向量绕着$
-$ 进行旋转，实际上，我们只需要将$ <span
-class="math inline">\(进行旋转后计算出旋转后对应的\)</span> <span
-class="math inline">\(向量，并重新应用之前的计算公式计算\)</span> $ $
-$ $ $。</p>
+<p>如图，结合我们多年守望先锋的经验，左右移动鼠标是<span
+class="math inline">\(\overrightarrow { u }\)</span> <span
+class="math inline">\(\overrightarrow { n }\)</span> 两个向量绕着<span
+class="math inline">\(\overrightarrow {
+v }\)</span> 进行旋转，实际上，我们只需要将<span
+class="math inline">\(\overrightarrow { n
+}\)</span>进行旋转后计算出旋转后对应的<span
+class="math inline">\(\overrightarrow { target
+}\)</span>向量，并重新应用之前的计算公式计算<span
+class="math inline">\(\overrightarrow { u }\)</span> <span
+class="math inline">\(\overrightarrow { n }\)</span> <span
+class="math inline">\(\overrightarrow { v }\)</span>。</p>
 <h3 id="y方向变化鼠标上下移动">y方向变化——鼠标上下移动</h3>
-<p>同样的，结合我们多年76对空打法鸡的经验，上下移动鼠标是$ $ $
-$ 两个向量绕着$ $ 进行旋转，实际上，我们也只需要将$ <span
-class="math inline">\(进行旋转后计算出旋转后对应的\)</span> <span
-class="math inline">\(向量，并重新应用之前的计算公式计算\)</span> $ $
-$ $ <span class="math inline">\(。   注意下代码中的\)</span>x$ <span
+<p>同样的，结合我们多年76对空打法鸡的经验，上下移动鼠标是<span
+class="math inline">\(\overrightarrow { v }\)</span> <span
+class="math inline">\(\overrightarrow { n }\)</span> 两个向量绕着<span
+class="math inline">\(\overrightarrow { u
+}\)</span> 进行旋转，实际上，我们也只需要将<span
+class="math inline">\(\overrightarrow { n
+}\)</span>进行旋转后计算出旋转后对应的<span
+class="math inline">\(\overrightarrow { target
+}\)</span>向量，并重新应用之前的计算公式计算<span
+class="math inline">\(\overrightarrow { u }\)</span> <span
+class="math inline">\(\overrightarrow { n }\)</span> <span
+class="math inline">\(\overrightarrow { v }\)</span>。  
+注意下代码中的<span class="math inline">\(x\)</span> <span
 class="math inline">\(y\)</span>和上面所说的<span
 class="math inline">\(x\)</span> <span
 class="math inline">\(y\)</span>是反的，由于默认的二维数组是<span
