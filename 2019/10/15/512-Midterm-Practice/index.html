@@ -203,60 +203,127 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Just for practice, if you find something wrong, feel free to <a href="mailto:fissure.blue@rutgers.edu">contact me</a>.</p>
-<span id="more"></span>
-
-<ol>
-<li><p>See <a target="_blank" rel="noopener" href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf">solutions</a></p>
-</li>
-<li><p>We have $T(n)   &#x3D; n T(n-1) + 1 $ and we can prove $ n!\le{T(n)}\le{2n!-1}$ by induction:</p>
+        <p>Just for practice, if you find something wrong, feel free to <a
+href="mailto:fissure.blue@rutgers.edu">contact me</a>. <span id="more"></span></p>
+<ol type="1">
+<li><p>See <a
+target="_blank" rel="noopener" href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf">solutions</a></p></li>
+<li><p>We have $T(n) = n T(n-1) + 1 $ and we can prove $ n!$ by
+induction:</p>
 <ul>
-<li><p>For $n&#x3D;1$, it works.</p>
-</li>
-<li><p>For $n\ge{2}$,<br>$$<br>n! &#x3D; n((n-1)!) \le T(n) &#x3D; n(T(n-1)+1) + 1 \le n(2(n-1)!-1)+1&#x3D;2n!-n+1 \le 2n!-1<br>$$</p>
-</li>
+<li><p>For <span class="math inline">\(n=1\)</span>, it works.</p></li>
+<li><p>For <span class="math inline">\(n\ge{2}\)</span>, <span
+class="math display">\[
+n! = n((n-1)!) \le T(n) = n(T(n-1)+1) + 1 \le n(2(n-1)!-1)+1=2n!-n+1 \le
+2n!-1
+\]</span></p></li>
 </ul>
-<p>So, $T(n)&#x3D;\Theta{(n!)}$</p>
-</li>
-<li><p>a). $n^3 &#x3D; \omega(\lg^2n)$</p>
-<p>b). $\lg(n^2) &#x3D; 2\lg(n)$, $\lg{2^{\sqrt{2\lg{n}}}}&#x3D;\sqrt{2\lg{n}}\lg{2}$, so $\lg{n^2}&#x3D;\omega{(\lg{2^{\sqrt{2\lg{n}}}})}$, thus ${n^2}&#x3D;\omega{({2^{\sqrt{2\lg{n}}}})}$</p>
-<p>c). $\Theta$</p>
-<p>d). $(3&#x2F;2)^n&#x3D;o(2^n)$</p>
-</li>
-<li><p>a).<br>$$<br>\begin{align*}<br>T(n) &amp;&#x3D; T(n-2)+n^2\<br>&amp;&#x3D; \frac{n}{2}T(0) + \sum_{i&#x3D;0}^{\lfloor{\frac{n}{2}}\rfloor}{(n-2i)^2}\<br>&amp;&#x3D; \Theta(n) + \Theta(n^3)\<br>&amp;&#x3D; \Theta(n^3)<br>\end{align*}<br>$$<br>b). Try <em>Master Theorm</em> first:<br>$f(n)&#x3D;\frac{n}{\lg{n}}$<br>$$<br>\lim_{n-&gt;\infty}{\frac{f(n)}{n}} &#x3D; \lim_{n-&gt;\infty}{\frac{1}{\lg{n}}} &#x3D; 0<br>$$<br>so $f(n)&#x3D;o(n)$, $T(n)&#x3D;\Theta(n)$<br>c). As the <a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/167418/time-complexity-of-tn-tn-2-frac1-logn">link</a> shows,<br>$$<br>T(n)&#x3D;\left{\begin{array}{}T(0)+\sum_{k&#x3D;1}^{n&#x2F;2}\frac{1}{\log(2k)}&amp;\text{if }n\text{ is even}\T(1)+\sum_{k&#x3D;1}^{(n-1)&#x2F;2}\frac{1}{\log(2k+1)}&amp;\text{if }n\text{ is odd}\end{array}\right.\tag{1}<br>$$<br>and<br>$$<br>\begin{align}<br>\sum_{k&#x3D;1}^{(n-1)&#x2F;2}\frac{1}{\log(2k+1)}<br>&amp;\le\frac{1}{\log(3)}+\int_1^{(n-1)&#x2F;2}\frac{\mathrm{d}x}{\log(2x+1)}\<br>&amp;&#x3D;{\frac{1}{\log(3)}+\frac12\int_3^8\frac{\mathrm{d}x}{\log(x)}}+\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}\tag{2}<br>\end{align}<br>$$<br>and<br>$$<br>\begin{align}<br>\sum_{k&#x3D;1}^{n&#x2F;2}\frac{1}{\log(2k)}<br>&amp;\le\frac{1}{\log(2)}+\int_1^{n&#x2F;2}\frac{\mathrm{d}x}{\log(2x)}\<br>&amp;&#x3D;{\frac{1}{\log(2)}+\frac12\int_2^8\frac{\mathrm{d}x}{\log(x)}}+\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}\tag{3}<br>\end{align}<br>$$<br>For $n \ge 8$, we have that $\log(x)\le2(\log(x)-1)$, thus<br>$$<br>\begin{align}<br>\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}<br>&amp;\le\int_8^n\frac{(\log(x)-1)\mathrm{d}x}{\log(x)^2}\<br>&amp;&#x3D;\frac{n}{\log(n)}{-\frac{8}{\log(8)}}\tag{4}<br>\end{align}<br>$$<br>Combining $(1)$ though $(4)$, we get that<br>$$<br>T(n)\le{C}+\frac{n}{\log(n)}&#x3D;O\left(\frac{n}{\log(n)}\right)\tag{5}<br>$$<br>and we have<br>$$<br>T(n) &#x3D; \sum{\frac{1}{\log{i}}} \ge \sum{\frac{1}{\log{n}}} &#x3D; \lfloor\frac{n}{2}\rfloor \frac{1}{\log{n}} \tag{6}<br>$$<br>So<br>$$<br>T(n) &#x3D; \Omega(\frac{n}{\log{n}}) \tag{7}<br>$$<br>Combining $(5)$ and $(7)$ we have<br>$$<br>T(n) &#x3D; \Theta(\frac{n}{\log{n}})<br>$$</p>
-</li>
-<li><p>BWTRPUZ</p>
-</li>
-<li><p>Can’t understand, <strong>Mergesort</strong> doesn’t compare indices.</p>
-</li>
-<li><p>See <a target="_blank" rel="noopener" href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf">solutions</a></p>
-</li>
+<p>So, <span class="math inline">\(T(n)=\Theta{(n!)}\)</span></p></li>
+<li><p>a). <span class="math inline">\(n^3 = \omega(\lg^2n)\)</span></p>
+<p>b). <span class="math inline">\(\lg(n^2) = 2\lg(n)\)</span>, <span
+class="math inline">\(\lg{2^{\sqrt{2\lg{n}}}}=\sqrt{2\lg{n}}\lg{2}\)</span>,
+so <span
+class="math inline">\(\lg{n^2}=\omega{(\lg{2^{\sqrt{2\lg{n}}}})}\)</span>,
+thus <span
+class="math inline">\({n^2}=\omega{({2^{\sqrt{2\lg{n}}}})}\)</span></p>
+<p>c). <span class="math inline">\(\Theta\)</span></p>
+<p>d). <span class="math inline">\((3/2)^n=o(2^n)\)</span></p></li>
+<li><p>a). <span class="math display">\[
+\begin{align*}
+T(n) &amp;= T(n-2)+n^2\\
+&amp;= \frac{n}{2}T(0) +
+\sum_{i=0}^{\lfloor{\frac{n}{2}}\rfloor}{(n-2i)^2}\\
+&amp;= \Theta(n) + \Theta(n^3)\\
+&amp;= \Theta(n^3)
+\end{align*}
+\]</span> b). Try <em>Master Theorm</em> first: <span
+class="math inline">\(f(n)=\frac{n}{\lg{n}}\)</span> <span
+class="math display">\[
+\lim_{n-&gt;\infty}{\frac{f(n)}{n}} =
+\lim_{n-&gt;\infty}{\frac{1}{\lg{n}}} = 0
+\]</span> so <span class="math inline">\(f(n)=o(n)\)</span>, <span
+class="math inline">\(T(n)=\Theta(n)\)</span> c). As the <a
+target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/167418/time-complexity-of-tn-tn-2-frac1-logn">link</a>
+shows, <span class="math display">\[
+T(n)=\left\{\begin{array}{}T(0)+\sum_{k=1}^{n/2}\frac{1}{\log(2k)}&amp;\text{if
+}n\text{ is
+even}\\T(1)+\sum_{k=1}^{(n-1)/2}\frac{1}{\log(2k+1)}&amp;\text{if
+}n\text{ is odd}\end{array}\right.\tag{1}
+\]</span> and <span class="math display">\[
+\begin{align}
+\sum_{k=1}^{(n-1)/2}\frac{1}{\log(2k+1)}
+&amp;\le\frac{1}{\log(3)}+\int_1^{(n-1)/2}\frac{\mathrm{d}x}{\log(2x+1)}\\
+&amp;={\frac{1}{\log(3)}+\frac12\int_3^8\frac{\mathrm{d}x}{\log(x)}}+\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}\tag{2}
+\end{align}
+\]</span> and <span class="math display">\[
+\begin{align}
+\sum_{k=1}^{n/2}\frac{1}{\log(2k)}
+&amp;\le\frac{1}{\log(2)}+\int_1^{n/2}\frac{\mathrm{d}x}{\log(2x)}\\
+&amp;={\frac{1}{\log(2)}+\frac12\int_2^8\frac{\mathrm{d}x}{\log(x)}}+\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}\tag{3}
+\end{align}
+\]</span> For <span class="math inline">\(n \ge 8\)</span>, we have that
+<span class="math inline">\(\log(x)\le2(\log(x)-1)\)</span>, thus <span
+class="math display">\[
+\begin{align}
+\frac12\int_8^n\frac{\mathrm{d}x}{\log(x)}
+&amp;\le\int_8^n\frac{(\log(x)-1)\mathrm{d}x}{\log(x)^2}\\
+&amp;=\frac{n}{\log(n)}{-\frac{8}{\log(8)}}\tag{4}
+\end{align}
+\]</span> Combining <span class="math inline">\((1)\)</span> though
+<span class="math inline">\((4)\)</span>, we get that <span
+class="math display">\[
+T(n)\le{C}+\frac{n}{\log(n)}=O\left(\frac{n}{\log(n)}\right)\tag{5}
+\]</span> and we have <span class="math display">\[
+T(n) = \sum{\frac{1}{\log{i}}} \ge \sum{\frac{1}{\log{n}}} =
+\lfloor\frac{n}{2}\rfloor \frac{1}{\log{n}} \tag{6}
+\]</span> So <span class="math display">\[
+T(n) = \Omega(\frac{n}{\log{n}}) \tag{7}
+\]</span> Combining <span class="math inline">\((5)\)</span> and <span
+class="math inline">\((7)\)</span> we have <span class="math display">\[
+T(n) = \Theta(\frac{n}{\log{n}})
+\]</span></p></li>
+<li><p>BWTRPUZ</p></li>
+<li><p>Can't understand, <strong>Mergesort</strong> doesn't compare
+indices.</p></li>
+<li><p>See <a
+target="_blank" rel="noopener" href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf">solutions</a></p></li>
 <li><p>a).</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">kthSmallest(a, k):</span><br><span class="line">  if len(a) == 1 and k&lt;=1:</span><br><span class="line">    return a[0]</span><br><span class="line">  p = partition(a)  // p &lt;= len(a) * 0.6</span><br><span class="line">  if k &lt;= p:</span><br><span class="line">    return kthSmallest(a[:p], k)</span><br><span class="line">  else:</span><br><span class="line">    return kthSmallest(a[p:], k-p)</span><br></pre></td></tr></table></figure>
-
-<p><code>a[:p]</code> means <code>a[0], a[1], a[2], ... , a[p-1]</code>,</p>
-<p><code>a[p:]</code> means <code>a[p], a[p+1], ... , a[len(a)-1]</code></p>
-<p>b). $T(n) &#x3D; T(\frac{n}{5&#x2F;3}) + n$</p>
-<p>c).<br>$$<br>n^{\log_{5&#x2F;3}{1}} &#x3D; 1<br>$$<br>so $f(n)&#x3D;\Omega(1)$,</p>
-<p>in order to find $0&lt;c&lt;1$ s.t. $f(\frac{n}{5&#x2F;3})\le{cf(n)}$, $\frac{n}{5&#x2F;3}\le{cn}$, just let $c&#x3D;\frac{3}{5}$ </p>
-<p>so $T(n)&#x3D;\Theta(f(n))&#x3D;\Theta(n)$, is leaner as well.</p>
-</li>
-<li><p>a). </p>
+<p><code>a[:p]</code> means
+<code>a[0], a[1], a[2], ... , a[p-1]</code>,</p>
+<p><code>a[p:]</code> means
+<code>a[p], a[p+1], ... , a[len(a)-1]</code></p>
+<p>b). <span class="math inline">\(T(n) = T(\frac{n}{5/3}) +
+n\)</span></p>
+<p>c). <span class="math display">\[
+n^{\log_{5/3}{1}} = 1
+\]</span> so <span class="math inline">\(f(n)=\Omega(1)\)</span>,</p>
+<p>in order to find <span class="math inline">\(0&lt;c&lt;1\)</span>
+s.t. <span class="math inline">\(f(\frac{n}{5/3})\le{cf(n)}\)</span>,
+<span class="math inline">\(\frac{n}{5/3}\le{cn}\)</span>, just let
+<span class="math inline">\(c=\frac{3}{5}\)</span></p>
+<p>so <span class="math inline">\(T(n)=\Theta(f(n))=\Theta(n)\)</span>,
+is leaner as well.</p></li>
+<li><p>a).</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">isSemiconnected(G):</span><br><span class="line">  V, E = G</span><br><span class="line">  meta_G = compute_SCC_meta(G)  // which costs O(|V|+|E|)</span><br><span class="line">  Vm, Em = meta_G</span><br><span class="line">  if not connected(meta_G):  // which costs O(|Vm|+|Em|)</span><br><span class="line">    return Flase</span><br><span class="line">  Vt = topo_sort(meta_G)  // which costs O(|Vm|+|Em|)</span><br><span class="line">  flag = True</span><br><span class="line">  for i in range(len(Vt)-1):  // which costs O(|Vm|)</span><br><span class="line">    v, u = Vt[i], Vt[i+1]</span><br><span class="line">    flag &amp;= check whether edge (v, u) exists // which costs O(1) when edges are store in matrix</span><br><span class="line">  return flag</span><br></pre></td></tr></table></figure>
-
-<p>b). Since <code>Vm&lt;=V, Em&lt;=E</code>, as the comments on the right, we have $T&#x3D;O(|V|+|E|)$</p>
-<p>c). If a graph is semiconnected, its meta graph of SCC must be a link(only one single path), otherwise the subtrees of the branching node cannot visit each other.</p>
-</li>
-<li><p>See <a target="_blank" rel="noopener" href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf">solutions</a></p>
-</li>
-<li><p>See <a target="_blank" rel="noopener" href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf">solutions</a></p>
-</li>
-<li><p>We can use something like <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Segment_tree">Segment Tree</a> to do this.<br>  a).</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">MaxSum(1, n):</span><br><span class="line">  pre_sum[0] = 0</span><br><span class="line">  for i = 1 to n:  // O(n)</span><br><span class="line">    pre_sum[i] = pre_sum[i-1] + a[i]</span><br><span class="line">  return Query(1, n)[1]</span><br><span class="line"></span><br><span class="line">MyMax(x, y):  // O(1)  </span><br><span class="line">  if x[0] &gt; y[0]:</span><br><span class="line">    return x</span><br><span class="line">  return y</span><br><span class="line"></span><br><span class="line">Sum(l, r):  // O(1)</span><br><span class="line">  return pre_sum[r] - pre_sum[l-1]</span><br><span class="line"></span><br><span class="line">Query(l, r):</span><br><span class="line">  if r &lt; l: return (-inf, -1, -1), (-inf, -1, -1), (-inf, -1, -1)</span><br><span class="line">  if l == r: return (a[l], l, l), (a[l], l, l), (a[l], l, l) </span><br><span class="line">  mid = (l + r) // 2</span><br><span class="line">  left_pre, left_max, left_suf = Query(l, mid - 1)</span><br><span class="line">  right_pre, right_max, right_suf = Query(mid, r)</span><br><span class="line">  if Sum(l, mid - 1) + right_pre[0] &gt; left_pre[0]:</span><br><span class="line">    self_pre = (Sum(l, mid - 1) + right_pre[0], l, right_pre[2])</span><br><span class="line">  else:</span><br><span class="line">    self_pre = left_pre</span><br><span class="line">  if left_suf[0] + Sum(mid, r) &gt; right_suf[0]:</span><br><span class="line">    self_suf = (left_suf[0] + Sum(mid, r), left_suf[1], r)</span><br><span class="line">  else:</span><br><span class="line">    self_suf = right_suf</span><br><span class="line">  self_max = MyMax(left_max, right_max)</span><br><span class="line">  self_max = MyMax(self_max, (left_suf[0]+right_pre[0], left_suf[1], right_pre[2]))</span><br><span class="line">  self_max = MyMax(self_max, MyMax(left_pre, right_suf))</span><br><span class="line">  return self_pre, self_max, self_suf</span><br></pre></td></tr></table></figure>
-<p>  b). $T(n)&#x3D;2T(n&#x2F;2)+C$, so $T(n)&#x3D;\Theta(n)$</p>
-</li>
+<p>b). Since <code>Vm&lt;=V, Em&lt;=E</code>, as the comments on the
+right, we have <span class="math inline">\(T=O(|V|+|E|)\)</span></p>
+<p>c). If a graph is semiconnected, its meta graph of SCC must be a
+link(only one single path), otherwise the subtrees of the branching node
+cannot visit each other.</p></li>
+<li><p>See <a
+target="_blank" rel="noopener" href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf">solutions</a></p></li>
+<li><p>See <a
+target="_blank" rel="noopener" href="https://content.sakai.rutgers.edu/access/content/group/d0cb5ec4-ecb5-4b18-9901-2c9e0f3bdf6d/Study%20Guides/practice_exam1_solution.pdf">solutions</a></p></li>
+<li><p>We can use something like <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Segment_tree">Segment Tree</a> to do
+this. a). <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">MaxSum(1, n):</span><br><span class="line">  pre_sum[0] = 0</span><br><span class="line">  for i = 1 to n:  // O(n)</span><br><span class="line">    pre_sum[i] = pre_sum[i-1] + a[i]</span><br><span class="line">  return Query(1, n)[1]</span><br><span class="line"></span><br><span class="line">MyMax(x, y):  // O(1)  </span><br><span class="line">  if x[0] &gt; y[0]:</span><br><span class="line">    return x</span><br><span class="line">  return y</span><br><span class="line"></span><br><span class="line">Sum(l, r):  // O(1)</span><br><span class="line">  return pre_sum[r] - pre_sum[l-1]</span><br><span class="line"></span><br><span class="line">Query(l, r):</span><br><span class="line">  if r &lt; l: return (-inf, -1, -1), (-inf, -1, -1), (-inf, -1, -1)</span><br><span class="line">  if l == r: return (a[l], l, l), (a[l], l, l), (a[l], l, l) </span><br><span class="line">  mid = (l + r) // 2</span><br><span class="line">  left_pre, left_max, left_suf = Query(l, mid - 1)</span><br><span class="line">  right_pre, right_max, right_suf = Query(mid, r)</span><br><span class="line">  if Sum(l, mid - 1) + right_pre[0] &gt; left_pre[0]:</span><br><span class="line">    self_pre = (Sum(l, mid - 1) + right_pre[0], l, right_pre[2])</span><br><span class="line">  else:</span><br><span class="line">    self_pre = left_pre</span><br><span class="line">  if left_suf[0] + Sum(mid, r) &gt; right_suf[0]:</span><br><span class="line">    self_suf = (left_suf[0] + Sum(mid, r), left_suf[1], r)</span><br><span class="line">  else:</span><br><span class="line">    self_suf = right_suf</span><br><span class="line">  self_max = MyMax(left_max, right_max)</span><br><span class="line">  self_max = MyMax(self_max, (left_suf[0]+right_pre[0], left_suf[1], right_pre[2]))</span><br><span class="line">  self_max = MyMax(self_max, MyMax(left_pre, right_suf))</span><br><span class="line">  return self_pre, self_max, self_suf</span><br></pre></td></tr></table></figure> b). <span
+class="math inline">\(T(n)=2T(n/2)+C\)</span>, so <span
+class="math inline">\(T(n)=\Theta(n)\)</span></p></li>
 </ol>
-<p>  c). If using dynamic programming, we can get another $O(n)$ algorithm, transmission formula is <code>dp[i] = max(a[i], dp[i-1] + a[i])</code>.</p>
+<p>c). If using dynamic programming, we can get another <span
+class="math inline">\(O(n)\)</span> algorithm, transmission formula is
+<code>dp[i] = max(a[i], dp[i-1] + a[i])</code>.</p>
 
     </div>
 
@@ -447,6 +514,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

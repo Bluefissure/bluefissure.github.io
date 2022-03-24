@@ -292,7 +292,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Just for practice, if you find something wrong, feel free to <a href="mailto:fissure.blue@rutgers.edu">contact me</a>.</p>
+          <p>Just for practice, if you find something wrong, feel free to <a
+href="mailto:fissure.blue@rutgers.edu">contact me</a>.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/10/15/512-Midterm-Practice/#more" rel="contents">
@@ -385,7 +386,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>事实证明生一肚子气切比赛没有什么好下场</p>
+          <p>事实证明生一肚子气切比赛没有什么好下场
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/29/leetcode-weekly-contest-156/#more" rel="contents">
@@ -478,7 +479,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>是切题怪中的豪杰</p>
+          <p>是切题怪中的豪杰
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/23/leetcode-weekly-contest-155/#more" rel="contents">
@@ -577,7 +578,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>简单题 + 板子</p>
+          <p>简单题 + 板子
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/15/leetcode-weekly-contest-154/#more" rel="contents">
@@ -676,7 +677,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>DP盛宴</p>
+          <p>DP盛宴
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/08/leetcode-weekly-contest-153/#more" rel="contents">
@@ -775,7 +776,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一场艰难的复健之旅。</p>
+          <p>一场艰难的复健之旅。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/02/leetcode-weekly-contest-152/#more" rel="contents">
@@ -959,8 +960,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/distinct-subsequences-ii/">题目链接</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>求S的不重复子序列个数</p>
+          <p><a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/distinct-subsequences-ii/">题目链接</a></p>
+<h2 id="题意">题意</h2>
+<p>求S的不重复子序列个数</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/11/15/leetcode-940-distinct-subsequences-ii/#more" rel="contents">
@@ -1049,8 +1052,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-area-rectangle/">题目链接</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>求由点集里面的点组成的最小长方形的面积</p>
+          <p><a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-area-rectangle/">题目链接</a></p>
+<h2 id="题意">题意</h2>
+<p>求由点集里面的点组成的最小长方形的面积</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/11/15/leetcode-939-minimum-area-rectangle/#more" rel="contents">
@@ -1232,6 +1237,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

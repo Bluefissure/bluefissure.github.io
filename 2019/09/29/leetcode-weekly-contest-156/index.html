@@ -216,32 +216,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>事实证明生一肚子气切比赛没有什么好下场</p>
-<span id="more"></span>
-
-<p>##1207. Unique Number of Occurrences </p>
+        <p>事实证明生一肚子气切比赛没有什么好下场 <span id="more"></span></p>
+<p>##1207. Unique Number of Occurrences</p>
 <p>求问数组中数字的出现次数是不是唯一的。</p>
 <p>思路：Counter</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">uniqueOccurrences</span>(<span class="params">self, arr: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        c = collections.Counter(arr)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(c.keys()) == <span class="built_in">len</span>(<span class="built_in">set</span>(c.values()))</span><br></pre></td></tr></table></figure>
-
-<h2 id="1208-Get-Equal-Substrings-Within-Budget"><a href="#1208-Get-Equal-Substrings-Within-Budget" class="headerlink" title="1208. Get Equal Substrings Within Budget"></a>1208. Get Equal Substrings Within Budget</h2><p>两个字符串，修改一个字符的cost为对应ASCII差值的绝对值，问总cost不超过<code>maxCost</code>的最长子串。</p>
+<h2 id="get-equal-substrings-within-budget">1208. Get Equal Substrings
+Within Budget</h2>
+<p>两个字符串，修改一个字符的cost为对应ASCII差值的绝对值，问总cost不超过<code>maxCost</code>的最长子串。</p>
 <p>思路：二分或双指针</p>
 <p>详解：比赛没想到双指针，二分也写了半天</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">equalSubstring</span>(<span class="params">self, s: <span class="built_in">str</span>, t: <span class="built_in">str</span>, maxCost: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        costs = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: <span class="built_in">abs</span>(<span class="built_in">ord</span>(x[<span class="number">0</span>]) - <span class="built_in">ord</span>(x[<span class="number">1</span>])), <span class="built_in">zip</span>(s, t)))</span><br><span class="line">        pre_costs = [<span class="number">0</span>] * <span class="built_in">len</span>(costs)</span><br><span class="line">        <span class="keyword">for</span> i, c <span class="keyword">in</span> <span class="built_in">enumerate</span>(costs):</span><br><span class="line">            pre_costs[i] = (pre_costs[i-<span class="number">1</span>] <span class="keyword">if</span> i&gt;<span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>) + c</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">sumlr</span>(<span class="params">a, l, r</span>):</span><br><span class="line">            <span class="keyword">if</span> l &gt; r:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> l == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> a[r]</span><br><span class="line">            <span class="keyword">return</span> a[r] - a[l-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> i, c <span class="keyword">in</span> <span class="built_in">enumerate</span>(pre_costs):</span><br><span class="line">            l, r = i, <span class="built_in">len</span>(pre_costs) - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> l &lt; r - <span class="number">1</span>:</span><br><span class="line">                mid = (l + r) // <span class="number">2</span></span><br><span class="line">                <span class="keyword">if</span> sumlr(pre_costs, i, mid) &lt;= maxCost: </span><br><span class="line">                    l = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>: </span><br><span class="line">                    r = mid</span><br><span class="line">            <span class="keyword">if</span> r &lt; <span class="built_in">len</span>(pre_costs):</span><br><span class="line">                <span class="keyword">while</span> sumlr(pre_costs, i, r) &gt; maxCost: r -= <span class="number">1</span></span><br><span class="line">                ans = <span class="built_in">max</span>(ans, r - i + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">equalSubstring</span>(<span class="params">self, S, T, maxCost</span>):</span><br><span class="line">        N = <span class="built_in">len</span>(S)</span><br><span class="line">        A = [<span class="built_in">abs</span>(<span class="built_in">ord</span>(S[i]) - <span class="built_in">ord</span>(T[i])) <span class="keyword">for</span> i <span class="keyword">in</span> xrange(N)]</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        windowsum = <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> right, x <span class="keyword">in</span> <span class="built_in">enumerate</span>(A):</span><br><span class="line">            windowsum += x</span><br><span class="line">            <span class="keyword">while</span> windowsum &gt; maxCost <span class="keyword">and</span> left &lt; N:</span><br><span class="line">                windowsum -= A[left]</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            cand = right - left + <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> cand &gt; ans: ans = cand</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="1209-Remove-All-Adjacent-Duplicates-in-String-II"><a href="#1209-Remove-All-Adjacent-Duplicates-in-String-II" class="headerlink" title="1209. Remove All Adjacent Duplicates in String II"></a>1209. Remove All Adjacent Duplicates in String II</h2><p>出现长度为k的同一个字符组成的字符串就删掉，问最后剩下的字符串。</p>
+<h2 id="remove-all-adjacent-duplicates-in-string-ii">1209. Remove All
+Adjacent Duplicates in String II</h2>
+<p>出现长度为k的同一个字符组成的字符串就删掉，问最后剩下的字符串。</p>
 <p>思路：栈模拟。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeDuplicates</span>(<span class="params">self, s: <span class="built_in">str</span>, k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        str_stack = []</span><br><span class="line">        <span class="keyword">for</span> i, ch <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">            temp_str = str_stack.pop() <span class="keyword">if</span> str_stack <span class="keyword">else</span> <span class="string">&quot;&quot;</span></span><br><span class="line">            <span class="keyword">if</span> temp_str <span class="keyword">and</span> ch != temp_str[-<span class="number">1</span>]:</span><br><span class="line">                str_stack.append(temp_str)</span><br><span class="line">                temp_str = <span class="string">&quot;&quot;</span></span><br><span class="line">            temp_str += ch</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(temp_str) != k:</span><br><span class="line">                str_stack.append(temp_str)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(str_stack)</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="1210-Minimum-Moves-to-Reach-Target-with-Rotations"><a href="#1210-Minimum-Moves-to-Reach-Target-with-Rotations" class="headerlink" title="1210. Minimum Moves to Reach Target with Rotations"></a>1210. Minimum Moves to Reach Target with Rotations</h2><p>蛇可以顺逆时针旋转，往右往下移动，问迷宫最短路。</p>
+<h2 id="minimum-moves-to-reach-target-with-rotations">1210. Minimum
+Moves to Reach Target with Rotations</h2>
+<p>蛇可以顺逆时针旋转，往右往下移动，问迷宫最短路。</p>
 <p>思路：BFS模拟。</p>
 <p>吐槽：一开始不知道顺时针旋转后也可以向右移动，导致WA死。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bfs</span>(<span class="params">mp</span>):</span><br><span class="line">    n = <span class="built_in">len</span>(mp[<span class="number">0</span>])</span><br><span class="line">    init_pos = ((<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>))</span><br><span class="line">    target_pos = ((n-<span class="number">1</span>, n-<span class="number">2</span>), (n-<span class="number">1</span>, n-<span class="number">1</span>))</span><br><span class="line">    Q = [(<span class="number">0</span>, init_pos, <span class="number">0</span>)]</span><br><span class="line">    vis = <span class="built_in">set</span>()</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">inrange</span>(<span class="params">xy, xy0, mp</span>):</span><br><span class="line">        n = <span class="built_in">len</span>(mp[<span class="number">0</span>])</span><br><span class="line">        x, y = xy</span><br><span class="line">        x0, y0 = xy0</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span> &lt;= x &lt; n <span class="keyword">and</span> <span class="number">0</span> &lt;= y &lt; n <span class="keyword">and</span> <span class="number">0</span> &lt;= x0 &lt; n <span class="keyword">and</span> <span class="number">0</span> &lt;= y0 &lt; n):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> mp[x][y] == <span class="number">1</span> <span class="keyword">or</span> mp[x0][y0] == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">while</span> Q:</span><br><span class="line">        moves, cur_pos, cur_dir = heapq.heappop(Q)</span><br><span class="line">        <span class="keyword">if</span> (cur_pos, cur_dir) <span class="keyword">in</span> vis:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        vis.add((cur_pos, cur_dir))</span><br><span class="line">        <span class="keyword">if</span> cur_pos == target_pos:</span><br><span class="line">            <span class="keyword">return</span> moves</span><br><span class="line">        (x, y), (x0, y0) = cur_pos</span><br><span class="line">        <span class="comment"># move right</span></span><br><span class="line">        <span class="keyword">if</span> inrange((x, y+<span class="number">1</span>), (x0, y0+<span class="number">1</span>), mp) <span class="keyword">and</span> (((x, y+<span class="number">1</span>), (x0, y0+<span class="number">1</span>)), cur_dir) <span class="keyword">not</span> <span class="keyword">in</span> vis:</span><br><span class="line">            heapq.heappush(Q, (moves+<span class="number">1</span>, ((x, y+<span class="number">1</span>), (x0, y0+<span class="number">1</span>)), cur_dir))</span><br><span class="line">        <span class="comment"># move down</span></span><br><span class="line">        <span class="keyword">if</span> inrange((x+<span class="number">1</span>, y), (x0+<span class="number">1</span>, y0), mp) <span class="keyword">and</span> (((x+<span class="number">1</span>, y), (x0+<span class="number">1</span>, y0)), cur_dir) <span class="keyword">not</span> <span class="keyword">in</span> vis:</span><br><span class="line">            heapq.heappush(Q, (moves+<span class="number">1</span>, ((x+<span class="number">1</span>, y), (x0+<span class="number">1</span>, y0)), cur_dir))</span><br><span class="line">        <span class="keyword">if</span> cur_dir == <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># rotate clockwise</span></span><br><span class="line">            <span class="keyword">if</span> inrange((x+<span class="number">1</span>, y), (x0+<span class="number">1</span>, y0), mp) <span class="keyword">and</span> (((x, y), (x+<span class="number">1</span>, y)), <span class="number">1</span>) <span class="keyword">not</span> <span class="keyword">in</span> vis:</span><br><span class="line">                heapq.heappush(Q, (moves+<span class="number">1</span>, ((x, y), (x+<span class="number">1</span>, y)), <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># rotate counterclockwise </span></span><br><span class="line">            <span class="keyword">if</span> inrange((x, y+<span class="number">1</span>), (x0, y0+<span class="number">1</span>), mp) <span class="keyword">and</span> (((x, y), (x, y+<span class="number">1</span>)), <span class="number">0</span>) <span class="keyword">not</span> <span class="keyword">in</span> vis:</span><br><span class="line">                heapq.heappush(Q, (moves+<span class="number">1</span>, ((x, y), (x, y+<span class="number">1</span>)), <span class="number">0</span>))</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumMoves</span>(<span class="params">self, grid</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> bfs(grid)</span><br></pre></td></tr></table></figure>
-
 
     </div>
 
@@ -329,7 +326,10 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1208-Get-Equal-Substrings-Within-Budget"><span class="nav-number">1.</span> <span class="nav-text">1208. Get Equal Substrings Within Budget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1209-Remove-All-Adjacent-Duplicates-in-String-II"><span class="nav-number">2.</span> <span class="nav-text">1209. Remove All Adjacent Duplicates in String II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1210-Minimum-Moves-to-Reach-Target-with-Rotations"><span class="nav-number">3.</span> <span class="nav-text">1210. Minimum Moves to Reach Target with Rotations</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#get-equal-substrings-within-budget"><span class="nav-number">1.</span> <span class="nav-text">1208. Get Equal Substrings
+Within Budget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove-all-adjacent-duplicates-in-string-ii"><span class="nav-number">2.</span> <span class="nav-text">1209. Remove All
+Adjacent Duplicates in String II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minimum-moves-to-reach-target-with-rotations"><span class="nav-number">3.</span> <span class="nav-text">1210. Minimum
+Moves to Reach Target with Rotations</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -433,6 +433,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

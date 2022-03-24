@@ -222,32 +222,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>简单题 + 板子</p>
-<span id="more"></span>
-
-<h2 id="1189-Maximum-Number-of-Balloons"><a href="#1189-Maximum-Number-of-Balloons" class="headerlink" title="1189. Maximum Number of Balloons"></a>1189. Maximum Number of Balloons</h2><p>数气球（字面意义上）</p>
+        <p>简单题 + 板子 <span id="more"></span></p>
+<h2 id="maximum-number-of-balloons">1189. Maximum Number of
+Balloons</h2>
+<p>数气球（字面意义上）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxNumberOfBalloons</span>(<span class="params">self, text: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(<span class="built_in">sum</span>([ch==<span class="string">&#x27;b&#x27;</span> <span class="keyword">for</span> ch <span class="keyword">in</span> text]), <span class="built_in">sum</span>([ch==<span class="string">&#x27;a&#x27;</span> <span class="keyword">for</span> ch <span class="keyword">in</span> text]), <span class="built_in">sum</span>([ch==<span class="string">&#x27;l&#x27;</span> <span class="keyword">for</span> ch <span class="keyword">in</span> text])//<span class="number">2</span>, <span class="built_in">sum</span>([ch==<span class="string">&#x27;o&#x27;</span> <span class="keyword">for</span> ch <span class="keyword">in</span> text])//<span class="number">2</span>, <span class="built_in">sum</span>([ch==<span class="string">&#x27;n&#x27;</span> <span class="keyword">for</span> ch <span class="keyword">in</span> text]))</span><br></pre></td></tr></table></figure>
-
-<h2 id="1190-Reverse-Substrings-Between-Each-Pair-of-Parentheses"><a href="#1190-Reverse-Substrings-Between-Each-Pair-of-Parentheses" class="headerlink" title="1190. Reverse Substrings Between Each Pair of Parentheses"></a>1190. Reverse Substrings Between Each Pair of Parentheses</h2><p>模拟可过</p>
+<h2 id="reverse-substrings-between-each-pair-of-parentheses">1190.
+Reverse Substrings Between Each Pair of Parentheses</h2>
+<p>模拟可过</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverseParentheses</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        tmp_str = <span class="string">&quot;&quot;</span></span><br><span class="line">        stk = []</span><br><span class="line">        level = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> ch <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> ch == <span class="string">&#x27;(&#x27;</span>:</span><br><span class="line">                stk.append(tmp_str)</span><br><span class="line">                tmp_str = <span class="string">&quot;&quot;</span></span><br><span class="line">                level += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> ch == <span class="string">&#x27;)&#x27;</span>:</span><br><span class="line">                tmp_str = <span class="string">&quot;&quot;</span>.join(<span class="built_in">reversed</span>(tmp_str))</span><br><span class="line">                tmp_str = stk.pop() + tmp_str</span><br><span class="line">                level -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                tmp_str += ch</span><br><span class="line">        <span class="keyword">return</span> tmp_str</span><br></pre></td></tr></table></figure>
-
-<h2 id="1191-K-Concatenation-Maximum-Sum"><a href="#1191-K-Concatenation-Maximum-Sum" class="headerlink" title="1191. K-Concatenation Maximum Sum"></a>1191. K-Concatenation Maximum Sum</h2><p>单个数组的最大区间和可以翻<a href="https://blog.bluefissure.com/2019/09/08/leetcode-weekly-contest-153/">Contest 153</a> 的1186的dp1</p>
+<h2 id="k-concatenation-maximum-sum">1191. K-Concatenation Maximum
+Sum</h2>
+<p>单个数组的最大区间和可以翻<a
+href="https://blog.bluefissure.com/2019/09/08/leetcode-weekly-contest-153/">Contest
+153</a> 的1186的dp1</p>
 <p>然后答案则是：</p>
 <ul>
-<li>单数组最大区间 (k &#x3D;&#x3D; 1)</li>
-<li>最大后缀+最大前缀  (k &#x3D;&#x3D; 2)</li>
-<li>最大后缀+中间$k-2$个的数组和+最大前缀  (k &gt; 2)</li>
+<li>单数组最大区间 (k == 1)</li>
+<li>最大后缀+最大前缀 (k == 2)</li>
+<li>最大后缀+中间<span
+class="math inline">\(k-2\)</span>个的数组和+最大前缀 (k &gt; 2)</li>
 </ul>
 <p>三种情况中最大的。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">kConcatenationMaxSum</span>(<span class="params">self, arr: <span class="type">List</span>[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        MOD = <span class="number">10</span>**<span class="number">9</span> + <span class="number">7</span></span><br><span class="line">        INF = <span class="number">10</span>**<span class="number">9</span> + <span class="number">1000</span></span><br><span class="line">        dp1 = collections.Counter()</span><br><span class="line">        ans = arr[<span class="number">0</span>]</span><br><span class="line">        presum = [<span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]</span><br><span class="line">        sufsum = [<span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]</span><br><span class="line">        totsum = <span class="built_in">sum</span>(arr)</span><br><span class="line">        <span class="keyword">for</span> i, a <span class="keyword">in</span> <span class="built_in">enumerate</span>(arr):</span><br><span class="line">            dp1[i] = a;</span><br><span class="line">            j = <span class="built_in">len</span>(arr) - i - <span class="number">1</span></span><br><span class="line">            presum[<span class="number">0</span>] += a</span><br><span class="line">            sufsum[<span class="number">0</span>] += arr[j]</span><br><span class="line">            <span class="keyword">if</span> presum[<span class="number">0</span>] &gt; <span class="number">0</span>:</span><br><span class="line">                presum[<span class="number">1</span>] = i</span><br><span class="line">                <span class="keyword">if</span> presum[<span class="number">0</span>] &gt; presum[<span class="number">2</span>]:</span><br><span class="line">                    presum[<span class="number">2</span>] = presum[<span class="number">0</span>]</span><br><span class="line">                    presum[<span class="number">3</span>] = i</span><br><span class="line">            <span class="keyword">if</span> sufsum[<span class="number">0</span>] &gt; <span class="number">0</span>:</span><br><span class="line">                sufsum[<span class="number">1</span>] = j</span><br><span class="line">                <span class="keyword">if</span> sufsum[<span class="number">0</span>] &gt; sufsum[<span class="number">2</span>]:</span><br><span class="line">                    sufsum[<span class="number">2</span>] = sufsum[<span class="number">0</span>]</span><br><span class="line">                    sufsum[<span class="number">3</span>] = j</span><br><span class="line">            <span class="keyword">if</span> i:</span><br><span class="line">                dp1[i] = <span class="built_in">max</span>(a, dp1[i-<span class="number">1</span>] + a);</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, dp1[i])</span><br><span class="line">        <span class="keyword">if</span> k &gt; <span class="number">1</span>:</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, <span class="built_in">max</span>(totsum, <span class="number">0</span>) * k, <span class="built_in">max</span>(totsum, <span class="number">0</span>) * <span class="built_in">max</span>(<span class="number">0</span>, k-<span class="number">2</span>) + <span class="built_in">max</span>(presum[<span class="number">2</span>], <span class="number">0</span>) + <span class="built_in">max</span>(sufsum[<span class="number">2</span>], <span class="number">0</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(ans, <span class="number">0</span>)%MOD</span><br></pre></td></tr></table></figure>
-
 <p>PS: 忘了取模WA了好多发</p>
-<h2 id="1192-Critical-Connections-in-a-Network"><a href="#1192-Critical-Connections-in-a-Network" class="headerlink" title="1192. Critical Connections in a Network"></a>1192. Critical Connections in a Network</h2><p>模板题，没什么意思：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bridge_%28graph_theory%29">Bridge</a></p>
-<p>Tarjan’s bridge-finding algorithm:</p>
+<h2 id="critical-connections-in-a-network">1192. Critical Connections in
+a Network</h2>
+<p>模板题，没什么意思：<a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bridge_%28graph_theory%29">Bridge</a></p>
+<p>Tarjan's bridge-finding algorithm:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">tarjan</span>(<span class="params">x, fa, bid</span>):</span><br><span class="line">    <span class="keyword">global</span> dfn, dot, low, ans</span><br><span class="line">    dot += <span class="number">1</span></span><br><span class="line">    dfn[x] = dot</span><br><span class="line">    low[x] = dot</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> bid[x]:</span><br><span class="line">        <span class="keyword">if</span> dfn[y] == <span class="number">0</span>:</span><br><span class="line">            tarjan(y, x, bid)</span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], low[y])</span><br><span class="line">            <span class="keyword">if</span> low[y] &gt; dfn[x]:</span><br><span class="line">                ans.append([x, y])</span><br><span class="line">        <span class="keyword">elif</span> y != fa:</span><br><span class="line">            low[x] = <span class="built_in">min</span>(low[x], dfn[y])</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">criticalConnections</span>(<span class="params">self, n: <span class="built_in">int</span>, connections: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="keyword">global</span> dfn, dot, low, ans</span><br><span class="line">        dfn = [<span class="number">0</span>] * (<span class="number">100000</span>+<span class="number">5</span>)</span><br><span class="line">        low = [<span class="number">0</span>] * (<span class="number">100000</span>+<span class="number">5</span>)</span><br><span class="line">        dot = <span class="number">0</span></span><br><span class="line">        ans = []</span><br><span class="line">        bid = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">        <span class="keyword">for</span> edge <span class="keyword">in</span> connections:</span><br><span class="line">            bid[edge[<span class="number">0</span>]].append(edge[<span class="number">1</span>])</span><br><span class="line">            bid[edge[<span class="number">1</span>]].append(edge[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, n):</span><br><span class="line">            <span class="keyword">if</span> dfn[i] == <span class="number">0</span>:</span><br><span class="line">                tarjan(i, i, bid)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
-<p>PS: Leetcode 的 Python 的 Run Code 环境和 Submit 环境对全局变量的行为不一致，在外部定义全局变量会在 Submit 时吃瘪（）</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>复健路漫漫</p>
+<p>PS: Leetcode 的 Python 的 Run Code 环境和 Submit
+环境对全局变量的行为不一致，在外部定义全局变量会在 Submit 时吃瘪（）</p>
+<h2 id="后记">后记</h2>
+<p>复健路漫漫</p>
 
     </div>
 
@@ -335,7 +343,11 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1189-Maximum-Number-of-Balloons"><span class="nav-number">1.</span> <span class="nav-text">1189. Maximum Number of Balloons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1190-Reverse-Substrings-Between-Each-Pair-of-Parentheses"><span class="nav-number">2.</span> <span class="nav-text">1190. Reverse Substrings Between Each Pair of Parentheses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1191-K-Concatenation-Maximum-Sum"><span class="nav-number">3.</span> <span class="nav-text">1191. K-Concatenation Maximum Sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1192-Critical-Connections-in-a-Network"><span class="nav-number">4.</span> <span class="nav-text">1192. Critical Connections in a Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#maximum-number-of-balloons"><span class="nav-number">1.</span> <span class="nav-text">1189. Maximum Number of
+Balloons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse-substrings-between-each-pair-of-parentheses"><span class="nav-number">2.</span> <span class="nav-text">1190.
+Reverse Substrings Between Each Pair of Parentheses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-concatenation-maximum-sum"><span class="nav-number">3.</span> <span class="nav-text">1191. K-Concatenation Maximum
+Sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#critical-connections-in-a-network"><span class="nav-number">4.</span> <span class="nav-text">1192. Critical Connections in
+a Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -439,6 +451,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

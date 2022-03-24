@@ -222,25 +222,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>图形学实验三第一部分——实验二基础上的光照模型。 此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。 本篇博客首先在上一个实验：<a href="">WalkMan</a> 的基础上添加光照，并使用两种不同的着色方法。</p>
-<span id="more"></span>
-<h2 id="光照模型"><a href="#光照模型" class="headerlink" title="光照模型"></a>光照模型</h2><p>OpenGL中的光照模型中的反射光分为三个分量，分别是环境反射光（Ambient Light）、漫反射光（Diffuse Light）和镜面反射光（Specular Light）。</p>
+        <p>图形学实验三第一部分——实验二基础上的光照模型。
+此次试验首先在上一个实验的基础上实现OpenGL自带的光照模型，比较不同的着色方法带来的不同，之后再通过GLSL写着色器实现两种不同的光照模型。
+本篇博客首先在上一个实验：<a
+href="">WalkMan</a> 的基础上添加光照，并使用两种不同的着色方法。
+<span id="more"></span> 光照模型 ----</p>
+<p>OpenGL中的光照模型中的反射光分为三个分量，分别是环境反射光（Ambient
+Light）、漫反射光（Diffuse Light）和镜面反射光（Specular Light）。</p>
 <ul>
-<li><p>环境光Ambient：是由光源发出经环境多次散射而无法确定其入射方向的光，即似乎来自所有方向。其特征是入射方向和出射方向均为任意方向。</p>
-</li>
-<li><p>漫射光Diffuse：来自特定方向，它垂直于物体时比倾斜时更明亮。一旦它照射到物体上，则在各个方向上均匀地发散出去，效果为无论视点在哪里它都一样亮，其特征是入射方向唯一、出射方向为任意方向。</p>
-</li>
-<li><p>镜面光Specular：来自特定方向并沿另一方向反射出去，一个平行激光束在高质量的镜面上产生100%的镜面反射，其特征是入射方向和出射方向均唯一。</p>
-</li>
+<li><p>环境光Ambient：是由光源发出经环境多次散射而无法确定其入射方向的光，即似乎来自所有方向。其特征是入射方向和出射方向均为任意方向。</p></li>
+<li><p>漫射光Diffuse：来自特定方向，它垂直于物体时比倾斜时更明亮。一旦它照射到物体上，则在各个方向上均匀地发散出去，效果为无论视点在哪里它都一样亮，其特征是入射方向唯一、出射方向为任意方向。</p></li>
+<li><p>镜面光Specular：来自特定方向并沿另一方向反射出去，一个平行激光束在高质量的镜面上产生100%的镜面反射，其特征是入射方向和出射方向均唯一。</p></li>
 </ul>
-<h2 id="创建光源"><a href="#创建光源" class="headerlink" title="创建光源"></a><strong>创建光源</strong></h2><p>OpenGL中用函数glLightfv来创建光源，函数原型是： </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">glLightfv</span> <span class="params">(GLenum light, GLenum pname, <span class="type">const</span> GLfloat *params)</span>  </span></span><br></pre></td></tr></table></figure>
-<p>第一个参数light指定所创建的光源号，如GL_LIGHT0、GL_LIGHT1、…、GL_LIGHT7。 第二个参数pname指定光源特性，这个参数的具体信息见下表所示。 <img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png" class=""> 第三个参数设置相应的光源特性值。 如下，我们便可以定义一个位置在(5,5,5)没有环境光，镜面反射光和漫反射光都为白光的光源</p>
+<h2 id="创建光源"><strong>创建光源</strong></h2>
+<p>OpenGL中用函数glLightfv来创建光源，函数原型是： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">glLightfv</span> <span class="params">(GLenum light, GLenum pname, <span class="type">const</span> GLfloat *params)</span>  </span></span><br></pre></td></tr></table></figure>
+第一个参数light指定所创建的光源号，如GL_LIGHT0、GL_LIGHT1、...、GL_LIGHT7。
+第二个参数pname指定光源特性，这个参数的具体信息见下表所示。
+<img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/pname.png" class=""> 第三个参数设置相应的光源特性值。
+如下，我们便可以定义一个位置在(5,5,5)没有环境光，镜面反射光和漫反射光都为白光的光源
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GLfloat light_ambient[] = &#123; <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span> &#125;;</span><br><span class="line">GLfloat light_diffuse[] = &#123; <span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span> &#125;;</span><br><span class="line">GLfloat light_specular[] = &#123; <span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span> &#125;;</span><br><span class="line">GLfloat light_position[] = &#123; <span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">glLightfv</span>(GL_LIGHT0, GL_POSITION, light_position);</span><br><span class="line"><span class="built_in">glLightfv</span>(GL_LIGHT0, GL_AMBIENT, light_ambient);</span><br><span class="line"><span class="built_in">glLightfv</span>(GL_LIGHT0, GL_DIFFUSE, light_diffuse);</span><br><span class="line"><span class="built_in">glLightfv</span>(GL_LIGHT0, GL_SPECULAR, light_specular);</span><br></pre></td></tr></table></figure>
-<p>其中，position是其次坐标系，当第四个参数为0时，表示点光源，为1时表示由前三个数组成向量射来的平型光源。</p>
-<h2 id="Phong-Model与Flat-Model"><a href="#Phong-Model与Flat-Model" class="headerlink" title="Phong Model与Flat Model"></a>Phong Model与Flat Model</h2><p>我们用下列代码控制关照的模式 </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!smooth)</span><br><span class="line">	<span class="built_in">glShadeModel</span>(GL_FLAT);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">glShadeModel</span>(GL_SMOOTH);</span><br></pre></td></tr></table></figure>
-<p>然后光照模型的对比如下： <img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/smooth.png" class=""> <img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/flat.png" class=""> 可见，FLAT模式下出现了明显的马赫带。 新版本的OpenGL提供了更加自由的渲染模式，我们在<a href="">下一篇博客</a>中将利用其通过不同的Model渲染新的场景。</p>
+其中，position是其次坐标系，当第四个参数为0时，表示点光源，为1时表示由前三个数组成向量射来的平型光源。</p>
+<h2 id="phong-model与flat-model">Phong Model与Flat Model</h2>
+<p>我们用下列代码控制关照的模式 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!smooth)</span><br><span class="line">	<span class="built_in">glShadeModel</span>(GL_FLAT);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">glShadeModel</span>(GL_SMOOTH);</span><br></pre></td></tr></table></figure> 然后光照模型的对比如下：
+<img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/smooth.png" class=""> <img src="/2017/04/20/computer-graphics-experiment-iii-part-1-lightmodel-in-opengl-based-on-walkingman/flat.png" class=""> 可见，FLAT模式下出现了明显的马赫带。
+新版本的OpenGL提供了更加自由的渲染模式，我们在<a
+href="">下一篇博客</a>中将利用其通过不同的Model渲染新的场景。</p>
 
     </div>
 
@@ -328,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">光照模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%85%89%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">创建光源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Phong-Model%E4%B8%8EFlat-Model"><span class="nav-number">3.</span> <span class="nav-text">Phong Model与Flat Model</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%85%89%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">创建光源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phong-model%E4%B8%8Eflat-model"><span class="nav-number">2.</span> <span class="nav-text">Phong Model与Flat Model</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -430,6 +436,8 @@
 
 
 
+
+  
 
   
 

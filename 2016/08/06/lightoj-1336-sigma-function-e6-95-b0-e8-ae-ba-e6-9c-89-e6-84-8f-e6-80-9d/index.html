@@ -218,23 +218,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a target="_blank" rel="noopener" href="http://lightoj.com/volume_showproblem.php?problem=1336">题目连接</a></p>
-<span id="more"></span>
-<h2 id="1336-Sigma-Function"><a href="#1336-Sigma-Function" class="headerlink" title="1336 - Sigma Function"></a>1336 - Sigma Function</h2><p> </p>
-<p><a target="_blank" rel="noopener" href="http://lightoj.com/volume_showproblem.php?problem=1336&language=english&type=pdf">PDF (English)</a></p>
-<p><a target="_blank" rel="noopener" href="http://lightoj.com/volume_problemstat.php?problem=1336">Statistics</a></p>
-<p><a target="_blank" rel="noopener" href="http://lightoj.com/forum_showproblem.php?problem=1336">Forum</a></p>
+        <p><a
+target="_blank" rel="noopener" href="http://lightoj.com/volume_showproblem.php?problem=1336">题目连接</a>
+<span id="more"></span> 1336 - Sigma Function ---------------------</p>
+<p> </p>
+<p><a
+target="_blank" rel="noopener" href="http://lightoj.com/volume_showproblem.php?problem=1336&amp;language=english&amp;type=pdf">PDF
+(English)</a></p>
+<p><a
+target="_blank" rel="noopener" href="http://lightoj.com/volume_problemstat.php?problem=1336">Statistics</a></p>
+<p><a
+target="_blank" rel="noopener" href="http://lightoj.com/forum_showproblem.php?problem=1336">Forum</a></p>
 <p>Time Limit: 2 second(s)</p>
 <p>Memory Limit: 32 MB</p>
-<p>Sigma function is an interesting function in Number Theory. It is denoted by the Greek letter Sigma (σ). This function actually denotes the sum of all divisors of a number. For example σ(24) &#x3D; 1+2+3+4+6+8+12+24&#x3D;60. Sigma of small numbers is easy to find but for large numbers it is very difficult to find in a straight forward way. But mathematicians have discovered a formula to find sigma. If the prime power decomposition of an integer is</p>
-<p>$$n&#x3D;{ { p }<em>{ 1 } }^{ { e }</em>{ 1 } }\cdot { { p }<em>{ 2 } }^{ { e }</em>{ 2 } }\cdot { { p }<em>{ 3 } }^{ { e }</em>{ 3 } }…{ { p }<em>{ k } }^{ { e }</em>{ k } }$$</p>
+<p>Sigma function is an interesting function in Number Theory. It is
+denoted by the Greek letter Sigma (σ). This function actually denotes
+the sum of all divisors of a number. For example σ(24) =
+1+2+3+4+6+8+12+24=60. Sigma of small numbers is easy to find but for
+large numbers it is very difficult to find in a straight forward way.
+But mathematicians have discovered a formula to find sigma. If the prime
+power decomposition of an integer is</p>
+<p><span class="math display">\[n={ { p }_{ 1 } }^{ { e }_{ 1 } }\cdot {
+{ p }_{ 2 } }^{ { e }_{ 2 } }\cdot { { p }_{ 3 } }^{ { e }_{ 3 } }...{ {
+p }_{ k } }^{ { e }_{ k } }\]</span></p>
 <p>Then we can write,</p>
-<p>$$\sigma (n)&#x3D;\frac { { { p }<em>{ 1 } }^{ { e }</em>{ 1 }+1 }-1 }{ { p }<em>{ 1 }-1 } \cdot \frac { { { p }</em>{ 2 } }^{ { e }<em>{ 2 }+1 }-1 }{ { p }</em>{ 2 }-1 } …\frac { { { p }<em>{ k } }^{ { e }</em>{ k }+1 }-1 }{ { p }_{ k }-1 } $$</p>
-<p>For some <strong>n</strong> the value of <strong>σ(n)</strong> is odd and for others it is even. Given a value <strong>n</strong>, you will have to find how many integers from <strong>1</strong> to <strong>n</strong> have <strong>even</strong> value of <strong>σ</strong>.</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>Input starts with an integer **T (**<strong>≤ 100)</strong>, denoting the number of test cases.</p>
-<p>Each case starts with a line containing an integer <strong>n (1 ≤ n ≤ 1012)</strong>.</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>For each case, print the case number and the result.</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><h1 id="Output-for-Sample-Input"><a href="#Output-for-Sample-Input" class="headerlink" title="Output for Sample Input"></a>Output for Sample Input</h1><p>4</p>
+<p><span class="math display">\[\sigma (n)=\frac { { { p }_{ 1 } }^{ { e
+}_{ 1 }+1 }-1 }{ { p }_{ 1 }-1 } \cdot \frac { { { p }_{ 2 } }^{ { e }_{
+2 }+1 }-1 }{ { p }_{ 2 }-1 } ...\frac { { { p }_{ k } }^{ { e }_{ k }+1
+}-1 }{ { p }_{ k }-1 } \]</span></p>
+<p>For some <strong>n</strong> the value of <strong>σ(n)</strong> is odd
+and for others it is even. Given a value <strong>n</strong>, you will
+have to find how many integers from <strong>1</strong> to
+<strong>n</strong> have <strong>even</strong> value of
+<strong>σ</strong>.</p>
+<h1 id="input">Input</h1>
+<p>Input starts with an integer <strong>T (≤ 100)</strong>, denoting the
+number of test cases.</p>
+<p>Each case starts with a line containing an integer <strong>n (1 ≤ n ≤
+1012)</strong>.</p>
+<h1 id="output">Output</h1>
+<p>For each case, print the case number and the result.</p>
+<h1 id="sample-input">Sample Input</h1>
+<h1 id="output-for-sample-input">Output for Sample Input</h1>
+<p>4</p>
 <p>3</p>
 <p>10</p>
 <p>100</p>
@@ -243,13 +269,29 @@
 <p>Case 2: 5</p>
 <p>Case 3: 83</p>
 <p>Case 4: 947</p>
-<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>定义$\sigma (n)$为$n$的因子和，求1～$n$范围内$\sigma$值为偶数的有多少个。</p>
-<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>首先分解$n$, $n&#x3D;\sum <em>{ i&#x3D;1 }^{ r }{ { { p }</em>{ i } }^{ { a }_{ i } } } $,则$\sigma (n)&#x3D;\prod <em>{ i&#x3D;1 }^{ r }{ (\sum <em>{ j&#x3D;0 }^{ { a }</em>{ i } }{ { { p }</em>{ i } }^{ j } } ) } $，我们考虑什么情况下$\sigma (n)$为奇数，有</p>
-<ul>
-<li>${ p }<em>{ i }&#x3D;2$时，$\sum <em>{ j&#x3D;0 }^{ { a }</em>{ i } }{ { { p }</em>{ i } }^{ j } } $为奇数</li>
-<li>${ p }<em>{ i }\neq 2$时，${ a }</em>{ i } $ 均为偶数时 $\sum <em>{ j&#x3D;0 }^{ { a }</em>{ i } }{ { { p }<em>{ i } }^{ j } } $为奇数<br>因此，我们发现${ a }</em>{ i } $均为偶数时，有$\sqrt { n } &#x3D;\sum <em>{ i&#x3D;1 }^{ r }{ { { p }</em>{ i } }^{ \frac { { a }_{ i } }{ 2 }  } } $为因子和为奇数的个数，但是缺少了2的幂为奇数的情况，共有$\sqrt { \frac { n }{ 2 }  } $种情况，因此最后的答案为$n-\sqrt { n } -\sqrt { \frac { n }{ 2 }  } $</li>
-</ul>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;T);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> cas=<span class="number">1</span>;cas&lt;=T;cas++)</span><br><span class="line">    &#123;</span><br><span class="line">        LL n;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">        LL ans =((LL)<span class="built_in">sqrt</span>(n)+(LL)<span class="built_in">sqrt</span>(n/<span class="number">2.</span>));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d: %lld\n&quot;</span>,cas,n-ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题意">题意：</h3>
+<p>定义<span class="math inline">\(\sigma (n)\)</span>为<span
+class="math inline">\(n\)</span>的因子和，求1～<span
+class="math inline">\(n\)</span>范围内<span
+class="math inline">\(\sigma\)</span>值为偶数的有多少个。</p>
+<h3 id="思路">思路：</h3>
+<p>首先分解<span class="math inline">\(n\)</span>, $n=<em>{ i=1 }^{ r }{
+{ { p }</em>{ i } }^{ { a }<em>{ i } } } <span
+class="math inline">\(,则\)</span>(n)=</em>{ i=1 }^{ r }{ (<em>{ j=0 }^{
+{ a }</em>{ i } }{ { { p }<em>{ i } }^{ j } } ) } <span
+class="math inline">\(，我们考虑什么情况下\)</span>(n)$为奇数，有 *
+<span class="math inline">\({ p }_{ i }=2\)</span>时，$</em>{ j=0 }^{ {
+a }<em>{ i } }{ { { p }</em>{ i } }^{ j } } $为奇数 * <span
+class="math inline">\({ p }_{ i }\neq 2\)</span>时，${ a }<em>{ i } $
+均为偶数时 $</em>{ j=0 }^{ { a }<em>{ i } }{ { { p }</em>{ i } }^{ j } }
+<span class="math inline">\(为奇数 因此，我们发现\)</span>{ a }<em>{ i }
+<span class="math inline">\(均为偶数时，有\)</span> =</em>{ i=1 }^{ r }{
+{ { p }_{ i } }^{  } } <span
+class="math inline">\(为因子和为奇数的个数，但是缺少了2的幂为奇数的情况，共有\)</span>
+<span class="math inline">\(种情况，因此最后的答案为\)</span>n- - $</p>
+<h3 id="代码">代码：</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;T);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> cas=<span class="number">1</span>;cas&lt;=T;cas++)</span><br><span class="line">    &#123;</span><br><span class="line">        LL n;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">        LL ans =((LL)<span class="built_in">sqrt</span>(n)+(LL)<span class="built_in">sqrt</span>(n/<span class="number">2.</span>));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d: %lld\n&quot;</span>,cas,n-ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -336,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1336-Sigma-Function"><span class="nav-number">1.</span> <span class="nav-text">1336 - Sigma Function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input"><span class="nav-number"></span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Output"><span class="nav-number"></span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-Input"><span class="nav-number"></span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Output-for-Sample-Input"><span class="nav-number"></span> <span class="nav-text">Output for Sample Input</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E6%84%8F%EF%BC%9A"><span class="nav-number">0.1.</span> <span class="nav-text">题意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">0.2.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">0.3.</span> <span class="nav-text">代码：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#input"><span class="nav-number">1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output"><span class="nav-number">2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sample-input"><span class="nav-number">3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output-for-sample-input"><span class="nav-number">4.</span> <span class="nav-text">Output for Sample Input</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">4.0.1.</span> <span class="nav-text">题意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">4.0.2.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">4.0.3.</span> <span class="nav-text">代码：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -440,6 +482,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

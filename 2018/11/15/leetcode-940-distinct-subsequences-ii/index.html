@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"blog.bluefissure.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="题目链接 题意求S的不重复子序列个数">
+  <meta name="description" content="题目链接 题意 求S的不重复子序列个数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode-940 Distinct Subsequences II">
 <meta property="og:url" content="https://blog.bluefissure.com/2018/11/15/leetcode-940-distinct-subsequences-ii/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
-<meta property="og:description" content="题目链接 题意求S的不重复子序列个数">
+<meta property="og:description" content="题目链接 题意 求S的不重复子序列个数">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-11-15T01:52:41.000Z">
 <meta property="article:modified_time" content="2018-11-15T10:09:01.768Z">
@@ -212,20 +212,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/distinct-subsequences-ii/">题目链接</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>求S的不重复子序列个数</p>
+        <p><a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/distinct-subsequences-ii/">题目链接</a></p>
+<h2 id="题意">题意</h2>
+<p>求S的不重复子序列个数</p>
 <span id="more"></span>
-
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>DP</p>
-<h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><p>显然如果S的每个字符都是不同的，一共有$2^{n}$个子集（子序列），用<code>dp[i]</code>表示第<code>i</code>位的子序列个数，则有<code>dp[i+1]=2*dp[i]</code></p>
+<h2 id="思路">思路</h2>
+<p>DP</p>
+<h2 id="详解">详解</h2>
+<p>显然如果S的每个字符都是不同的，一共有<span
+class="math inline">\(2^{n}\)</span>个子集（子序列），用<code>dp[i]</code>表示第<code>i</code>位的子序列个数，则有<code>dp[i+1]=2*dp[i]</code></p>
 <p>考虑重复情况，如果第<code>i</code>位的字母之前出现过，设最近的出现位置是<code>j</code>，则<code>j-1</code>的情况会被多计一次，减掉就行了</p>
 <p>详细解释下为什么：</p>
 <p>首先，<code>dp[i+1]=2*dp[i]</code>的转移方程基于乘法原理：取了这个字母与没取这个字母两种情况</p>
 <p>那么，由于<code>S[i]==S[j]</code>，重复的情况是“没取<code>S[j]</code>取了<code>S[i]</code>”和“取了<code>S[j]</code>没取<code>S[i]</code>”，仔细思考，这两种情况都需要在<code>j</code>后面的字母都没有取，否则也不是重复，所以这种情况一共<code>dp[j-1]</code>种</p>
 <p>PS：别忘了减掉空集</p>
 <p>PPS：模运算下的减法需要<code>(a-b+mod)%mod</code></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">distinctSubseqII</span>(<span class="params">self, S</span>):</span><br><span class="line">        dp = [<span class="number">0</span>] * (<span class="built_in">len</span>(S)+<span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        mk = [<span class="number">0</span>] * <span class="number">26</span></span><br><span class="line">        MOD = <span class="number">1000000007</span></span><br><span class="line">        <span class="keyword">for</span> (i, ch) <span class="keyword">in</span> <span class="built_in">enumerate</span>(S, <span class="number">1</span>):</span><br><span class="line">            idx = <span class="built_in">ord</span>(ch)-<span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span>(mk[idx]!=<span class="number">0</span>):</span><br><span class="line">                dp[i] = (dp[i-<span class="number">1</span>] * <span class="number">2</span> - dp[mk[idx]-<span class="number">1</span>] + MOD)%MOD</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i] = (dp[i-<span class="number">1</span>] * <span class="number">2</span>)%MOD</span><br><span class="line">            mk[idx] = i</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="built_in">len</span>(S)] - <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="代码">代码</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">distinctSubseqII</span>(<span class="params">self, S</span>):</span><br><span class="line">        dp = [<span class="number">0</span>] * (<span class="built_in">len</span>(S)+<span class="number">1</span>)</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        mk = [<span class="number">0</span>] * <span class="number">26</span></span><br><span class="line">        MOD = <span class="number">1000000007</span></span><br><span class="line">        <span class="keyword">for</span> (i, ch) <span class="keyword">in</span> <span class="built_in">enumerate</span>(S, <span class="number">1</span>):</span><br><span class="line">            idx = <span class="built_in">ord</span>(ch)-<span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span>(mk[idx]!=<span class="number">0</span>):</span><br><span class="line">                dp[i] = (dp[i-<span class="number">1</span>] * <span class="number">2</span> - dp[mk[idx]-<span class="number">1</span>] + MOD)%MOD</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i] = (dp[i-<span class="number">1</span>] * <span class="number">2</span>)%MOD</span><br><span class="line">            mk[idx] = i</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="built_in">len</span>(S)] - <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -417,6 +421,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
