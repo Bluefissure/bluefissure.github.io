@@ -1,112 +1,24 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.5.0',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.bluefissure.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="是切题怪中的豪杰">
 <meta property="og:type" content="article">
@@ -114,24 +26,22 @@
 <meta property="og:url" content="https://blog.bluefissure.com/2019/09/23/leetcode-weekly-contest-155/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="是切题怪中的豪杰">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-22T16:36:59.986Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-09-22T16:34:23.000Z">
+<meta property="article:modified_time" content="2019-09-22T16:36:59.986Z">
+<meta property="article:author" content="Bluefissure">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode Weekly Contest 155">
-<meta name="twitter:description" content="是切题怪中的豪杰">
+
+<link rel="canonical" href="https://blog.bluefissure.com/2019/09/23/leetcode-weekly-contest-155/">
 
 
-
-
-
-
-  <link rel="canonical" href="https://blog.bluefissure.com/2019/09/23/leetcode-weekly-contest-155/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
@@ -143,181 +53,79 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Bluefissure's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">A Place for Recording</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bluefissure's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">A Place for Recording</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -325,137 +133,68 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.bluefissure.com/2019/09/23/leetcode-weekly-contest-155/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Bluefissure">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Bluefissure's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">LeetCode Weekly Contest 155
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode Weekly Contest 155
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">Posted on</span>
               
 
               <time title="Created: 2019-09-23 00:34:23 / Modified: 00:36:59" itemprop="dateCreated datePublished" datetime="2019-09-23T00:34:23+08:00">2019-09-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/LeetCode-Contest/" itemprop="url" rel="index"><span itemprop="name">LeetCode Contest</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/23/leetcode-weekly-contest-155/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/23/leetcode-weekly-contest-155/" itemprop="commentCount"></span>
-                </a>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/LeetCode-Contest/" itemprop="url" rel="index"><span itemprop="name">LeetCode Contest</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -463,27 +202,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+        <p>是切题怪中的豪杰</p>
+<span id="more"></span>
 
-      
-        <p>是切题怪中的豪杰<br><a id="more"></a></p>
-<h2 id="1200-Minimum-Absolute-Difference"><a href="#1200-Minimum-Absolute-Difference" class="headerlink" title="1200. Minimum Absolute Difference"></a>1200. Minimum Absolute Difference</h2><p>求问数组中有多少对数字的绝对值在数组中任意两数的绝对值中是最小的。</p>
+<p>##1200. Minimum Absolute Difference </p>
+<p>求问数组中有多少对数字的绝对值在数组中任意两数的绝对值中是最小的。</p>
 <p>思路：排序即可，甚至不用处理绝对值为0的情况，因为题目一开始就说了数组是distinct的。（但是我最后才看到）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minimumAbsDifference</span><span class="params">(self, arr: List[int])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        min_abs = <span class="number">10</span>**<span class="number">7</span></span><br><span class="line">        arr.sort()</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(arr)<span class="number">-1</span>):</span><br><span class="line">            min_abs = min(min_abs, abs(arr[i+<span class="number">1</span>]-arr[i]))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(arr)<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> min_abs == abs(arr[i+<span class="number">1</span>]-arr[i]):</span><br><span class="line">                ans.append((arr[i],arr[i+<span class="number">1</span>]))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumAbsDifference</span>(<span class="params">self, arr: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        min_abs = <span class="number">10</span>**<span class="number">7</span></span><br><span class="line">        arr.sort()</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(arr)-<span class="number">1</span>):</span><br><span class="line">            min_abs = <span class="built_in">min</span>(min_abs, <span class="built_in">abs</span>(arr[i+<span class="number">1</span>]-arr[i]))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(arr)-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> min_abs == <span class="built_in">abs</span>(arr[i+<span class="number">1</span>]-arr[i]):</span><br><span class="line">                ans.append((arr[i],arr[i+<span class="number">1</span>]))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
 <h2 id="1201-Ugly-Number-III"><a href="#1201-Ugly-Number-III" class="headerlink" title="1201. Ugly Number III"></a>1201. Ugly Number III</h2><p>求出能被 a 或 b 或 c 整除的第 n 个数。</p>
 <p>思路：二分</p>
 <p>详解：求一个数前面有多少个a的倍数，b的倍数，c的倍数就可以知道这个数是第几个数了，注意要用容斥原理处理ab, bc, ac 和 abc，在倍数相关处理的过程中要算LCM。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcd</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x <span class="keyword">if</span> <span class="keyword">not</span> y <span class="keyword">else</span> gcd(y, x%y)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lcm</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x*y//gcd(x, y)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nthUglyNumber</span><span class="params">(self, n: int, a: int, b: int, c: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">number</span><span class="params">(n, a, b, c)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> n//a+n//b+n//c-n//(lcm(a,b))-n//(lcm(a,c))-n//(lcm(c,b))+n//(lcm(a,lcm(b,c)))</span><br><span class="line">        l = <span class="number">1</span></span><br><span class="line">        r = <span class="number">2</span> * <span class="number">10</span>**<span class="number">9</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r - <span class="number">1</span>:</span><br><span class="line">            mid = (l+r)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> number(mid, a, b, c) &lt; n:</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = mid</span><br><span class="line">        <span class="keyword">while</span> number(l, a, b, c) &lt; n:</span><br><span class="line">            l += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
-<p>结合代码，要给出第一个number &gt;= n的数，否则其有可能不是 a 或 b 或 c 的倍数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">gcd</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x <span class="keyword">if</span> <span class="keyword">not</span> y <span class="keyword">else</span> gcd(y, x%y)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lcm</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">return</span> x*y//gcd(x, y)</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">nthUglyNumber</span>(<span class="params">self, n: <span class="built_in">int</span>, a: <span class="built_in">int</span>, b: <span class="built_in">int</span>, c: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">number</span>(<span class="params">n, a, b, c</span>):</span><br><span class="line">            <span class="keyword">return</span> n//a+n//b+n//c-n//(lcm(a,b))-n//(lcm(a,c))-n//(lcm(c,b))+n//(lcm(a,lcm(b,c)))</span><br><span class="line">        l = <span class="number">1</span></span><br><span class="line">        r = <span class="number">2</span> * <span class="number">10</span>**<span class="number">9</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r - <span class="number">1</span>:</span><br><span class="line">            mid = (l+r)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> number(mid, a, b, c) &lt; n:</span><br><span class="line">                l = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r = mid</span><br><span class="line">        <span class="keyword">while</span> number(l, a, b, c) &lt; n:</span><br><span class="line">            l += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
+
+<p>结合代码，要给出第一个number &gt;&#x3D; n的数，否则其有可能不是 a 或 b 或 c 的倍数。</p>
 <p>PS: 孩子二分老不会处理边界，多半是废了。</p>
 <h2 id="1202-Smallest-String-With-Swaps"><a href="#1202-Smallest-String-With-Swaps" class="headerlink" title="1202. Smallest String With Swaps"></a>1202. Smallest String With Swaps</h2><p>可以任意按照pairs中的数对调换两个位置的字母，求经过任意次调换后能达到的最小字符串。</p>
 <p>思路：<del>冰茶几</del> 并查集</p>
 <p>详解：每个二元数对连接起来会成为一个独立集（是这么叫吗），然后我们只需要对每个独立集的位置的字符进行排序即可。</p>
 <p>举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nchdbshdurh</span><br><span class="line"> c d   d   </span><br><span class="line">n   b h   h</span><br><span class="line">  h  s  ur</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nchdbshdurh</span><br><span class="line"> c d   d   </span><br><span class="line">n   b h   h</span><br><span class="line">  h  s  ur </span><br></pre></td></tr></table></figure>
+
 <p>只需要对下面三行进行排序后再合起来就行了。</p>
 <p>所以，使用并查集（Union-Find Set）来维护每个位置所在的集合即可。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> x != self.fa[x]:</span><br><span class="line">            self.fa[x] = self.find(self.fa[x])</span><br><span class="line">        <span class="keyword">return</span> self.fa[x]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">union</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        fax = self.find(x)</span><br><span class="line">        fay = self.find(y)</span><br><span class="line">        <span class="keyword">if</span> fax == fay: <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span>(self.r[fax] &lt; self.r[fay]):</span><br><span class="line">            self.fa[fax] = fay</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span>(self.r[fax] == self.r[fay]):</span><br><span class="line">                self.r[fax] += <span class="number">1</span></span><br><span class="line">            self.fa[fay] = fax</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">smallestStringWithSwaps</span><span class="params">(self, s: str, pairs)</span> -&gt; str:</span></span><br><span class="line">        self.fa = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s))]</span><br><span class="line">        self.r = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s))]</span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> pairs:</span><br><span class="line">            self.union(x, y)</span><br><span class="line">        d = collections.defaultdict(str)</span><br><span class="line">        <span class="keyword">for</span> i, ch <span class="keyword">in</span> enumerate(s):</span><br><span class="line">            fai = self.find(i)</span><br><span class="line">            d[fai] += ch</span><br><span class="line">        <span class="keyword">for</span> (k, v) <span class="keyword">in</span> d.items():</span><br><span class="line">            d[k] = sorted(v)</span><br><span class="line">        n = collections.Counter()</span><br><span class="line">        ans = <span class="string">""</span></span><br><span class="line">        <span class="keyword">for</span> i, ch <span class="keyword">in</span> enumerate(s):</span><br><span class="line">            fai = self.find(i)</span><br><span class="line">            ans += d[fai][n[fai]]</span><br><span class="line">            n[fai] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">find</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="keyword">if</span> x != self.fa[x]:</span><br><span class="line">            self.fa[x] = self.find(self.fa[x])</span><br><span class="line">        <span class="keyword">return</span> self.fa[x]</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">union</span>(<span class="params">self, x, y</span>):</span><br><span class="line">        fax = self.find(x)</span><br><span class="line">        fay = self.find(y)</span><br><span class="line">        <span class="keyword">if</span> fax == fay: <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span>(self.r[fax] &lt; self.r[fay]):</span><br><span class="line">            self.fa[fax] = fay</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span>(self.r[fax] == self.r[fay]):</span><br><span class="line">                self.r[fax] += <span class="number">1</span></span><br><span class="line">            self.fa[fay] = fax</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">smallestStringWithSwaps</span>(<span class="params">self, s: <span class="built_in">str</span>, pairs</span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        self.fa = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s))]</span><br><span class="line">        self.r = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s))]</span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> pairs:</span><br><span class="line">            self.union(x, y)</span><br><span class="line">        d = collections.defaultdict(<span class="built_in">str</span>)</span><br><span class="line">        <span class="keyword">for</span> i, ch <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">            fai = self.find(i)</span><br><span class="line">            d[fai] += ch</span><br><span class="line">        <span class="keyword">for</span> (k, v) <span class="keyword">in</span> d.items():</span><br><span class="line">            d[k] = <span class="built_in">sorted</span>(v)</span><br><span class="line">        n = collections.Counter()</span><br><span class="line">        ans = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> i, ch <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">            fai = self.find(i)</span><br><span class="line">            ans += d[fai][n[fai]]</span><br><span class="line">            n[fai] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
 <p>PS: 并查集最好按秩优化，否则可能TLE（别问我怎么知道的）。</p>
 <h2 id="1203-Sort-Items-by-Groups-Respecting-Dependencies"><a href="#1203-Sort-Items-by-Groups-Respecting-Dependencies" class="headerlink" title="1203. Sort Items by Groups Respecting Dependencies"></a>1203. Sort Items by Groups Respecting Dependencies</h2><p>若干group包含若干item，group内的items需要相邻，没有group的item可以随意放置。同时要满足一系列诸如“item[i]要在item[j]”之前的顺序限制，输出一种排列方法。</p>
 <p>思路：双层拓扑排序</p>
@@ -493,867 +236,194 @@
 <li>u和v在不同group，由于group内的item必须相邻，所以可以把item之间的顺序限制转化为group之间的顺序限制。之后我们在最外层对group进行拓扑排序。</li>
 </ul>
 <p>至于什么是拓扑排序，即在一张图内重复“寻找入度为0的点，删掉它出发的边”，最后的输出即为一种满足限制的顺序。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">topoSort</span><span class="params">(graph)</span>:</span></span><br><span class="line">    in_degrees = dict((u,<span class="number">0</span>) <span class="keyword">for</span> u <span class="keyword">in</span> graph)</span><br><span class="line">    vertex_num = len(in_degrees)</span><br><span class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> graph:</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:</span><br><span class="line">            in_degrees[v] += <span class="number">1</span></span><br><span class="line">    Q = [u <span class="keyword">for</span> u <span class="keyword">in</span> in_degrees <span class="keyword">if</span> in_degrees[u] == <span class="number">0</span>]</span><br><span class="line">    Seq = []</span><br><span class="line">    <span class="keyword">while</span> Q:</span><br><span class="line">        u = Q.pop()</span><br><span class="line">        Seq.append(u)</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:</span><br><span class="line">            in_degrees[v] -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> in_degrees[v] == <span class="number">0</span>:</span><br><span class="line">                Q.append(v)</span><br><span class="line">    <span class="keyword">if</span> len(Seq) == vertex_num:</span><br><span class="line">        <span class="keyword">return</span> Seq</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Fail"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span>    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortItems</span><span class="params">(self, n: int, m: int, group: List[int], beforeItems: List[List[int]])</span> -&gt; List[int]:</span></span><br><span class="line">        groups = [[] <span class="keyword">for</span> i <span class="keyword">in</span> range(m)]</span><br><span class="line">        <span class="keyword">for</span> i, g <span class="keyword">in</span> enumerate(group):</span><br><span class="line">            <span class="comment"># 将无group的item添加到只包含他自己的group，方便最后进行group间的拓扑排序</span></span><br><span class="line">            <span class="keyword">if</span> g == <span class="number">-1</span>:</span><br><span class="line">                group[i] = len(groups)</span><br><span class="line">                groups.append([i])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                groups[g].append(i)</span><br><span class="line">        <span class="keyword">for</span> i, grp <span class="keyword">in</span> enumerate(groups):</span><br><span class="line">            graph = &#123;&#125;</span><br><span class="line">            <span class="keyword">for</span> u <span class="keyword">in</span> grp:</span><br><span class="line">                graph[u] = []</span><br><span class="line">            <span class="keyword">for</span> u <span class="keyword">in</span> grp:</span><br><span class="line">                <span class="keyword">for</span> v <span class="keyword">in</span> beforeItems[u]:</span><br><span class="line">                    <span class="keyword">if</span> group[v] == group[u]:</span><br><span class="line">                        graph[v].append(u)</span><br><span class="line">            <span class="comment"># 对每个group进行内部拓扑排序</span></span><br><span class="line">            groups[i] = topoSort(graph)</span><br><span class="line">            <span class="keyword">if</span> groups[i] == <span class="string">"Fail"</span>:</span><br><span class="line">                <span class="keyword">return</span> []</span><br><span class="line">        graph = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(groups)):</span><br><span class="line">            graph[i] = []</span><br><span class="line">        <span class="comment"># 转换item间的before关系为group之间</span></span><br><span class="line">        <span class="keyword">for</span> u, ll <span class="keyword">in</span> enumerate(beforeItems):</span><br><span class="line">            <span class="keyword">for</span> v <span class="keyword">in</span> ll:</span><br><span class="line">                <span class="keyword">if</span> group[u] != group[v]:</span><br><span class="line">                    graph[group[v]].append(group[u])</span><br><span class="line">        <span class="comment"># group间的拓扑排序，排的是下标（index）</span></span><br><span class="line">        group_idx = topoSort(graph)</span><br><span class="line">        <span class="keyword">if</span> group_idx == <span class="string">"Fail"</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="comment"># join together</span></span><br><span class="line">        <span class="keyword">for</span> idx <span class="keyword">in</span> group_idx:</span><br><span class="line">            ans += groups[idx]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">topoSort</span>(<span class="params">graph</span>):</span><br><span class="line">    in_degrees = <span class="built_in">dict</span>((u,<span class="number">0</span>) <span class="keyword">for</span> u <span class="keyword">in</span> graph)</span><br><span class="line">    vertex_num = <span class="built_in">len</span>(in_degrees)</span><br><span class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> graph:</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:</span><br><span class="line">            in_degrees[v] += <span class="number">1</span></span><br><span class="line">    Q = [u <span class="keyword">for</span> u <span class="keyword">in</span> in_degrees <span class="keyword">if</span> in_degrees[u] == <span class="number">0</span>]</span><br><span class="line">    Seq = []</span><br><span class="line">    <span class="keyword">while</span> Q:</span><br><span class="line">        u = Q.pop()</span><br><span class="line">        Seq.append(u)</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:</span><br><span class="line">            in_degrees[v] -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> in_degrees[v] == <span class="number">0</span>:</span><br><span class="line">                Q.append(v)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(Seq) == vertex_num:</span><br><span class="line">        <span class="keyword">return</span> Seq</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Fail&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sortItems</span>(<span class="params">self, n: <span class="built_in">int</span>, m: <span class="built_in">int</span>, group: <span class="type">List</span>[<span class="built_in">int</span>], beforeItems: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        groups = [[] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m)]</span><br><span class="line">        <span class="keyword">for</span> i, g <span class="keyword">in</span> <span class="built_in">enumerate</span>(group):</span><br><span class="line">            <span class="comment"># 将无group的item添加到只包含他自己的group，方便最后进行group间的拓扑排序</span></span><br><span class="line">            <span class="keyword">if</span> g == -<span class="number">1</span>:</span><br><span class="line">                group[i] = <span class="built_in">len</span>(groups)</span><br><span class="line">                groups.append([i])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                groups[g].append(i)</span><br><span class="line">        <span class="keyword">for</span> i, grp <span class="keyword">in</span> <span class="built_in">enumerate</span>(groups):</span><br><span class="line">            graph = &#123;&#125;</span><br><span class="line">            <span class="keyword">for</span> u <span class="keyword">in</span> grp:</span><br><span class="line">                graph[u] = []</span><br><span class="line">            <span class="keyword">for</span> u <span class="keyword">in</span> grp:</span><br><span class="line">                <span class="keyword">for</span> v <span class="keyword">in</span> beforeItems[u]:</span><br><span class="line">                    <span class="keyword">if</span> group[v] == group[u]:</span><br><span class="line">                        graph[v].append(u)</span><br><span class="line">            <span class="comment"># 对每个group进行内部拓扑排序</span></span><br><span class="line">            groups[i] = topoSort(graph)</span><br><span class="line">            <span class="keyword">if</span> groups[i] == <span class="string">&quot;Fail&quot;</span>:</span><br><span class="line">                <span class="keyword">return</span> []</span><br><span class="line">        graph = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(groups)):</span><br><span class="line">            graph[i] = []</span><br><span class="line">        <span class="comment"># 转换item间的before关系为group之间</span></span><br><span class="line">        <span class="keyword">for</span> u, ll <span class="keyword">in</span> <span class="built_in">enumerate</span>(beforeItems):</span><br><span class="line">            <span class="keyword">for</span> v <span class="keyword">in</span> ll:</span><br><span class="line">                <span class="keyword">if</span> group[u] != group[v]:</span><br><span class="line">                    graph[group[v]].append(group[u])</span><br><span class="line">        <span class="comment"># group间的拓扑排序，排的是下标（index）</span></span><br><span class="line">        group_idx = topoSort(graph)</span><br><span class="line">        <span class="keyword">if</span> group_idx == <span class="string">&quot;Fail&quot;</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="comment"># join together</span></span><br><span class="line">        <span class="keyword">for</span> idx <span class="keyword">in</span> group_idx:</span><br><span class="line">            ans += groups[idx]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 
-      
+
+
+
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/09/15/leetcode-weekly-contest-154/" rel="prev" title="LeetCode Weekly Contest 154">
+      <i class="fa fa-chevron-left"></i> LeetCode Weekly Contest 154
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/09/29/leetcode-weekly-contest-156/" rel="next" title="LeetCode Weekly Contest 156">
+      LeetCode Weekly Contest 156 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/09/15/leetcode-weekly-contest-154/" rel="next" title="LeetCode Weekly Contest 154">
-                <i class="fa fa-chevron-left"></i> LeetCode Weekly Contest 154
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/29/leetcode-weekly-contest-156/" rel="prev" title="LeetCode Weekly Contest 156">
-                LeetCode Weekly Contest 156 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Bluefissure">
-            
-              <p class="site-author-name" itemprop="name">Bluefissure</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">30</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Bluefissure" title="GitHub &rarr; https://github.com/Bluefissure" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:bluefissureofg@gmail.com" title="E-Mail &rarr; mailto:bluefissureofg@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://chrisoft.org/" title="https://chrisoft.org/" rel="noopener" target="_blank">Chrisoft</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://ericwww.github.io/" title="https://ericwww.github.io/" rel="noopener" target="_blank">Syasusu</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1200-Minimum-Absolute-Difference"><span class="nav-number">1.</span> <span class="nav-text">1200. Minimum Absolute Difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1201-Ugly-Number-III"><span class="nav-number">2.</span> <span class="nav-text">1201. Ugly Number III</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1202-Smallest-String-With-Swaps"><span class="nav-number">3.</span> <span class="nav-text">1202. Smallest String With Swaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1203-Sort-Items-by-Groups-Respecting-Dependencies"><span class="nav-number">4.</span> <span class="nav-text">1203. Sort Items by Groups Respecting Dependencies</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://bluefissure.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.bluefissure.com/2019/09/23/leetcode-weekly-contest-155/';
-        this.page.identifier = '2019/09/23/leetcode-weekly-contest-155/';
-        this.page.title = 'LeetCode Weekly Contest 155';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://bluefissure.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        loadComments();
-      
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
-  
-
-
-  
-  
-
-  
-
-  
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
-
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1201-Ugly-Number-III"><span class="nav-number">1.</span> <span class="nav-text">1201. Ugly Number III</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1202-Smallest-String-With-Swaps"><span class="nav-number">2.</span> <span class="nav-text">1202. Smallest String With Swaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1203-Sort-Items-by-Groups-Respecting-Dependencies"><span class="nav-number">3.</span> <span class="nav-text">1203. Sort Items by Groups Respecting Dependencies</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bluefissure</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-          if(result)$(this).text('Copied')
-          else $(this).text('Copy failed')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('Copy')
-        }, 300)
-      }).append(e)
-    })
-  </script>
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
 
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

@@ -1,112 +1,24 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.5.0',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.bluefissure.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下">
 <meta property="og:type" content="article">
@@ -114,24 +26,22 @@
 <meta property="og:url" content="https://blog.bluefissure.com/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-13T07:00:23.615Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-08-18T16:04:11.000Z">
+<meta property="article:modified_time" content="2018-11-13T07:00:23.615Z">
+<meta property="article:author" content="Bluefissure">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="莫比乌斯反演 学习笔记">
-<meta name="twitter:description" content="当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下">
+
+<link rel="canonical" href="https://blog.bluefissure.com/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/">
 
 
-
-
-
-
-  <link rel="canonical" href="https://blog.bluefissure.com/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
@@ -143,181 +53,79 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Bluefissure's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">A Place for Recording</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bluefissure's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">A Place for Recording</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -325,142 +133,70 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.bluefissure.com/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Bluefissure">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Bluefissure's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">莫比乌斯反演 学习笔记
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          莫比乌斯反演 学习笔记
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2016-08-19 00:04:11" itemprop="dateCreated datePublished" datetime="2016-08-19T00:04:11+08:00">2016-08-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-13 15:00:23" itemprop="dateModified" datetime="2018-11-13T15:00:23+08:00">2018-11-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Math-Theory/" itemprop="url" rel="index"><span itemprop="name">Math Theory</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-11-13 15:00:23" itemprop="dateModified" datetime="2018-11-13T15:00:23+08:00">2018-11-13</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math-Theory/" itemprop="url" rel="index"><span itemprop="name">Math Theory</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -468,912 +204,218 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p>当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下<br><a id="more"></a></p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>已知 </p>
-<script type="math/tex; mode=display">F(n)=\sum_{d\mid n}f(d)</script><p>则有 </p>
-<script type="math/tex; mode=display">f(n)=\sum_{d\mid n}\mu(d)F({n\over d})</script><p>其中$\mu(d)$叫做莫比乌斯函数,其值为</p>
-<script type="math/tex; mode=display">\mu(d)=\begin{cases} 1 &\text{d = 1}\\ (-1)^r &\text{$d=p_1p_2…p_r,其中p_i为不同的素数$}\\ 0 &\text{else} \end{cases}</script><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>1.</p>
-<script type="math/tex; mode=display">\sum _{ d|n }^{  }{ \mu (d)= } \begin{cases} 1,\quad n=1 \\ 0,\quad n>1 \end{cases}\\</script><p>证明如下:</p>
-<p>$\bullet$ $n=1$时,显然</p>
-<p>$\bullet$ $n\neq 1$时,将$n$分解$n={ { p }_{ 1 } }^{ { a }_{ 1 } }{ { p }_{ 2 } }^{ { a }_{ 2 } }…{ { p }_{ k } }^{ { a }_{ k } }$, $\mu$值不为0的只有质因子次数均为1的因子,其中质因子个数为$r$的因子有$C_{k}^{r}$个,所以</p>
-<script type="math/tex; mode=display">\sum _{ d|n }^{  }{ \mu (d) } =C_{ k }^{ 0 }-C_{ k }^{ 1 }+C_{ k }^{ 2 }-...+{ (-1) }^{ k }C_{ k }^{ k }=\sum _{ i=0 }^{ k }{ { (-1) }^{ i }C_{ k }^{ i } } ={ (-1+1) }^{ k }=0</script><p>2.</p>
-<script type="math/tex; mode=display">\sum _{ d|n }^{  }{ \frac { \mu (d) }{ d }  } =\frac { \varphi (n) }{ n }\\</script><p>证明如下:</p>
-<p>由欧拉函数性质知$n=\sum _{ d|n }^{  }{ \varphi (n) }$, 设$F(n)=n,\quad f(n)=\varphi (n)$, 有$f(n)=\varphi (n)=\sum _{ d|n }^{  }{ \mu (d) } \cdot \frac { n }{ d } $,故$\sum _{ d|n }^{  }{ \frac { \mu (d) }{ d }  } =\frac { \varphi (n) }{ n } $</p>
+        <p>当时数论学到莫比乌斯暂时放下了，现在重新拿起来学习一下</p>
+<span id="more"></span>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>已知 <br>$$F(n)&#x3D;\sum_{d\mid n}f(d)$$<br>则有<br>$$f(n)&#x3D;\sum_{d\mid n}\mu(d)F({n\over d})$$<br>其中$\mu(d)$叫做莫比乌斯函数,其值为<br>$$\mu(d)&#x3D;\begin{cases} 1 &amp;\text{d &#x3D; 1}\ (-1)^r &amp;\text{$d&#x3D;p_1p_2…p_r,其中p_i为不同的素数$}\ 0 &amp;\text{else} \end{cases}$$</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol>
+<li>$$\sum _{ d|n }^{  }{ \mu (d)&#x3D; } \begin{cases} 1,\quad n&#x3D;1 \ 0,\quad n&gt;1 \end{cases}\$$</li>
+</ol>
+<p>证明如下:</p>
+<p>$\bullet$ $n&#x3D;1$时,显然</p>
+<p>$\bullet$ $n\neq 1$时,将$n$分解$n&#x3D;{ { p }<em>{ 1 } }^{ { a }</em>{ 1 } }{ { p }<em>{ 2 } }^{ { a }</em>{ 2 } }…{ { p }<em>{ k } }^{ { a }</em>{ k } }$, $\mu$值不为0的只有质因子次数均为1的因子,其中质因子个数为$r$的因子有$C_{k}^{r}$个,所以<br>$$\sum <em>{ d|n }^{  }{ \mu (d) } &#x3D;C</em>{ k }^{ 0 }-C_{ k }^{ 1 }+C_{ k }^{ 2 }-…+{ (-1) }^{ k }C_{ k }^{ k }&#x3D;\sum <em>{ i&#x3D;0 }^{ k }{ { (-1) }^{ i }C</em>{ k }^{ i } } &#x3D;{ (-1+1) }^{ k }&#x3D;0$$</p>
+<ol start="2">
+<li>$$\sum _{ d|n }^{  }{ \frac { \mu (d) }{ d }  } &#x3D;\frac { \varphi (n) }{ n }\ $$<br>证明如下:</li>
+</ol>
+<p>由欧拉函数性质知$n&#x3D;\sum _{ d|n }^{  }{ \varphi (n) }$, 设$F(n)&#x3D;n,\quad f(n)&#x3D;\varphi (n)$, 有$f(n)&#x3D;\varphi (n)&#x3D;\sum _{ d|n }^{  }{ \mu (d) } \cdot \frac { n }{ d } $,故$\sum _{ d|n }^{  }{ \frac { \mu (d) }{ d }  } &#x3D;\frac { \varphi (n) }{ n } $</p>
 <p>3.$\mu(n)$为积性函数</p>
-<h2 id="反演定理的证明"><a href="#反演定理的证明" class="headerlink" title="反演定理的证明"></a>反演定理的证明</h2><script type="math/tex; mode=display">\begin{align} \sum _{ d|n }^{  }{ \mu (d)\cdot F(\frac { n }{ d } ) } &=\sum _{ d|n }^{  }{ \left[ \mu (d)\sum _{ k|\frac { n }{ d }  }^{  }{ f(k) }  \right]  } \\ &=\sum _{ d|n }^{  }{ \sum _{ d|\frac { n }{ k }  }^{  }{ \left[ \mu (d)\cdot f(k) \right]  }  } \\ &=\sum _{ dk|n }^{  }{ \left[ \mu (d)\cdot f(k) \right]  } \\ &=\sum _{ k|n }^{  }{ \left[ f(k)\sum _{ d|\frac { n }{ k }  }^{  }{ \mu (d) }  \right]  } =f(n) \end{align}</script><p>其中,$\sum _{ d|\frac { n }{ k }  }^{  }{ \mu (d) } $的计算用到了性质1</p>
-<h2 id="另一种形式"><a href="#另一种形式" class="headerlink" title="另一种形式"></a>另一种形式</h2><p>莫比乌斯公式还有一种常用的形式较为常用： </p>
-<script type="math/tex; mode=display">F(d)=\sum _{ d|n }^{  }{ f(n) } \Rightarrow f(d)=\sum _{ d|n } \mu ({ \frac { n }{ d }  })F(n)</script><p>证明同理 </p>
+<h2 id="反演定理的证明"><a href="#反演定理的证明" class="headerlink" title="反演定理的证明"></a>反演定理的证明</h2><p>$$\begin{align} \sum _{ d|n }^{  }{ \mu (d)\cdot F(\frac { n }{ d } ) } &amp;&#x3D;\sum _{ d|n }^{  }{ \left[ \mu (d)\sum _{ k|\frac { n }{ d }  }^{  }{ f(k) }  \right]  } \ &amp;&#x3D;\sum _{ d|n }^{  }{ \sum _{ d|\frac { n }{ k }  }^{  }{ \left[ \mu (d)\cdot f(k) \right]  }  } \ &amp;&#x3D;\sum _{ dk|n }^{  }{ \left[ \mu (d)\cdot f(k) \right]  } \ &amp;&#x3D;\sum _{ k|n }^{  }{ \left[ f(k)\sum _{ d|\frac { n }{ k }  }^{  }{ \mu (d) }  \right]  } &#x3D;f(n) \end{align}$$ </p>
+<p>其中,$\sum _{ d|\frac { n }{ k }  }^{  }{ \mu (d) } $的计算用到了性质1</p>
+<h2 id="另一种形式"><a href="#另一种形式" class="headerlink" title="另一种形式"></a>另一种形式</h2><p>莫比乌斯公式还有一种常用的形式较为常用：<br>$$F(d)&#x3D;\sum _{ d|n }^{  }{ f(n) } \Rightarrow f(d)&#x3D;\sum _{ d|n } \mu ({ \frac { n }{ d }  })F(n)$$</p>
+<p>证明同理 </p>
 <h2 id="题目相关"><a href="#题目相关" class="headerlink" title="题目相关"></a>题目相关</h2><p>嗯，今天做了几道懵逼乌斯的题目感觉的确蛮懵逼的，主要是各种公式的推导过程很是不熟悉，看来还是要多刷题加深对于反演的理解</p>
-<h3 id="1-区间内-gcd-x-y-k-对数查询"><a href="#1-区间内-gcd-x-y-k-对数查询" class="headerlink" title="1.区间内$gcd(x,y)=k$对数查询"></a>1.区间内$gcd(x,y)=k$对数查询</h3><p>这是第一类的莫比乌斯反演的应用问题，详细的题意为”求满足$a\le x\le b, c\le y\le d$范围内，$gcd(x,y)=k$的$(x,y)$数对有多少个”。<br>首先，我们将问题转化成四个子问题，如果$sol(a,b)$表示$1\le x\le a, 1\le y\le b$范围内满足题意的$(x,y)$数对有多少个，那么最后的答案$ans$便为</p>
-<script type="math/tex; mode=display">ans=sol(b,d)-sol(a-1,d)-sol(c-1,b)+sol(a-1,c-1)</script><p>于是，我们只需要解决$1\le x\le a, 1\le y\le b$范围内$gcd(x,y)=k$的个数。<br>显然，这个问题等价于$1\le x\le \frac { a }{ k } ,1\le y\le \frac { b }{ k } $范围内$gcd(x,y)=1$的个数。<br>于是，我们考虑这个元问题：$1\le x\le n ,1\le y\le m $范围内$gcd(x,y)=1$的个数<br>不妨假设$n\le m$ 我们用$f(k)$表示$gcd(x,y)=k$的个数，用$F(k)$表示$k|gcd(x,y)$的个数，则有</p>
-<script type="math/tex; mode=display">F(d)=\sum _{ d|n }^{  }{ f(n) }</script><p>显然</p>
-<script type="math/tex; mode=display">F(x)=\left\lfloor \frac { n }{ x }  \right\rfloor \cdot \left\lfloor \frac { m }{ x }  \right\rfloor</script><p>根据反演公式</p>
-<script type="math/tex; mode=display">f(i)=\sum _{ i|d } \mu ({ \frac { d }{ i }  })F(d)=\sum _{ i|d } \mu ({ \frac { d }{ i }  })\cdot \left\lfloor \frac { n }{ d }  \right\rfloor \cdot \left\lfloor \frac { m }{ d }  \right\rfloor</script><p>有</p>
-<script type="math/tex; mode=display">f(1)=\sum _{ d\le n } \mu ({ d })\cdot \left\lfloor \frac { n }{ d }  \right\rfloor \cdot \left\lfloor \frac { m }{ d }  \right\rfloor</script><p>于是我们枚举一下$d$就能得出结果啦。 </p>
-<p>等等，枚举？范围稍稍大一点就铁定TLE啊，我们考虑</p>
-<script type="math/tex; mode=display">\left\lfloor \frac { n }{ d }  \right\rfloor</script><p>这个东西，显然他不是随着$d$的变化一定都变化的，而是只会有$O(\sqrt { n } )$个取值，具体的原因在新生赛热身的<a href="http://acm.sdu.edu.cn/problem/20/" target="_blank" rel="noopener">这道题</a> 的题解中有简单提到。<br>因此，我们对</p>
-<script type="math/tex; mode=display">\left\lfloor \frac { n }{ d }  \right\rfloor \cdot \left\lfloor \frac { m }{ d }\right\rfloor</script><p>这个东西相同取值的块求区间内$\mu $的和即可，在实际的操作过程中只需要维护一个$\mu $的前缀和。 代码以 <a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2301" target="_blank" rel="noopener">BZOJ_2301</a> 为例<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a,b,c,d,k;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100100</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">int</span> prim[N], phi[N] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;, mob[N]=&#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> pn = <span class="number">0</span>;</span><br><span class="line">LL sum[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">table</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    mob[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt; N;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">            prim[pn++] = i;</span><br><span class="line">            phi[i] = i<span class="number">-1</span>;</span><br><span class="line">            mob[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; pn &amp;&amp; <span class="number">1L</span>L*i*prim[j] &lt; N;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % prim[j] == <span class="number">0</span>)&#123;</span><br><span class="line">                phi[i*prim[j]] = phi[i] * prim[j];</span><br><span class="line">                vis[i*prim[j]] = <span class="number">1</span>;</span><br><span class="line">                mob[i*prim[j]] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            phi[i*prim[j]] = phi[i] * (prim[j]<span class="number">-1</span>);</span><br><span class="line">            vis[i*prim[j]] = <span class="number">1</span>;</span><br><span class="line">            mob[i*prim[j]] = -mob[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sum[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++) sum[i]=sum[i<span class="number">-1</span>]+mob[i];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">LL <span class="title">sol</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> last;</span><br><span class="line">    LL ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;m) swap(n,m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i=last+<span class="number">1</span>)&#123;</span><br><span class="line">        last=min(n/(n/i),m/(m/i));</span><br><span class="line">        ret+=(LL)(n/i)*(m/i)*(sum[last]-sum[i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    table();</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);T--;)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d"</span>,&amp;a,&amp;b,&amp;c,&amp;d,&amp;k);</span><br><span class="line">        LL ans=sol(b/k,d/k)-sol((a<span class="number">-1</span>)/k,d/k)-sol((c<span class="number">-1</span>)/k,b/k)+sol((a<span class="number">-1</span>)/k,(c<span class="number">-1</span>)/k);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-区间内-gcd-x-y-为质数的对数查询"><a href="#2-区间内-gcd-x-y-为质数的对数查询" class="headerlink" title="2.区间内$gcd(x,y)$为质数的对数查询"></a>2.区间内$gcd(x,y)$为质数的对数查询</h3><p>同1.可转化成元问题：$1\le x\le n ,1\le y\le m $范围内$gcd(x,y)$为质数的$(x,y)$数对个数 $(n\le m)$ 一个非常直观（或说偷懒）的办法就是对于所有的质数$p$满足$p\le n$我们用1.的方法搞出$gcd(x,y)=p$的个数然后加起来……啊喂怎么可能这么简单辣……<br>但是这个想法给了我们一个思路，我们先来看</p>
-<script type="math/tex; mode=display">f(p)=\sum _{ d\le n/p }^{  }{ \mu (d)\cdot \left\lfloor \frac { n/p }{ d }  \right\rfloor \cdot \left\lfloor \frac { m/p }{ d }  \right\rfloor = } \sum _{ d\le n/p }^{  }{ \mu (d)\cdot \left\lfloor \frac { n }{ pd }  \right\rfloor \cdot \left\lfloor \frac { m }{ pd }  \right\rfloor  }</script><p>令$T=pd$，有</p>
-<script type="math/tex; mode=display">f(p)=\sum _{ d\le n/p }^{  }{ \mu (\frac { T }{ p } )\cdot \left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor  }</script><p>有</p>
-<script type="math/tex; mode=display">\begin{align} \sum _{ p\le n }^{  }{ f(p) } &=\sum _{ p\le n }^{  }{ \sum _{ d\le n/p }^{  }{ \mu (\frac { T }{ p } )\cdot \left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor  }  } \\ &=\sum _{ T=1 }^{ n }{ \sum _{ p|T }^{  }{ \mu (\frac { T }{ p } )\cdot \left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor  }  } \\ &=\sum _{ T=1 }^{ n }{ \left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor \sum _{ p|T }^{  }{ \mu (\frac { T }{ p } ) }  }  \end{align}</script><p>(以上$p$均为质数，下同）<br>$\left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor $可以分块来搞，后面的这个$\sum _{ p|T }^{  }{ \mu (\frac { T }{ p } ) } $就不太好弄了，我们先来研究一下它</p>
-<h4 id="函数-g-x-sum-p-x-mu-frac-x-p"><a href="#函数-g-x-sum-p-x-mu-frac-x-p" class="headerlink" title="函数$g(x)=\sum _{ p|x }^{  }{ \mu (\frac { x }{ p } ) } $"></a>函数$g(x)=\sum _{ p|x }^{  }{ \mu (\frac { x }{ p } ) } $</h4><p>首先，我们先来说它的计算过程中用到的一个性质，之后再给出证明</p>
-<script type="math/tex; mode=display">g(kp)=\begin{cases} \mu (k),\quad p\mid k \\ \mu (k)-g(k),\quad p\nmid k \end{cases}</script><p>证明：首先</p>
-<script type="math/tex; mode=display">g(kp)=\sum _{ p'|kp }^{  }{ \mu (\frac { kp }{ p' } ) }</script><p>（$p’$为质数，下同）我们把$k$分解</p>
-<script type="math/tex; mode=display">k={ p }^{ a }\cdot { p }_{ 1 }^{ { a }_{ 1 } }\cdot { p }_{ 2 }^{ { a }_{ 2 } }...{ p }_{ r }^{ { a }_{ r } }</script><p>1.当$p|k$时，有$a\ge 1$,故</p>
-<script type="math/tex; mode=display">kp={ p }^{ a+1 }\cdot { p }_{ 1 }^{ { a }_{ 1 } }\cdot { p }_{ 2 }^{ { a }_{ 2 } }...{ p }_{ r }^{ { a }_{ r } }</script><p>由$\mu$的定义可知，只有$p’=p$时，$\mu (\frac { kp }{ p’ } ) $才不等于0（否则$p$的指数比1大），所以此时</p>
-<script type="math/tex; mode=display">\sum _{ p'|kp }^{  }{ \mu (\frac { kp }{ p' } ) } =\mu (k)</script><p>2.当$p\nmid k$时 $p’=p$时，同上文：</p>
-<script type="math/tex; mode=display">\mu (\frac { kp }{ p' } )=\mu (k)</script><p>$p’\ne p$时，因为$\mu $是一个积性函数，并且$p\nmid \frac { k }{ p’ } $，所以有</p>
-<script type="math/tex; mode=display">\mu (\frac { kp }{ p' } )=\mu (\frac { k }{ p' } )\cdot \mu(p)</script><p>有</p>
-<script type="math/tex; mode=display">g(kp){ | }_{ p\ne p' }=\sum _{ p'|kp ,p'\ne p }^{  }{ \mu (\frac { kp }{ p' } ) } =\sum _{ p'|kp,p'\ne p }^{  }{ \mu (\frac { k }{ p' } )\cdot \mu (p) } =\mu (p)\cdot \sum _{ p'|k }^{  }{ \mu (\frac { k }{ p' } ) }</script><p>而</p>
-<script type="math/tex; mode=display">\mu (p)=-1,\sum _{ p'|k }^{  }{ \mu (\frac { k }{ p' } ) } =g(k)</script><p>所以</p>
-<script type="math/tex; mode=display">g(kp){ | }_{ p\ne p' }=-g(k)</script><p>上面两个加起来，就得到了</p>
-<script type="math/tex; mode=display">\mu (k)-g(k),\quad p\nmid k</script><p>综上，</p>
-<script type="math/tex; mode=display">g(kp)=\begin{cases} \mu (k),\quad p\mid k \\ \mu (k)-g(k),\quad p\nmid k \end{cases}</script><p>回想一下我们线性筛的过程，发现对于$p|k$和$p\nmid k$的讨论正是线性筛的过程，因此我们可以预处理出$g(x)$，然后的做法就和问题1差不多了，具体的预处理过程看代码还是。 貌似一道叫做 YY的GCD 的题目成了权限题，于是代码只好以 <a href="http://www.spoj.com/problems/PGCD/" target="_blank" rel="noopener">SPOJ_PGCD </a>为例<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a,b,c,d,k;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000005</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">int</span> prim[N], phi[N] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;, mob[N]=&#123;<span class="number">1</span>,<span class="number">1</span>&#125;,g[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> pn = <span class="number">0</span>;</span><br><span class="line">LL sum[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">table</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    mob[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    g[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt; N;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">            prim[pn++] = i;</span><br><span class="line">            phi[i] = i<span class="number">-1</span>;</span><br><span class="line">            mob[i] = <span class="number">-1</span>;</span><br><span class="line">            g[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; pn &amp;&amp; <span class="number">1L</span>L*i*prim[j] &lt; N;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % prim[j] == <span class="number">0</span>)&#123;</span><br><span class="line">                phi[i*prim[j]] = phi[i] * prim[j];</span><br><span class="line">                vis[i*prim[j]] = <span class="number">1</span>;</span><br><span class="line">                mob[i*prim[j]] = <span class="number">0</span>;</span><br><span class="line">                g[i*prim[j]] = mob[i];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            phi[i*prim[j]] = phi[i] * (prim[j]<span class="number">-1</span>);</span><br><span class="line">            vis[i*prim[j]] = <span class="number">1</span>;</span><br><span class="line">            mob[i*prim[j]] = -mob[i];</span><br><span class="line">            g[i*prim[j]] = mob[i] - g[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sum[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++) sum[i]=sum[i<span class="number">-1</span>]+g[i];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">LL <span class="title">sol</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> last;</span><br><span class="line">    LL ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;m) swap(n,m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i=last+<span class="number">1</span>)&#123;</span><br><span class="line">        last=min(n/(n/i),m/(m/i));</span><br><span class="line">        ret+=(LL)(n/i)*(m/i)*(sum[last]-sum[i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret-(LL)m*n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T,cas=<span class="number">1</span>;</span><br><span class="line">    table();</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);T--;)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">        LL ans;</span><br><span class="line">        ans=sol(a,b);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-区间内-gcd-x-y-x3D-k-对数查询"><a href="#1-区间内-gcd-x-y-x3D-k-对数查询" class="headerlink" title="1.区间内$gcd(x,y)&#x3D;k$对数查询"></a>1.区间内$gcd(x,y)&#x3D;k$对数查询</h3><p>这是第一类的莫比乌斯反演的应用问题，详细的题意为”求满足$a\le x\le b, c\le y\le d$范围内，$gcd(x,y)&#x3D;k$的$(x,y)$数对有多少个”。<br>首先，我们将问题转化成四个子问题，如果$sol(a,b)$表示$1\le x\le a, 1\le y\le b$范围内满足题意的$(x,y)$数对有多少个，那么最后的答案$ans$便为<br>$$ans&#x3D;sol(b,d)-sol(a-1,d)-sol(c-1,b)+sol(a-1,c-1)$$<br>于是，我们只需要解决$1\le x\le a, 1\le y\le b$范围内$gcd(x,y)&#x3D;k$的个数。<br>显然，这个问题等价于$1\le x\le \frac { a }{ k } ,1\le y\le \frac { b }{ k } $范围内$gcd(x,y)&#x3D;1$的个数。<br>于是，我们考虑这个元问题：$1\le x\le n ,1\le y\le m $范围内$gcd(x,y)&#x3D;1$的个数<br>不妨假设$n\le m$ 我们用$f(k)$表示$gcd(x,y)&#x3D;k$的个数，用$F(k)$表示$k|gcd(x,y)$的个数，则有<br>$$F(d)&#x3D;\sum _{ d|n }^{  }{ f(n) }$$<br>显然<br>$$F(x)&#x3D;\left\lfloor \frac { n }{ x }  \right\rfloor \cdot \left\lfloor \frac { m }{ x }  \right\rfloor $$<br>根据反演公式<br>$$f(i)&#x3D;\sum _{ i|d } \mu ({ \frac { d }{ i }  })F(d)&#x3D;\sum _{ i|d } \mu ({ \frac { d }{ i }  })\cdot \left\lfloor \frac { n }{ d }  \right\rfloor \cdot \left\lfloor \frac { m }{ d }  \right\rfloor $$<br>有<br>$$f(1)&#x3D;\sum _{ d\le n } \mu ({ d })\cdot \left\lfloor \frac { n }{ d }  \right\rfloor \cdot \left\lfloor \frac { m }{ d }  \right\rfloor $$<br>于是我们枚举一下$d$就能得出结果啦。 </p>
+<p>等等，枚举？范围稍稍大一点就铁定TLE啊，我们考虑<br>$$\left\lfloor \frac { n }{ d }  \right\rfloor $$<br>这个东西，显然他不是随着$d$的变化一定都变化的，而是只会有$O(\sqrt { n } )$个取值，具体的原因在新生赛热身的<a target="_blank" rel="noopener" href="http://acm.sdu.edu.cn/problem/20/">这道题</a> 的题解中有简单提到。<br>因此，我们对<br>$$\left\lfloor \frac { n }{ d }  \right\rfloor \cdot \left\lfloor \frac { m }{ d }\right\rfloor$$<br>这个东西相同取值的块求区间内$\mu $的和即可，在实际的操作过程中只需要维护一个$\mu $的前缀和。 代码以 <a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/problem.php?id=2301">BZOJ_2301</a> 为例 </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> a,b,c,d,k;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 100100</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LL long long</span></span><br><span class="line"><span class="type">int</span> prim[N], phi[N] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;, mob[N]=&#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="type">int</span> pn = <span class="number">0</span>;</span><br><span class="line">LL sum[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">table</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in">sizeof</span>(vis));</span><br><span class="line">    mob[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt; N;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">            prim[pn++] = i;</span><br><span class="line">            phi[i] = i<span class="number">-1</span>;</span><br><span class="line">            mob[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j &lt; pn &amp;&amp; <span class="number">1LL</span>*i*prim[j] &lt; N;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % prim[j] == <span class="number">0</span>)&#123;</span><br><span class="line">                phi[i*prim[j]] = phi[i] * prim[j];</span><br><span class="line">                vis[i*prim[j]] = <span class="number">1</span>;</span><br><span class="line">                mob[i*prim[j]] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            phi[i*prim[j]] = phi[i] * (prim[j]<span class="number">-1</span>);</span><br><span class="line">            vis[i*prim[j]] = <span class="number">1</span>;</span><br><span class="line">            mob[i*prim[j]] = -mob[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sum[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;N;i++) sum[i]=sum[i<span class="number">-1</span>]+mob[i];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">LL <span class="title">sol</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> last;</span><br><span class="line">    LL ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;m) <span class="built_in">swap</span>(n,m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i=last+<span class="number">1</span>)&#123;</span><br><span class="line">        last=<span class="built_in">min</span>(n/(n/i),m/(m/i));</span><br><span class="line">        ret+=(LL)(n/i)*(m/i)*(sum[last]-sum[i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">table</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;T);T--;)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d%d&quot;</span>,&amp;a,&amp;b,&amp;c,&amp;d,&amp;k);</span><br><span class="line">        LL ans=<span class="built_in">sol</span>(b/k,d/k)-<span class="built_in">sol</span>((a<span class="number">-1</span>)/k,d/k)-<span class="built_in">sol</span>((c<span class="number">-1</span>)/k,b/k)+<span class="built_in">sol</span>((a<span class="number">-1</span>)/k,(c<span class="number">-1</span>)/k);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-区间内-gcd-x-y-为质数的对数查询"><a href="#2-区间内-gcd-x-y-为质数的对数查询" class="headerlink" title="2.区间内$gcd(x,y)$为质数的对数查询"></a>2.区间内$gcd(x,y)$为质数的对数查询</h3><p>同1.可转化成元问题：$1\le x\le n ,1\le y\le m $范围内$gcd(x,y)$为质数的$(x,y)$数对个数 $(n\le m)$ 一个非常直观（或说偷懒）的办法就是对于所有的质数$p$满足$p\le n$我们用1.的方法搞出$gcd(x,y)&#x3D;p$的个数然后加起来……啊喂怎么可能这么简单辣……<br>但是这个想法给了我们一个思路，我们先来看<br>$$f(p)&#x3D;\sum _{ d\le n&#x2F;p }^{  }{ \mu (d)\cdot \left\lfloor \frac { n&#x2F;p }{ d }  \right\rfloor \cdot \left\lfloor \frac { m&#x2F;p }{ d }  \right\rfloor &#x3D; } \sum _{ d\le n&#x2F;p }^{  }{ \mu (d)\cdot \left\lfloor \frac { n }{ pd }  \right\rfloor \cdot \left\lfloor \frac { m }{ pd }  \right\rfloor  }  $$<br>令$T&#x3D;pd$，有<br>$$f(p)&#x3D;\sum _{ d\le n&#x2F;p }^{  }{ \mu (\frac { T }{ p } )\cdot \left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor  } $$<br>有<br>$$\begin{align} \sum _{ p\le n }^{  }{ f(p) } &amp;&#x3D;\sum _{ p\le n }^{  }{ \sum _{ d\le n&#x2F;p }^{  }{ \mu (\frac { T }{ p } )\cdot \left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor  }  } \ &amp;&#x3D;\sum _{ T&#x3D;1 }^{ n }{ \sum _{ p|T }^{  }{ \mu (\frac { T }{ p } )\cdot \left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor  }  } \ &amp;&#x3D;\sum _{ T&#x3D;1 }^{ n }{ \left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor \sum _{ p|T }^{  }{ \mu (\frac { T }{ p } ) }  }  \end{align} $$<br>(以上$p$均为质数，下同）<br>$\left\lfloor \frac { n }{ T }  \right\rfloor \cdot \left\lfloor \frac { m }{ T }  \right\rfloor $可以分块来搞，后面的这个$\sum _{ p|T }^{  }{ \mu (\frac { T }{ p } ) } $就不太好弄了，我们先来研究一下它</p>
+<h4 id="函数-g-x-x3D-sum-p-x-mu-frac-x-p"><a href="#函数-g-x-x3D-sum-p-x-mu-frac-x-p" class="headerlink" title="函数$g(x)&#x3D;\sum _{ p|x }^{  }{ \mu (\frac { x }{ p } ) } $"></a>函数$g(x)&#x3D;\sum _{ p|x }^{  }{ \mu (\frac { x }{ p } ) } $</h4><p>首先，我们先来说它的计算过程中用到的一个性质，之后再给出证明<br>$$g(kp)&#x3D;\begin{cases} \mu (k),\quad p\mid k \ \mu (k)-g(k),\quad p\nmid k \end{cases}$$<br>证明：首先<br>$$g(kp)&#x3D;\sum <em>{ p’|kp }^{  }{ \mu (\frac { kp }{ p’ } ) } $$<br>（$p’$为质数，下同）我们把$k$分解<br>$$k&#x3D;{ p }^{ a }\cdot { p }</em>{ 1 }^{ { a }<em>{ 1 } }\cdot { p }</em>{ 2 }^{ { a }<em>{ 2 } }…{ p }</em>{ r }^{ { a }<em>{ r } }$$<br>1.当$p|k$时，有$a\ge 1$,故<br>$$kp&#x3D;{ p }^{ a+1 }\cdot { p }</em>{ 1 }^{ { a }<em>{ 1 } }\cdot { p }</em>{ 2 }^{ { a }<em>{ 2 } }…{ p }</em>{ r }^{ { a }_{ r } }$$<br>由$\mu$的定义可知，只有$p’&#x3D;p$时，$\mu (\frac { kp }{ p’ } ) $才不等于0（否则$p$的指数比1大），所以此时<br>$$\sum <em>{ p’|kp }^{  }{ \mu (\frac { kp }{ p’ } ) } &#x3D;\mu (k)$$<br>2.当$p\nmid k$时 $p’&#x3D;p$时，同上文：<br>$$\mu (\frac { kp }{ p’ } )&#x3D;\mu (k)$$<br>$p’\ne p$时，因为$\mu $是一个积性函数，并且$p\nmid \frac { k }{ p’ } $，所以有<br>$$\mu (\frac { kp }{ p’ } )&#x3D;\mu (\frac { k }{ p’ } )\cdot \mu(p)$$<br>有<br>$$g(kp){ | }</em>{ p\ne p’ }&#x3D;\sum _{ p’|kp ,p’\ne p }^{  }{ \mu (\frac { kp }{ p’ } ) } &#x3D;\sum _{ p’|kp,p’\ne p }^{  }{ \mu (\frac { k }{ p’ } )\cdot \mu (p) } &#x3D;\mu (p)\cdot \sum _{ p’|k }^{  }{ \mu (\frac { k }{ p’ } ) } $$<br>而<br>$$\mu (p)&#x3D;-1,\sum <em>{ p’|k }^{  }{ \mu (\frac { k }{ p’ } ) } &#x3D;g(k)$$<br>所以<br>$$g(kp){ | }</em>{ p\ne p’ }&#x3D;-g(k)$$<br>上面两个加起来，就得到了<br>$$\mu (k)-g(k),\quad p\nmid k$$<br>综上，<br>$$g(kp)&#x3D;\begin{cases} \mu (k),\quad p\mid k \ \mu (k)-g(k),\quad p\nmid k \end{cases}$$  <br>回想一下我们线性筛的过程，发现对于$p|k$和$p\nmid k$的讨论正是线性筛的过程，因此我们可以预处理出$g(x)$，然后的做法就和问题1差不多了，具体的预处理过程看代码还是。 貌似一道叫做 YY的GCD 的题目成了权限题，于是代码只好以 <a target="_blank" rel="noopener" href="http://www.spoj.com/problems/PGCD/">SPOJ_PGCD </a>为例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> a,b,c,d,k;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000005</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LL long long</span></span><br><span class="line"><span class="type">int</span> prim[N], phi[N] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;, mob[N]=&#123;<span class="number">1</span>,<span class="number">1</span>&#125;,g[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="type">int</span> pn = <span class="number">0</span>;</span><br><span class="line">LL sum[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">table</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in">sizeof</span>(vis));</span><br><span class="line">    mob[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    g[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt; N;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">            prim[pn++] = i;</span><br><span class="line">            phi[i] = i<span class="number">-1</span>;</span><br><span class="line">            mob[i] = <span class="number">-1</span>;</span><br><span class="line">            g[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j &lt; pn &amp;&amp; <span class="number">1LL</span>*i*prim[j] &lt; N;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i % prim[j] == <span class="number">0</span>)&#123;</span><br><span class="line">                phi[i*prim[j]] = phi[i] * prim[j];</span><br><span class="line">                vis[i*prim[j]] = <span class="number">1</span>;</span><br><span class="line">                mob[i*prim[j]] = <span class="number">0</span>;</span><br><span class="line">                g[i*prim[j]] = mob[i];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            phi[i*prim[j]] = phi[i] * (prim[j]<span class="number">-1</span>);</span><br><span class="line">            vis[i*prim[j]] = <span class="number">1</span>;</span><br><span class="line">            mob[i*prim[j]] = -mob[i];</span><br><span class="line">            g[i*prim[j]] = mob[i] - g[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sum[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;N;i++) sum[i]=sum[i<span class="number">-1</span>]+g[i];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">LL <span class="title">sol</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> last;</span><br><span class="line">    LL ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;m) <span class="built_in">swap</span>(n,m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i=last+<span class="number">1</span>)&#123;</span><br><span class="line">        last=<span class="built_in">min</span>(n/(n/i),m/(m/i));</span><br><span class="line">        ret+=(LL)(n/i)*(m/i)*(sum[last]-sum[i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret-(LL)m*n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T,cas=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">table</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;T);T--;)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;a,&amp;b);</span><br><span class="line">        LL ans;</span><br><span class="line">        ans=<span class="built_in">sol</span>(a,b);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="3-还有好多其他类型的题，到时候单独写博客吧……我也没做完……"><a href="#3-还有好多其他类型的题，到时候单独写博客吧……我也没做完……" class="headerlink" title="3.还有好多其他类型的题，到时候单独写博客吧……我也没做完……"></a>3.还有好多其他类型的题，到时候单独写博客吧……我也没做完……</h3><p>收尾的话差不多了，总结的话有时间再写，打那么多公式简直累死了……</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/" rel="prev" title="HDU 5816 Hearthstone 状压">
+      <i class="fa fa-chevron-left"></i> HDU 5816 Hearthstone 状压
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/" rel="next" title="Python模拟登陆初探">
+      Python模拟登陆初探 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/08/09/hdu-5816-hearthstone-e7-8a-b6-e5-8e-8b/" rel="next" title="HDU 5816 Hearthstone 状压">
-                <i class="fa fa-chevron-left"></i> HDU 5816 Hearthstone 状压
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/" rel="prev" title="Python模拟登陆初探">
-                Python模拟登陆初探 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Bluefissure">
-            
-              <p class="site-author-name" itemprop="name">Bluefissure</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">30</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Bluefissure" title="GitHub &rarr; https://github.com/Bluefissure" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:bluefissureofg@gmail.com" title="E-Mail &rarr; mailto:bluefissureofg@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://chrisoft.org/" title="https://chrisoft.org/" rel="noopener" target="_blank">Chrisoft</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://ericwww.github.io/" title="https://ericwww.github.io/" rel="noopener" target="_blank">Syasusu</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性质"><span class="nav-number">2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反演定理的证明"><span class="nav-number">3.</span> <span class="nav-text">反演定理的证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另一种形式"><span class="nav-number">4.</span> <span class="nav-text">另一种形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目相关"><span class="nav-number">5.</span> <span class="nav-text">题目相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-区间内-gcd-x-y-k-对数查询"><span class="nav-number">5.1.</span> <span class="nav-text">1.区间内$gcd(x,y)=k$对数查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-区间内-gcd-x-y-为质数的对数查询"><span class="nav-number">5.2.</span> <span class="nav-text">2.区间内$gcd(x,y)$为质数的对数查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数-g-x-sum-p-x-mu-frac-x-p"><span class="nav-number">5.2.1.</span> <span class="nav-text">函数$g(x)=\sum _{ p|x }^{  }{ \mu (\frac { x }{ p } ) } $</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-还有好多其他类型的题，到时候单独写博客吧……我也没做完……"><span class="nav-number">5.3.</span> <span class="nav-text">3.还有好多其他类型的题，到时候单独写博客吧……我也没做完……</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://bluefissure.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.bluefissure.com/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/';
-        this.page.identifier = '2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/';
-        this.page.title = '莫比乌斯反演 学习笔记';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://bluefissure.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        loadComments();
-      
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
-  
-
-
-  
-  
-
-  
-
-  
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
-
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E6%BC%94%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">反演定理的证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">另一种形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E7%9B%B8%E5%85%B3"><span class="nav-number">5.</span> <span class="nav-text">题目相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8C%BA%E9%97%B4%E5%86%85-gcd-x-y-x3D-k-%E5%AF%B9%E6%95%B0%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.1.</span> <span class="nav-text">1.区间内$gcd(x,y)&#x3D;k$对数查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8C%BA%E9%97%B4%E5%86%85-gcd-x-y-%E4%B8%BA%E8%B4%A8%E6%95%B0%E7%9A%84%E5%AF%B9%E6%95%B0%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.2.</span> <span class="nav-text">2.区间内$gcd(x,y)$为质数的对数查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0-g-x-x3D-sum-p-x-mu-frac-x-p"><span class="nav-number">5.2.1.</span> <span class="nav-text">函数$g(x)&#x3D;\sum _{ p|x }^{  }{ \mu (\frac { x }{ p } ) } $</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%98%E6%9C%89%E5%A5%BD%E5%A4%9A%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%A2%98%EF%BC%8C%E5%88%B0%E6%97%B6%E5%80%99%E5%8D%95%E7%8B%AC%E5%86%99%E5%8D%9A%E5%AE%A2%E5%90%A7%E2%80%A6%E2%80%A6%E6%88%91%E4%B9%9F%E6%B2%A1%E5%81%9A%E5%AE%8C%E2%80%A6%E2%80%A6"><span class="nav-number">5.3.</span> <span class="nav-text">3.还有好多其他类型的题，到时候单独写博客吧……我也没做完……</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bluefissure</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-          if(result)$(this).text('Copied')
-          else $(this).text('Copy failed')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('Copy')
-        }, 300)
-      }).append(e)
-    })
-  </script>
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
 
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

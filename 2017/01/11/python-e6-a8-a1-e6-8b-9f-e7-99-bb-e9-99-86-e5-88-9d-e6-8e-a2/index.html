@@ -1,112 +1,24 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.5.0',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.bluefissure.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="嘛，学校上线了新的教务系统和选课系统，然后之前的刷课之类的脚本就要重写辣。之前的版本是学长用Java写的一个模拟登陆之类的脚本，然而作为两年都没用Java写过工程类代码的我来说，“人生苦短，我用Python”，于是便花了四个小时写了个新的脚本，具体的方式在这里记录一下，供自己以后回顾以及萌萌哒学弟学妹们参考。">
 <meta property="og:type" content="article">
@@ -114,7 +26,7 @@
 <meta property="og:url" content="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/index.html">
 <meta property="og:site_name" content="Bluefissure&#39;s Blog">
 <meta property="og:description" content="嘛，学校上线了新的教务系统和选课系统，然后之前的刷课之类的脚本就要重写辣。之前的版本是学长用Java写的一个模拟登陆之类的脚本，然而作为两年都没用Java写过工程类代码的我来说，“人生苦短，我用Python”，于是便花了四个小时写了个新的脚本，具体的方式在这里记录一下，供自己以后回顾以及萌萌哒学弟学妹们参考。">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/1.png">
 <meta property="og:image" content="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/2.png">
 <meta property="og:image" content="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/3.png">
@@ -123,24 +35,22 @@
 <meta property="og:image" content="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/kchsearch_res.png">
 <meta property="og:image" content="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/xuanke.png">
 <meta property="og:image" content="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/xuanke_res.png">
-<meta property="og:updated_time" content="2018-11-13T05:49:26.360Z">
+<meta property="article:published_time" content="2017-01-11T09:08:23.000Z">
+<meta property="article:modified_time" content="2018-11-13T05:49:26.360Z">
+<meta property="article:author" content="Bluefissure">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python模拟登陆初探">
-<meta name="twitter:description" content="嘛，学校上线了新的教务系统和选课系统，然后之前的刷课之类的脚本就要重写辣。之前的版本是学长用Java写的一个模拟登陆之类的脚本，然而作为两年都没用Java写过工程类代码的我来说，“人生苦短，我用Python”，于是便花了四个小时写了个新的脚本，具体的方式在这里记录一下，供自己以后回顾以及萌萌哒学弟学妹们参考。">
 <meta name="twitter:image" content="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/1.png">
 
+<link rel="canonical" href="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/">
 
 
-
-
-
-  <link rel="canonical" href="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
@@ -152,181 +62,79 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Bluefissure's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">A Place for Recording</p>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bluefissure's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">A Place for Recording</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
+
 
 
 
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -334,142 +142,70 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Bluefissure">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Bluefissure's Blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Python模拟登陆初探
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Python模拟登陆初探
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2017-01-11 17:08:23" itemprop="dateCreated datePublished" datetime="2017-01-11T17:08:23+08:00">2017-01-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-13 13:49:26" itemprop="dateModified" datetime="2018-11-13T13:49:26+08:00">2018-11-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                <a href="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/" itemprop="commentCount"></span>
-                </a>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-11-13 13:49:26" itemprop="dateModified" datetime="2018-11-13T13:49:26+08:00">2018-11-13</time>
               </span>
-            
-          
-
-          
-          
-
-          
-
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -477,866 +213,236 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+        <p>　　嘛，学校上线了新的教务系统和选课系统，然后之前的刷课之类的脚本就要重写辣。之前的版本是学长用Java写的一个模拟登陆之类的脚本，然而作为两年都没用Java写过工程类代码的我来说，“人生苦短，我用Python”，于是便花了四个小时写了个新的脚本，具体的方式在这里记录一下，供自己以后回顾以及萌萌哒学弟学妹们参考。</p>
+<span id="more"></span>
 
-      
-        <p>　　嘛，学校上线了新的教务系统和选课系统，然后之前的刷课之类的脚本就要重写辣。之前的版本是学长用Java写的一个模拟登陆之类的脚本，然而作为两年都没用Java写过工程类代码的我来说，“人生苦短，我用Python”，于是便花了四个小时写了个新的脚本，具体的方式在这里记录一下，供自己以后回顾以及萌萌哒学弟学妹们参考。<br><a id="more"></a></p>
 <p>　　首先，我也是第一次写这种带些“黑科技”性质的脚本，如果有不完善的地方欢迎大家提出问题，进行讨论。大体的思路是：设定一个间隔时间，不断地查询某个课程的剩余容量，发现有课余量的时候便开始选课。</p>
 <p>　　因此，脚本需要实现的主要有三个模块：模拟登陆模块、查询课余量模块、选课模块，下面分别对三个模块进行说明：</p>
-<h2 id="模拟登陆"><a href="#模拟登陆" class="headerlink" title="模拟登陆"></a>模拟登陆</h2><p>我们先来看一下登录界面<br><img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/1.png"><br>啊，大概长这样，在cmd里ping一下域名找到IP<br><img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/2.png"><br>然后打开Wireshark，对IP地址添加filter，过滤掉其他信息<br><img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/3.png"><br>刷新网页，登录，则记录了通信过程的数据包（121开头的IP为本机，202为网站的IP）<br><img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/4.png"><br>很明显带着login的那个东西传送的是登录信息，打开看看：<br>果然，直接POST了一个类型为application/x-www-form-urlencoded的数据给了子目录/b/ajaxLogin，数据内容为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"j_username"</span> = <span class="string">"学号"</span></span><br><span class="line"><span class="string">"j_password"</span> = <span class="string">"密码"</span></span><br></pre></td></tr></table></figure></p>
-<p>于是，我们同样的将数据以这种形式封装，并用Python模拟HTTP请求发送给<a href="http://bkjwxk.sdu.edu.cn/b/ajaxLogin" target="_blank" rel="noopener">http://bkjwxk.sdu.edu.cn/b/ajaxLogin</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(username,password)</span>:</span></span><br><span class="line">	urlLogin=<span class="string">'http://bkjwxk.sdu.edu.cn/b/ajaxLogin'</span></span><br><span class="line">	</span><br><span class="line">	data = &#123;</span><br><span class="line">		<span class="string">"j_username"</span>: username,</span><br><span class="line">		<span class="string">"j_password"</span>: password,</span><br><span class="line">	&#125;</span><br><span class="line">	data = urllib.parse.urlencode(data).encode(<span class="string">'utf-8'</span>) <span class="comment">#注意编码</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		headers = &#123;</span><br><span class="line">			<span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">			<span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'</span>,</span><br><span class="line">			<span class="string">'Accept'</span>: <span class="string">'*/*'</span>,</span><br><span class="line">			<span class="string">'Origin'</span>: <span class="string">'http://bkjwxk.sdu.edu.cn'</span>,</span><br><span class="line">			<span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">			<span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.8'</span>,</span><br><span class="line">			<span class="string">'Accept-Encoding'</span>:<span class="string">' gzip, deflate'</span>,</span><br><span class="line">			<span class="string">'Host'</span>: <span class="string">'bkjwxk.sdu.edu.cn'</span></span><br><span class="line">		&#125;</span><br><span class="line">		request = urllib.request.Request(url=urlLogin, headers=headers, data=data)</span><br><span class="line">		cookie = http.cookiejar.CookieJar()</span><br><span class="line">		opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie))</span><br><span class="line">		</span><br><span class="line">		r = opener.open(request) </span><br><span class="line">		response = r.read().decode(<span class="string">'utf-8'</span>)	<span class="comment">#注意解码</span></span><br><span class="line">		print(response)</span><br><span class="line">		<span class="keyword">if</span>(response!=<span class="string">'"success"'</span>): </span><br><span class="line">			print(<span class="string">"登陆失败"</span>)</span><br><span class="line">			sys.exit()</span><br><span class="line">		print(<span class="string">"登陆成功"</span>)</span><br><span class="line">		<span class="keyword">return</span> cookie;</span><br><span class="line">	<span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">		print(<span class="string">"Login Error: %s"</span>%e)</span><br></pre></td></tr></table></figure></p>
+<h2 id="模拟登陆"><a href="#模拟登陆" class="headerlink" title="模拟登陆"></a>模拟登陆</h2><p>我们先来看一下登录界面 </p>
+<img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/1.png" class=""> 
+<p>啊，大概长这样，在cmd里ping一下域名找到IP </p>
+<img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/2.png" class="">
+<p>然后打开Wireshark，对IP地址添加filter，过滤掉其他信息 </p>
+<img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/3.png" class=""> 
+<p>刷新网页，登录，则记录了通信过程的数据包（121开头的IP为本机，202为网站的IP） </p>
+<img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/4.png" class=""> 
+<p>很明显带着login的那个东西传送的是登录信息，打开看看：<br>果然，直接POST了一个类型为application&#x2F;x-www-form-urlencoded的数据给了子目录&#x2F;b&#x2F;ajaxLogin，数据内容为 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;j_username&quot;</span> = <span class="string">&quot;学号&quot;</span></span><br><span class="line"><span class="string">&quot;j_password&quot;</span> = <span class="string">&quot;密码&quot;</span></span><br></pre></td></tr></table></figure>
+<p>于是，我们同样的将数据以这种形式封装，并用Python模拟HTTP请求发送给<a target="_blank" rel="noopener" href="http://bkjwxk.sdu.edu.cn/b/ajaxLogin">http://bkjwxk.sdu.edu.cn/b/ajaxLogin</a> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">username,password</span>):</span><br><span class="line">	urlLogin=<span class="string">&#x27;http://bkjwxk.sdu.edu.cn/b/ajaxLogin&#x27;</span></span><br><span class="line">	</span><br><span class="line">	data = &#123;</span><br><span class="line">		<span class="string">&quot;j_username&quot;</span>: username,</span><br><span class="line">		<span class="string">&quot;j_password&quot;</span>: password,</span><br><span class="line">	&#125;</span><br><span class="line">	data = urllib.parse.urlencode(data).encode(<span class="string">&#x27;utf-8&#x27;</span>) <span class="comment">#注意编码</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		headers = &#123;</span><br><span class="line">			<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/x-www-form-urlencoded&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;Accept&#x27;</span>: <span class="string">&#x27;*/*&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;Origin&#x27;</span>: <span class="string">&#x27;http://bkjwxk.sdu.edu.cn&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;keep-alive&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;Accept-Language&#x27;</span>: <span class="string">&#x27;zh-CN,zh;q=0.8&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;Accept-Encoding&#x27;</span>:<span class="string">&#x27; gzip, deflate&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;Host&#x27;</span>: <span class="string">&#x27;bkjwxk.sdu.edu.cn&#x27;</span></span><br><span class="line">		&#125;</span><br><span class="line">		request = urllib.request.Request(url=urlLogin, headers=headers, data=data)</span><br><span class="line">		cookie = http.cookiejar.CookieJar()</span><br><span class="line">		opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie))</span><br><span class="line">		</span><br><span class="line">		r = opener.<span class="built_in">open</span>(request) </span><br><span class="line">		response = r.read().decode(<span class="string">&#x27;utf-8&#x27;</span>)	<span class="comment">#注意解码</span></span><br><span class="line">		<span class="built_in">print</span>(response)</span><br><span class="line">		<span class="keyword">if</span>(response!=<span class="string">&#x27;&quot;success&quot;&#x27;</span>): </span><br><span class="line">			<span class="built_in">print</span>(<span class="string">&quot;登陆失败&quot;</span>)</span><br><span class="line">			sys.exit()</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;登陆成功&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span> cookie;</span><br><span class="line">	<span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;Login Error: %s&quot;</span>%e)</span><br></pre></td></tr></table></figure>
+
 <p>几点需要注意的地方：</p>
 <ol>
 <li>header中的Content-Type最为重要，它规定了数据发送的形式。而header的其他内容加不加好像都可以得到正确的结果</li>
 <li>注意cookie的获取和保存，这里使用了http.cookiejar.CookieJar</li>
 </ol>
 <p>之后，如果登陆成功会返回”success”，不成功则返回了提示信息，我们可以通过打印response来看到。 登陆成功的话，就能返回cookie进行下一步对课程剩余量的爬虫了。</p>
-<h2 id="爬取剩余课程容量"><a href="#爬取剩余课程容量" class="headerlink" title="爬取剩余课程容量"></a>爬取剩余课程容量</h2><p>如同刚才的做法，先在网页中模拟对课余量的查询，然后抓包分析数据包内容，这里不再详述，直接看发送和接受的数据包的结果：<br><img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/kchsearch.png"><br><img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/kchsearch_res.png"><br>厉害了，发送格式是application/x-www-form-urlencoded，返回直接返回了json，这样分析就方便多了，具体数据代表的含义的话简单地说一下，具体还是自己抓了包看吧：<br>发送信息：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Form item: <span class="string">"currentPage"</span> = <span class="string">"1"</span> <span class="comment">#当前页号</span></span><br><span class="line">Form item: <span class="string">"kch"</span> = <span class="string">"0063209110"</span> <span class="comment">#课程号</span></span><br></pre></td></tr></table></figure></p>
-<p>接受信息：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">JavaScript Object Notation: application/json</span><br><span class="line">	Object</span><br><span class="line">		Member Key: "result"	#成功与否</span><br><span class="line">			String value: success	</span><br><span class="line">		Member Key: "msg"		#不成功的话提示信息</span><br><span class="line">			Null value</span><br><span class="line">		Member Key: "object"	#返回数据</span><br><span class="line">			Object</span><br><span class="line">				Member Key: "perPageNum"	#每一页的课程数量</span><br><span class="line">				Member Key: "totalRows"		</span><br><span class="line">				Member Key: "totalPages"	#一共多少页</span><br><span class="line">				Member Key: "currentPage"	#当前页</span><br><span class="line">				Member Key: "prePage"		#前一页</span><br><span class="line">				Member Key: "nextPage"		#后一页</span><br><span class="line">				Member Key: "startIndex"	#本页开始的Index</span><br><span class="line">				Member Key: "lastIndex"		#本页结束的Index</span><br><span class="line">				Member Key: "resultList"	#结果数组</span><br><span class="line">					Array</span><br></pre></td></tr></table></figure></p>
-<p>然后直接操作json中的Array那个数组，对应的什么KCM属性对应课程名，根据拼音猜一猜就好，找出查询课程的的课序号，如果剩余量大于零则开始选课。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkLeft</span><span class="params">(kch,kxh,cookie)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		urlCheck=urlbase+<span class="string">'/b/xk/xs/kcsearch'</span></span><br><span class="line">		curPage = <span class="number">1</span></span><br><span class="line">		totPage = <span class="number">100</span></span><br><span class="line">		find = <span class="keyword">False</span></span><br><span class="line">		<span class="keyword">while</span>(curPage &lt;= totPage <span class="keyword">and</span> <span class="keyword">not</span> find):</span><br><span class="line">			<span class="comment"># print("curPage %d"%curPage)</span></span><br><span class="line">			<span class="comment"># print("totPage %d"%totPage)</span></span><br><span class="line">			<span class="comment"># print("kch %s"%kch)</span></span><br><span class="line">			data = &#123;</span><br><span class="line">					<span class="string">"type"</span>: <span class="string">"kc"</span>,</span><br><span class="line">					<span class="string">"currentPage"</span>: curPage,</span><br><span class="line">					<span class="string">"kch"</span>: kch,</span><br><span class="line">					<span class="string">"jsh"</span>: <span class="string">""</span>,</span><br><span class="line">					<span class="string">"skxq"</span>: <span class="string">""</span>,</span><br><span class="line">					<span class="string">"skjc"</span>: <span class="string">""</span>,</span><br><span class="line">					<span class="string">"kkxsh"</span>: <span class="string">""</span></span><br><span class="line">					&#125;</span><br><span class="line">			data = urllib.parse.urlencode(data).encode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">			<span class="comment"># for item in cookie:</span></span><br><span class="line">			<span class="comment"># 	print('%s : %s' % (item.name,item.value))</span></span><br><span class="line">			headers = &#123;</span><br><span class="line">				<span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">			&#125;</span><br><span class="line">			request = urllib.request.Request(url=urlCheck, headers=headers, data=data)</span><br><span class="line">			cj = cookie</span><br><span class="line">			opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))</span><br><span class="line">			r = opener.open(request) </span><br><span class="line">			response = r.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">			<span class="keyword">if</span>(<span class="string">"login"</span> <span class="keyword">in</span> response):</span><br><span class="line">				<span class="keyword">return</span> <span class="number">2</span> <span class="comment">#Cookie espire</span></span><br><span class="line">			jsondata = json.loads(response)</span><br><span class="line"></span><br><span class="line">			totPage = int(jsondata[<span class="string">"object"</span>][<span class="string">"totalPages"</span>])</span><br><span class="line">			curPage = curPage + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> item <span class="keyword">in</span> jsondata[<span class="string">"object"</span>][<span class="string">"resultList"</span>]:</span><br><span class="line">				<span class="comment">#print(item.get("KXH"))</span></span><br><span class="line">				<span class="keyword">if</span>(int(item.get(<span class="string">"KXH"</span>))==int(kxh)):</span><br><span class="line">					find = <span class="keyword">True</span></span><br><span class="line">					<span class="keyword">if</span>(int(item.get(<span class="string">"kyl"</span>))&gt;<span class="number">0</span>):</span><br><span class="line">						<span class="keyword">if</span>(xuanke(kch,kxh,cookie)):</span><br><span class="line">							print(<span class="string">"课程\"%s\"选课成功，谢谢使用\nBy Bluefissure"</span>%(item.get(<span class="string">"KCM"</span>)))</span><br><span class="line">							sys.exit()</span><br><span class="line">					<span class="keyword">else</span>:</span><br><span class="line">						print(<span class="string">"课程\"%s\"课余量不足，您需要等待至少 %s 人退课"</span>%(item.get(<span class="string">"KCM"</span>),-int(item.get(<span class="string">"kyl"</span>))+<span class="number">1</span>))</span><br><span class="line">					<span class="keyword">break</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">not</span> find):</span><br><span class="line">			print(<span class="string">"找不到该课程，请确认课程号、课序号!"</span>)</span><br><span class="line">			sys.exit()</span><br><span class="line">	<span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">		print(<span class="string">"Check Error: %s"</span>%e)</span><br></pre></td></tr></table></figure></p>
-<h2 id="选课过程"><a href="#选课过程" class="headerlink" title="选课过程"></a>选课过程</h2><p>选课过程老简单了，直接看抓包的数据如下：<br><img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/xuanke.png"><br>厉害了，直接访问下/b/xk/xs/add/课程号/课序号 就好了，代码太简单都不用贴的…… 然后返回的内容还是json，提示信息是utf-8编码（中文），在wireshark里好像显示不正确：<br><img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/xuanke_res.png"><br>在Python里解码就好了：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xuanke</span><span class="params">(kch,kxh,cookie)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		urlXuanke=<span class="string">'http://bkjwxk.sdu.edu.cn/b/xk/xs/add/%s/%s'</span>%(kch,kxh)</span><br><span class="line">		request = urllib.request.Request(url=urlXuanke)</span><br><span class="line">		cj = cookie</span><br><span class="line">		opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))</span><br><span class="line">		r = opener.open(request) </span><br><span class="line">		response = r.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">		result = json.loads(response)[<span class="string">"msg"</span>]</span><br><span class="line">		print(result)</span><br><span class="line">		<span class="keyword">return</span>(<span class="string">"选课成功"</span> <span class="keyword">in</span> result)</span><br><span class="line">	<span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">		print(<span class="string">"Check Error: %s"</span>%e)</span><br></pre></td></tr></table></figure></p>
+<h2 id="爬取剩余课程容量"><a href="#爬取剩余课程容量" class="headerlink" title="爬取剩余课程容量"></a>爬取剩余课程容量</h2><p>如同刚才的做法，先在网页中模拟对课余量的查询，然后抓包分析数据包内容，这里不再详述，直接看发送和接受的数据包的结果： </p>
+<img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/kchsearch.png" class=""> 
+<img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/kchsearch_res.png" class=""> 
+<p>厉害了，发送格式是application&#x2F;x-www-form-urlencoded，返回直接返回了json，这样分析就方便多了，具体数据代表的含义的话简单地说一下，具体还是自己抓了包看吧：<br>发送信息： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Form item: <span class="string">&quot;currentPage&quot;</span> = <span class="string">&quot;1&quot;</span> <span class="comment">#当前页号</span></span><br><span class="line">Form item: <span class="string">&quot;kch&quot;</span> = <span class="string">&quot;0063209110&quot;</span> <span class="comment">#课程号</span></span><br></pre></td></tr></table></figure>
+<p>接受信息： </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">JavaScript Object Notation<span class="punctuation">:</span> application/json</span><br><span class="line">	Object</span><br><span class="line">		Member Key<span class="punctuation">:</span> <span class="string">&quot;result&quot;</span>	#成功与否</span><br><span class="line">			String value<span class="punctuation">:</span> success	</span><br><span class="line">		Member Key<span class="punctuation">:</span> <span class="string">&quot;msg&quot;</span>		#不成功的话提示信息</span><br><span class="line">			Null value</span><br><span class="line">		Member Key<span class="punctuation">:</span> <span class="string">&quot;object&quot;</span>	#返回数据</span><br><span class="line">			Object</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;perPageNum&quot;</span>	#每一页的课程数量</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;totalRows&quot;</span>		</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;totalPages&quot;</span>	#一共多少页</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;currentPage&quot;</span>	#当前页</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;prePage&quot;</span>		#前一页</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;nextPage&quot;</span>		#后一页</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;startIndex&quot;</span>	#本页开始的Index</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;lastIndex&quot;</span>		#本页结束的Index</span><br><span class="line">				Member Key<span class="punctuation">:</span> <span class="string">&quot;resultList&quot;</span>	#结果数组</span><br><span class="line">					Array</span><br></pre></td></tr></table></figure>
+<p>然后直接操作json中的Array那个数组，对应的什么KCM属性对应课程名，根据拼音猜一猜就好，找出查询课程的的课序号，如果剩余量大于零则开始选课。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">checkLeft</span>(<span class="params">kch,kxh,cookie</span>):</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		urlCheck=urlbase+<span class="string">&#x27;/b/xk/xs/kcsearch&#x27;</span></span><br><span class="line">		curPage = <span class="number">1</span></span><br><span class="line">		totPage = <span class="number">100</span></span><br><span class="line">		find = <span class="literal">False</span></span><br><span class="line">		<span class="keyword">while</span>(curPage &lt;= totPage <span class="keyword">and</span> <span class="keyword">not</span> find):</span><br><span class="line">			<span class="comment"># print(&quot;curPage %d&quot;%curPage)</span></span><br><span class="line">			<span class="comment"># print(&quot;totPage %d&quot;%totPage)</span></span><br><span class="line">			<span class="comment"># print(&quot;kch %s&quot;%kch)</span></span><br><span class="line">			data = &#123;</span><br><span class="line">					<span class="string">&quot;type&quot;</span>: <span class="string">&quot;kc&quot;</span>,</span><br><span class="line">					<span class="string">&quot;currentPage&quot;</span>: curPage,</span><br><span class="line">					<span class="string">&quot;kch&quot;</span>: kch,</span><br><span class="line">					<span class="string">&quot;jsh&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">					<span class="string">&quot;skxq&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">					<span class="string">&quot;skjc&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">					<span class="string">&quot;kkxsh&quot;</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">					&#125;</span><br><span class="line">			data = urllib.parse.urlencode(data).encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line">			<span class="comment"># for item in cookie:</span></span><br><span class="line">			<span class="comment"># 	print(&#x27;%s : %s&#x27; % (item.name,item.value))</span></span><br><span class="line">			headers = &#123;</span><br><span class="line">				<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/x-www-form-urlencoded&#x27;</span>,</span><br><span class="line">			&#125;</span><br><span class="line">			request = urllib.request.Request(url=urlCheck, headers=headers, data=data)</span><br><span class="line">			cj = cookie</span><br><span class="line">			opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))</span><br><span class="line">			r = opener.<span class="built_in">open</span>(request) </span><br><span class="line">			response = r.read().decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">			<span class="keyword">if</span>(<span class="string">&quot;login&quot;</span> <span class="keyword">in</span> response):</span><br><span class="line">				<span class="keyword">return</span> <span class="number">2</span> <span class="comment">#Cookie espire</span></span><br><span class="line">			jsondata = json.loads(response)</span><br><span class="line"></span><br><span class="line">			totPage = <span class="built_in">int</span>(jsondata[<span class="string">&quot;object&quot;</span>][<span class="string">&quot;totalPages&quot;</span>])</span><br><span class="line">			curPage = curPage + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> item <span class="keyword">in</span> jsondata[<span class="string">&quot;object&quot;</span>][<span class="string">&quot;resultList&quot;</span>]:</span><br><span class="line">				<span class="comment">#print(item.get(&quot;KXH&quot;))</span></span><br><span class="line">				<span class="keyword">if</span>(<span class="built_in">int</span>(item.get(<span class="string">&quot;KXH&quot;</span>))==<span class="built_in">int</span>(kxh)):</span><br><span class="line">					find = <span class="literal">True</span></span><br><span class="line">					<span class="keyword">if</span>(<span class="built_in">int</span>(item.get(<span class="string">&quot;kyl&quot;</span>))&gt;<span class="number">0</span>):</span><br><span class="line">						<span class="keyword">if</span>(xuanke(kch,kxh,cookie)):</span><br><span class="line">							<span class="built_in">print</span>(<span class="string">&quot;课程\&quot;%s\&quot;选课成功，谢谢使用\nBy Bluefissure&quot;</span>%(item.get(<span class="string">&quot;KCM&quot;</span>)))</span><br><span class="line">							sys.exit()</span><br><span class="line">					<span class="keyword">else</span>:</span><br><span class="line">						<span class="built_in">print</span>(<span class="string">&quot;课程\&quot;%s\&quot;课余量不足，您需要等待至少 %s 人退课&quot;</span>%(item.get(<span class="string">&quot;KCM&quot;</span>),-<span class="built_in">int</span>(item.get(<span class="string">&quot;kyl&quot;</span>))+<span class="number">1</span>))</span><br><span class="line">					<span class="keyword">break</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">not</span> find):</span><br><span class="line">			<span class="built_in">print</span>(<span class="string">&quot;找不到该课程，请确认课程号、课序号!&quot;</span>)</span><br><span class="line">			sys.exit()</span><br><span class="line">	<span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;Check Error: %s&quot;</span>%e)</span><br></pre></td></tr></table></figure>
+<h2 id="选课过程"><a href="#选课过程" class="headerlink" title="选课过程"></a>选课过程</h2><p>选课过程老简单了，直接看抓包的数据如下： </p>
+<img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/xuanke.png" class=""> 
+<p>厉害了，直接访问下&#x2F;b&#x2F;xk&#x2F;xs&#x2F;add&#x2F;课程号&#x2F;课序号 就好了，代码太简单都不用贴的…… 然后返回的内容还是json，提示信息是utf-8编码（中文），在wireshark里好像显示不正确： </p>
+<img src="/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/xuanke_res.png" class=""> 
+<p>在Python里解码就好了： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">xuanke</span>(<span class="params">kch,kxh,cookie</span>):</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		urlXuanke=<span class="string">&#x27;http://bkjwxk.sdu.edu.cn/b/xk/xs/add/%s/%s&#x27;</span>%(kch,kxh)</span><br><span class="line">		request = urllib.request.Request(url=urlXuanke)</span><br><span class="line">		cj = cookie</span><br><span class="line">		opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))</span><br><span class="line">		r = opener.<span class="built_in">open</span>(request) </span><br><span class="line">		response = r.read().decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">		result = json.loads(response)[<span class="string">&quot;msg&quot;</span>]</span><br><span class="line">		<span class="built_in">print</span>(result)</span><br><span class="line">		<span class="keyword">return</span>(<span class="string">&quot;选课成功&quot;</span> <span class="keyword">in</span> result)</span><br><span class="line">	<span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;Check Error: %s&quot;</span>%e)</span><br></pre></td></tr></table></figure>
+
 <h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ol>
 <li>Cookie可能过期，因此每次访问时如果发现有重定向至Login页面的返回时，要重新登录更新cookie</li>
-<li>其实系统架构大可不必检测课余量，直接暴力强行选就行，反正新系统的接口这么方便……但是，嘛，总感觉暴力去搞有一些<a href="https://baike.baidu.com/item/dos/5104226" target="_blank" rel="noopener">DOS</a>的感觉，不要这样搞为好（有人看了这篇博客后去DOS的话那是最骚的）</li>
+<li>其实系统架构大可不必检测课余量，直接暴力强行选就行，反正新系统的接口这么方便……但是，嘛，总感觉暴力去搞有一些<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/dos/5104226">DOS</a>的感觉，不要这样搞为好（有人看了这篇博客后去DOS的话那是最骚的）</li>
 </ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>发现bug的话欢迎来<a href="https://github.com/Bluefissure/SDU_Scripts" target="_blank" rel="noopener">github</a>提吖，测试并没有怎么做。<br>本脚本仅做学习交流用途，请勿将其大规模用于实践。<br>作者并未参与一切类似功能的发行版软件的开发，使用本脚本以及同类发行版软件的责任请由使用者自负。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>发现bug的话欢迎来<a target="_blank" rel="noopener" href="https://github.com/Bluefissure/SDU_Scripts">github</a>提吖，测试并没有怎么做。<br>本脚本仅做学习交流用途，请勿将其大规模用于实践。<br>作者并未参与一切类似功能的发行版软件的开发，使用本脚本以及同类发行版软件的责任请由使用者自负。</p>
 <p>喵喵。</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" rel="prev" title="莫比乌斯反演 学习笔记">
+      <i class="fa fa-chevron-left"></i> 莫比乌斯反演 学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/03/06/google-kickstart-round-a-2017/" rel="next" title="Google  Kickstart Round A 2017">
+      Google  Kickstart Round A 2017 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
     
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/08/19/e8-8e-ab-e6-af-94-e4-b9-8c-e6-96-af-e5-8f-8d-e6-bc-94-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" rel="next" title="莫比乌斯反演 学习笔记">
-                <i class="fa fa-chevron-left"></i> 莫比乌斯反演 学习笔记
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/06/google-kickstart-round-a-2017/" rel="prev" title="Google  Kickstart Round A 2017">
-                Google  Kickstart Round A 2017 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Bluefissure">
-            
-              <p class="site-author-name" itemprop="name">Bluefissure</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">30</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/Bluefissure" title="GitHub &rarr; https://github.com/Bluefissure" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:bluefissureofg@gmail.com" title="E-Mail &rarr; mailto:bluefissureofg@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://chrisoft.org/" title="https://chrisoft.org/" rel="noopener" target="_blank">Chrisoft</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://ericwww.github.io/" title="https://ericwww.github.io/" rel="noopener" target="_blank">Syasusu</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟登陆"><span class="nav-number">1.</span> <span class="nav-text">模拟登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬取剩余课程容量"><span class="nav-number">2.</span> <span class="nav-text">爬取剩余课程容量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选课过程"><span class="nav-number">3.</span> <span class="nav-text">选课过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他问题"><span class="nav-number">4.</span> <span class="nav-text">其他问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">5.</span> <span class="nav-text">最后</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
-
-
-
-  
-
-  
-    <script id="dsq-count-scr" src="https://bluefissure.disqus.com/count.js" async></script>
-  
-
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.bluefissure.com/2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/';
-        this.page.identifier = '2017/01/11/python-e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86-e5-88-9d-e6-8e-a2/';
-        this.page.title = 'Python模拟登陆初探';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://bluefissure.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        loadComments();
-      
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-  
-
-  
-
-  
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
-
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86"><span class="nav-number">1.</span> <span class="nav-text">模拟登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%88%AC%E5%8F%96%E5%89%A9%E4%BD%99%E8%AF%BE%E7%A8%8B%E5%AE%B9%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">爬取剩余课程容量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E8%AF%BE%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">选课过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">其他问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">5.</span> <span class="nav-text">最后</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bluefissure</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-          if(result)$(this).text('Copied')
-          else $(this).text('Copy failed')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('Copy')
-        }, 300)
-      }).append(e)
-    })
-  </script>
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
 
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bluefissure</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 
